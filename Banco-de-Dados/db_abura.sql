@@ -78,3 +78,15 @@ CREATE TABLE tb_ocorrencia_usuario (
     FOREIGN KEY (id_envio_ocorrencia) REFERENCES tb_ocorrencia(cd_envio_ocorrencia),
     FOREIGN KEY (id_usuario) REFERENCES tb_usuario(cd_usuario)
 );
+
+/* INSERTS PARA TESTE */
+
+/* Declaração de cargo */
+INSERT INTO `tb_cargo`(`cd_cargo`, `nm_cargo`, `ds_funcao`) VALUES 
+(null, "atendente", "ok"),
+(null, "admin", "ok");
+
+/* Registro de funcionário */
+INSERT INTO `tb_funcionario`(`cd_rm_funcionario`, `nm_funcionario`, `ds_senha`, `cd_cpf`, `nr_cnh`, `id_cargo`) VALUES 
+(1, "funcionario", 123, 12345678, 12345, 1),
+(2, "admin", 123, 87654321, 12345, 2);

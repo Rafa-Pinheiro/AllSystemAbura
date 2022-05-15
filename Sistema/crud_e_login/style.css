@@ -1,0 +1,59 @@
+#body-entrar {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#h1-entrar {
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.795);
+}
+
+.seta-entrar, .logo-entrar {
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.seta-entrar {
+    padding-left: 50px;
+}
+
+.logo-entrar {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    opacity: 0.2;
+}
+
+.form-entrar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-entrar {
+    margin-top: 20%;
+    height: 400px;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+}
+
+.input-entrar, .submit-entrar {
+    font-size: large;
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(189, 186, 252);
+    text-transform: uppercase;
+}
+
+.submit-entrar {
+    width: 230px;
+    background-color: rgb(115, 115, 255);
+    color: aliceblue;
+}
