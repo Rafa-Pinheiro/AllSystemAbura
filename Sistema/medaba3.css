@@ -1,0 +1,521 @@
+.fonte{
+	font-family: 'Dosis', sans-serif;
+}
+
+#canto{
+	width: 500px;
+	height: 450px;
+	margin-left: 1200px;
+	margin-top:-225px
+}
+
+.renatinha{
+	width: 80px;
+	height:50px;
+	position: absolute;
+	margin-top: -20px;
+	margin-right: 20px;
+	outline-color: #ffffff;
+}
+
+.navbar {
+	position: absolute;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #5ed4e3;
+	margin-bottom: 60px;
+	margin-top: 0;
+	height: 60px;
+	width: 1600px;
+	max-width: 1600px;
+}
+
+.camponav {
+	float: left;
+}
+
+.navbar a {
+	font-size: 3vh;
+	display: block;
+	text-align: center;
+	padding: 15px 20px;
+	text-decoration: none;
+	border-width: medium;
+}
+
+#aba1:hover , #aba2:hover ,#aba3:hover{
+	background-color: #E0FFFF;
+}
+
+#aba1, #aba2, #aba3{
+	color: #004AAD;
+	background-color: #ffffff;
+	border-radius: 80px 15px 15px 15px;
+	padding-bottom: 0px;
+	padding-right: 250px;
+	padding-top: 0px;
+	margin-top: 19px;
+}
+
+#aba1{
+	margin-right: 50px;
+}
+
+#aba2{
+	margin-left: -130px;
+	margin-right: 800px
+}
+
+#aba3{
+	margin-left: 815px;
+	margin-top: -38px;
+	color: #ff6ed0;
+}
+
+/****config do madal****/
+
+.container {
+	position: relative;
+	width: 50%;
+	animation-name: example;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	float: right;
+	margin-right: -580px;
+	margin-top: -80px;
+	z-index:9999;
+}
+
+#image {
+	display: block;
+	width: 150px;
+	height: 150px;
+	margin-top: 152px;
+}
+
+.container:hover .overlay {
+	height: 100px;
+}
+
+.text {
+	white-space: nowrap;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	overflow: hidden;
+	top: 50px;
+	left: 50px;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+
+
+@keyframes example {
+	from {top: 0px;}
+	to {top: 200px;}
+}
+
+.w3-container{
+	border-style: none;
+	font-size: 25px;
+
+}
+
+.city {display:none}
+
+/*********responsividade 1920*********/
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	.renatinha
+{
+	width: 100px;
+    height: 65px;
+    position: absolute;
+    margin-top: -25px;
+    margin-right: 20px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	.navbar
+{
+    margin-bottom: 60px;
+    margin-top: 0;
+    height: 60px;
+	width: 2500px;
+    max-width: 2500px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	.camponav
+{
+	float: left;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	#aba1 , #aba2 
+{
+	margin-top: -15px;
+	margin-bottom: -30px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	#aba3
+{
+	margin-top: -45px;
+	margin-bottom: -30px;
+	margin-left: 900px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	#aba1
+{
+	margin-left: 0px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	#aba2
+{
+	margin-left: -130px;
+    margin-right: 1635px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	#distancia
+{
+	margin-top: 150px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	.campos
+{
+	width: 660px;
+	margin-bottom: 10px;
+	margin-left: 80px;
+	margin-right: 125px;
+	font-size: 25px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px)
+{
+	#canto
+{
+	width: 800px;
+    height: 700px;
+    margin-left: 1700px;
+    margin-top: -450px;
+}
+}
+
+@media (max-width: 1920px && min-width: 1600px	)
+{
+	#image
+{
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin-top: 122px;
+    margin-left: 575px;
+}
+}
+
+/*********responsividade 1366*********/
+
+@media (max-width: 1366px)
+{
+	.renatinha
+{
+	width: 80px;
+	height:50px;
+	position: absolute;
+	margin-top: -15px;
+	margin-right: 20px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	.navbar
+{
+    margin-bottom: 60px;
+    margin-top: 0;
+    height: 60px;
+    width: 1945px;
+    max-width: 2000px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	.camponav
+{
+	float: left;
+}
+}
+
+@media (max-width: 1366px)
+{
+	#aba2 , #aba1
+{
+	margin-top: 0px;
+	margin-bottom: -30px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	#aba1
+{
+	margin-left: 0px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	#aba2
+{
+	margin-left: -130px;
+    margin-right: 1145px;
+}
+}
+
+@media (max-width: 1920px)
+{
+	#aba3
+{
+	margin-top: -32px;
+	margin-bottom: -30px;
+	margin-left: 815px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	#distancia
+{
+	margin-top: 120px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	.campos
+{
+	width: 390px;
+    height: 90px;
+    margin-bottom: 10px;
+    margin-left: 1200px;
+    margin-right: 50px;
+    margin-top: 45px;
+}
+}
+
+@media (max-width: 1366px)
+{
+	#image
+{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-top: 765px;
+    margin-left: 450px;
+}
+}
+
+/*********responsividade 1280*********/
+
+@media (max-width: 1280px)
+{
+	.renatinha
+{
+	width: 80px;
+	height:50px;
+	position: absolute;
+	margin-top: -15px;
+	margin-right: 20px;
+}
+}
+
+@media (max-width: 1280px)
+{
+	.navbar
+{
+    margin-bottom: 60px;
+    margin-top: 0;
+    height: 60px;
+    width: 2000px;
+    max-width: 2000px;
+}
+}
+
+@media (max-width: 1280px)
+{
+	.camponav
+{
+	float: left;
+}
+}
+
+@media (max-width: 1280px)
+{
+	#aba2 , #aba
+{
+	margin-top: 0px;
+	margin-bottom: -30px;
+}
+}
+
+@media (max-width: 1280px)
+{
+	#aba
+{
+	margin-left: 50px;
+}
+}
+
+@media (max-width: 1280px)
+{
+	#aba2
+{
+	margin-left: -130px;
+    margin-right: 1205px;
+}
+}
+
+@media (max-width: 1280px)
+{
+	#distancia
+{
+	margin-top: 130px;
+}
+}
+
+
+@media (max-width: 1280px)
+{
+	.campos
+{
+	width: 390px;
+    height: 90px;
+    margin-bottom: 10px;
+    margin-left: 1200px;
+    margin-right: 50px;
+    margin-top: 45px;
+}
+
+@media (max-width: 1280px)
+{
+	#image
+{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-top: 800px;
+    margin-left: 550px;
+}
+}
+
+/*********responsividade 1024*********/
+
+@media (max-width: 1024px)
+{
+	.renatinha
+{
+	width: 80px;
+	height:50px;
+	position: absolute;
+	margin-top: -15px;
+	margin-right: 20px;
+}
+}
+
+@media (max-width: 1024px)
+{
+	.navbar
+{
+    margin-bottom: 60px;
+    margin-top: 0;
+    height: 60px;
+    width: 2270px;
+    max-width: 3000px;
+}
+}
+
+@media (max-width: 1024px)
+{
+	.camponav
+{
+	float: left;
+}
+}
+
+@media (max-width: 1024px)
+{
+	#aba2 , #aba
+{
+	margin-top: 0px;
+	margin-bottom: -30px;
+}
+}
+
+@media (max-width: 1024px)
+{
+	#aba
+{
+	margin-left: 50px;
+}
+}
+
+@media (max-width: 1024px)
+{
+	#aba2
+{
+	margin-left: -130px;
+    margin-right: 1470px;
+}
+}
+
+@media (max-width: 1024px)
+{
+	.campos
+{
+	width: 330px;
+	height: 70px;
+    margin-bottom: 10px;
+    margin-left: 1200px;
+    margin-right: 50px;
+    margin-top: 70px;
+}
+}
+
+@media (max-width: 1024px)
+{
+	#image
+{
+	display: block;
+    width: 200px;
+    height: 200px;
+	margin-top: 1375px;
+    margin-left: 950px;
+}
+}
