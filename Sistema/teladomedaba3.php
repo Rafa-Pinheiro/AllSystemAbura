@@ -86,7 +86,8 @@
 				 	</div>
 
 				</div>
-				 
+				<!-- https://netbeans.apache.org/kb/docs/php/configure-php-environment-ubuntu_pt_BR.html#specifyDocumentRoot  -SITE DE CONFIGURAÇÃO DO LAMP NO LINUX- -->
+				<!-- https://www.youtube.com/watch?v=twLFmELptnQ -ALTERAÇÃO DE DIRETÓRIO NO APACHE2 LINUX-->
 	</body>
 
 	<script src="motor.js"></script>
