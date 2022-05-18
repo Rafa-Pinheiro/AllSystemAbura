@@ -10,7 +10,7 @@ session_start();
         // print_r($senha);
 
         $sql = "SELECT * FROM tb_funcionario WHERE nm_funcionario = '$email' AND ds_senha = '$senha'";
-        $result = $mysqli->query($sql);
+        $result = $con->query($sql);
 
         // print_r($result);
 
