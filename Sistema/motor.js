@@ -1,23 +1,22 @@
-
-window.onload = function () {
-
-  //CÓDIGO MODAL
-  document.getElementsByClassName("tablink")[0].click();
+//CÓDIGO MODAL
+document.getElementsByClassName("tablink")[0].click();
 
 function abrir(evt, cityName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].classList.remove("w3-light-grey");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.classList.add("w3-light-grey");
+var i, x, tablinks;
+x = document.getElementsByClassName("city");
+for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablink");
+for (i = 0; i < x.length; i++) {
+  tablinks[i].classList.remove("w3-light-grey");
+}
+document.getElementById(cityName).style.display = "block";
+evt.currentTarget.classList.add("w3-light-grey");
 }
 //FIM CÓDIGO MODAL
+window.onload = function () {
+
 
   // var chamado = 'Avenida Paula Ferreira, 3108, Pirituba, São Paulo, SP';
   var uma = ['Rua Manoel Ribeiro dos Santos,101, Itanhaém, SP', 'Avenida Estados Unidos, 859, Jardim São fernando, Itanhaém SP', 'Rua Oswaldo Cruz, 277, Boqueirão, Santos, SP'];
@@ -35,7 +34,7 @@ function abrir(evt, cityName) {
           "allToAll": true
       }
   };
-  var url = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json='+JSON.stringify(local);			
+  var url = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json='+JSON.stringify(local);
 
 
   var xmlHttp = new XMLHttpRequest();
@@ -48,9 +47,9 @@ function abrir(evt, cityName) {
   console.log(retorno, hor + ':' + min + ":" + sec);
 
 
-  /* 
+  /*
   //estrutura For, que gerará vetores para chamadas,umas e unidades de saúde;
-  o for fará a pesquisa nas tabelas do bd, e como serão armazenados 
+  o for fará a pesquisa nas tabelas do bd, e como serão armazenados
   */
   //(logra + ", " + number + ", " + district + ", " + city + ", " + state + ", " + country)
 

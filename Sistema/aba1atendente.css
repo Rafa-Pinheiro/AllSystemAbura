@@ -152,7 +152,7 @@
 }
 
 .letrah4{
-	margin-left: 0px;	
+	margin-left: 0px;
 }
 
 .letrah3{
@@ -214,6 +214,219 @@ textarea{
 }
 
 /****config do madal****/
+ul.dark{
+	background: #232c35;
+}
+
+body.dark{
+  background: #232c35;
+  color: gray;
+
+}
+.campos.dark , .campos2.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#faixa_etaria.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#numerores.dark{
+border-style: none;
+top: 3px;
+border-radius: 10px 50px;
+}
+
+#numerores.dark:focus::placeholder{
+color: gray;
+}
+
+#desc.dark{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: none;
+	padding: 30px;
+
+}
+
+.campos.dark:focus::placeholder{
+	font-size: 0.9em;
+	color: gray;
+
+
+}
+
+#canto.dark{
+	margin-top:-240px
+}
+
+.campos.ampli{
+	font-size: 21px;
+}
+.campos2.ampli{
+	font-size: 21px;
+}
+
+#faixa_etaria.ampli{
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+#rua.ampli{
+	font-size: 21px;
+}
+
+#bairro.ampli{
+	font-size: 21px;
+}
+
+#cidade.ampli{
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+#numerores.ampli{
+	font-size: 21px;
+}
+
+#canto.ampli{
+	font-size: 21px;
+	margin-top: -196px;
+}
+
+#desc.ampli{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: solid;
+	padding: 30px;
+}
+
+#desc.dark.ampli{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: none;
+	padding: 30px;
+}
+
+#canto.ampli.dark{
+	font-size: 21px;
+	margin-top: -174px;
+}
+
+.checkbox{
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox2{
+  opacity: 0;
+  position: absolute;
+}
+
+.label2{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: relative;
+  height: 26px;
+  width: 50px;
+
+
+}
+
+.label{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: absolute;
+  height: 26px;
+  width: 50px;
+
+
+}
+
+.label .bola{
+  background-color: #70eec2;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+
+.label2 .bola2{
+  background-color: #70eec2;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+
+.checkbox2:checked + .label2 .bola2{
+  transform: translate(24px);
+}
+
+.checkbox:checked + .label .bola{
+  transform: translate(24px);
+}
+
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    display: table;
+    margin-left: -1px;
+    margin-top: 21px;
+
+    }
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+#ampliar{
+margin-right:615px;
+}
+
+#escuro{
+margin-right:615px;
+}
+
+#Aparencia{
+	margin-top: -36px;
+    margin-left: 28px;
+}
+
 
 .container {
 	position: relative;
@@ -408,7 +621,7 @@ textarea{
 {
 	.letrah4
 {
-	margin-left: 0px;	
+	margin-left: 0px;
 }
 }
 
@@ -417,7 +630,7 @@ textarea{
 	.letrah2
 {
 	margin-right: -140px;
-    margin-top: 30px;	
+    margin-top: 30px;
 }
 }
 
@@ -427,7 +640,7 @@ textarea{
 {
 	margin-top: -62px;
     margin-left: 800px;
-    font-size: 30px;	
+    font-size: 30px;
 }
 }
 
@@ -614,7 +827,7 @@ textarea{
 {
 	.letrah4
 {
-	margin-left: 0px;	
+	margin-left: 0px;
 }
 }
 
@@ -623,7 +836,7 @@ textarea{
 	.letrah2
 {
 	margin-right: -220px;
-    margin-top: 30px;	
+    margin-top: 30px;
 }
 }
 
@@ -632,7 +845,7 @@ textarea{
 	.letrah3
 {
 	margin-top: -50px;
-	margin-left: 800px;	
+	margin-left: 800px;
 }
 }
 
@@ -832,7 +1045,7 @@ textarea{
 	.letrah2
 {
 	margin-right: -495px;
-    margin-top: 90px;	
+    margin-top: 90px;
 }
 }
 
