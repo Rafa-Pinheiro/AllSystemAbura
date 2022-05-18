@@ -15,16 +15,16 @@ window.onload = function () {
             "allToAll": true
         }
     };
-    var url = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json='+JSON.stringify(local);			
+    var url = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=' + JSON.stringify(local);
 
 
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", url, false ); // false for synchronous request
-    xmlHttp.send( null );
+    xmlHttp.open("GET", url, false); // false for synchronous request
+    xmlHttp.send(null);
     var retorno = (JSON.parse(xmlHttp.responseText)); //LINHA DE ARMAZENAMENTO DO RETORNO DO TEMPO JÁ EM JSON
-    var hor = parseInt(((retorno.time[0][1] + retorno.time[1][0])/60)/60);
-    var min = parseInt(((retorno.time[0][1] + retorno.time[1][0])/60) - (hor*60));
-    var sec = (((retorno.time[0][1] + retorno.time[1][0])/60)-(min+ (hor*60)))*60;
+    var hor = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) / 60);
+    var min = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) - (hor * 60));
+    var sec = (((retorno.time[0][1] + retorno.time[1][0]) / 60) - (min + (hor * 60))) * 60;
     console.log(retorno, hor + ':' + min + ":" + sec);
 
 
@@ -123,13 +123,13 @@ window.onload = function () {
 
         L.mapquest.directions().setLayerOptions({
             startMarker: {
-              icon: markerviatura
+                icon: markerviatura
             },
             endMarker: {
-              icon: markerhospital
+                icon: markerhospital
             },
             waypoints: {
-              icon: markeracidente
+                icon: markeracidente
             },
 
             routeRibbon: {
