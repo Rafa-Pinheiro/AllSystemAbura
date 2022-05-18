@@ -1,5 +1,7 @@
 <?php
 
+//conexao banco
+
 $host = "localhost";
 $usuario = "root";
 $senha = "usbw";
@@ -9,3 +11,4 @@ $mysqli = new mysqli($host, $usuario, $senha, $bd);
 
 if ($mysqli->connect_errno)
     echo "Erro de Conexão: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+ 
