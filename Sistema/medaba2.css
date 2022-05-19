@@ -145,6 +145,154 @@ textarea {
 
 /****config do madal****/
 
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    display: table;
+    margin-left: -1px;
+    margin-top: 21px;
+
+    }
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.checkbox{
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox2{
+  opacity: 0;
+  position: absolute;
+}
+
+.label2{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: relative;
+  height: 26px;
+  width: 50px;
+
+
+}
+
+.label{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: absolute;
+  height: 26px;
+  width: 50px;
+
+
+}
+ul.dark{
+	background: #232c35;
+}
+
+body.dark{
+  background: #232c35;
+  color: gray;
+
+}
+#textarea.dark{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: none;
+	padding: 30px;
+
+}
+
+
+#select2.ampli{
+	font-size: 21px;
+}
+
+#select1.ampli{
+	font-size: 21px;
+}
+
+#select1.dark{
+	background:gray;
+	color: white;
+	border-color: white;
+}
+
+#select2.dark{
+	background: gray;
+	color: white;
+	border-color: white;
+}
+
+
+.label .bola{
+  background-color: #5ed4e3;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+
+.label2 .bola2{
+  background-color: #5ed4e3;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+.checkbox2:checked + .label2 .bola2{
+  transform: translate(24px);
+}
+
+.checkbox:checked + .label .bola{
+  transform: translate(24px);
+}
+
+#ampliar{
+margin-right:615px;
+}
+
+#escuro{
+margin-right:615px;
+}
+
+#Aparencia{
+	margin-top: -36px;
+    margin-left: 28px;
+}
+
+
 .container {
 	position: relative;
 	width: 50%;

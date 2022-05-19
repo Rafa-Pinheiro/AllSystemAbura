@@ -8,6 +8,8 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+	<script src="https://kit.fontawesome.com/c9619274ba.js" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<link rel="stylesheet" href="medaba2.css">
@@ -31,7 +33,7 @@
 
 		<label class="s1">*</label>
 		<p class="letra"> Descrição detalhada</p>
-		<textarea></textarea>
+		<textarea id="textarea"></textarea>
 
 		<table>
 
@@ -39,7 +41,7 @@
 
 				<td>
 
-					<select name="ambulancia2" class="campos letrat distancia distancia3">
+					<select name="ambulancia2" id="select1" class="campos letrat distancia distancia3">
 
 						<option value="prioridade">Prioridade</option>
 						<option value="semgravidade">Sem gravidade</option>
@@ -56,7 +58,7 @@
 
 				<td>
 
-					<select name="ambulancia" class="campos letrat distancia2 distancia3">
+					<select name="ambulancia" id="select2" class="campos letrat distancia2 distancia3">
 
 						<option value="volvo">Tipo de Ambulância</option>
 						<option value="A">A</option>
@@ -91,20 +93,71 @@
 			</div>
 
 			<div id="telas" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
+				<i id="edit" class="fa-solid fa-pen-to-square"><h1 id="Aparencia">Aparencia</h1></i>
+				<div>
+					<h2 id="ampliar">Ampliar fonte</h2>
+					<input type="checkbox" class="checkbox2" id="chk2" name="idd">
+					<label class="label2" for="chk2">
+						<div class="bola2"></div>
+					</label>
+				</div>
+				<div>
+					<h2 id="escuro">modo escuro</h2>
+					<input type="checkbox" class="checkbox" id="chk" name="id" >
+
+					<label class="label" for="chk">
+						<div class="bola"></div>
+					</label>
+				</div>
+				<script type="text/javascript">
+
+				function dark( ){
+					document.body.classList.toggle('dark');
+					document.querySelector('.navbar').classList.toggle('dark');
+					document.querySelector('#select1').classList.toggle('dark');
+					document.querySelector('#select2').classList.toggle('dark');
+					document.querySelector('#textarea').classList.toggle('dark');
+
+
+				}
+				const chk = document.getElementById('chk')
+
+
+				chk.addEventListener('change', () => {
+					dark();
+				})
+
+				function ampli(){
+					document.body.classList.toggle('ampli');
+					document.querySelector('#select2').classList.toggle('ampli');
+					document.querySelector('#select1').classList.toggle('ampli');
+				}
+
+				const chk2 = document.getElementById('chk2')
+
+				chk2.addEventListener('change', () => {
+					ampli();
+
+				})
+
+
+
+
+				</script>
+
 			</div>
 
 			<div id="ajuste" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
+				<h1>Algum problema? Nos comunique!</h1>
+				<p>Empresa: </p>
+				<p>Data de criação: </p><br>
 			</div>
 
 			<div id="contato" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p><br>
+				<h2>Informações de Contato</h2>
+				<i class="fa-solid fa-phone">Telefone:40028922 </i>
+				<i class="fa-brands fa-whatsapp">Whatsapp:13982192428 </i>
+				<i class="fa-solid fa-at">E-mail:abura@gmail.com </i>
 			</div>
 
 			<div class="w3-container w3-light-grey w3-padding">
@@ -112,12 +165,10 @@
 			</div>
 
 		</div>
+		<img src="img/enfeite_azul.png" id="canto">
 
-	</div>
-	<img src="img/enfeite_azul.png" id="canto">
+	</body>
 
-</body>
+	<script src="motor.js"></script>
 
-<script src="motor.js"></script>
-
-</html>
+	</html>
