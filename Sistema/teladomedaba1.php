@@ -10,6 +10,8 @@
 
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+	<script src="https://kit.fontawesome.com/c9619274ba.js" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="medaba1.css">
 
 	<title>Tela do Médico</title>
@@ -35,7 +37,7 @@
 
 		<form>
 
-			<input class="campos idade" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="numerores" placeholder="Informe a faixa etária" required readonly>
+			<input class="campos idade" id="idde" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="numerores" placeholder="Informe a faixa etária" required readonly>
 
 			<h3 class="letrac letrah3">Possui Comorbidades?</h3>
 
@@ -48,16 +50,16 @@
 
 		<h2 class="letrac letrah2">Localização</h2>
 
-		<input class="campos" type="text" name="rua" placeholder="Informe a rua" required readonly>
+		<input class="campos" type="text" id="rua" name="rua" placeholder="Informe a rua" required readonly>
 
-		<input class="campos2" type="text" name="bairro" placeholder="Informe o bairro" required readonly>
+		<input class="campos2" type="text" id="bairro" name="bairro" placeholder="Informe o bairro" required readonly>
 
-		<input class="campos cidade" type="text" name="cidade" placeholder="Informe a cidade" required readonly>
+		<input class="campos cidade" type="text" id="cidade" name="cidade" placeholder="Informe a cidade" required readonly>
 
 		<input id="numerores" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="numerores" placeholder="Informe o n°" required readonly>
 
 		<h4 class="letrac letrah4"> Descrição </h4>
-		<textarea readonly></textarea>
+		<textarea id="textarea" readonly></textarea>
 
 	</main>
 	<div class="container">
@@ -79,20 +81,82 @@
 			</div>
 
 			<div id="telas" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
+				<i id="edit" class="fa-solid fa-pen-to-square"><h1 id="Aparencia">Aparencia</h1></i>
+				<div>
+					<h2 id="ampliar">Ampliar fonte</h2>
+					<input type="checkbox" class="checkbox2" id="chk2" name="idd">
+					<label class="label2" for="chk2">
+						<div class="bola2"></div>
+					</label>
+				</div>
+				<div>
+					<h2 id="escuro">modo escuro</h2>
+					<input type="checkbox" class="checkbox" id="chk" name="id" >
+
+					<label class="label" for="chk">
+						<div class="bola"></div>
+					</label>
+				</div>
+				<script type="text/javascript">
+
+				function dark( ){
+					document.body.classList.toggle('dark');
+					document.querySelector('.navbar').classList.toggle('dark');
+					document.querySelector('.campos').classList.toggle('dark');
+					document.querySelector('.campos2').classList.toggle('dark');
+					document.querySelector('#idde').classList.toggle('dark');
+					document.querySelector('#bairro').classList.toggle('dark');
+					document.querySelector('#rua').classList.toggle('dark');
+					document.querySelector('#cidade').classList.toggle('dark');
+					document.querySelector('#numerores').classList.toggle('dark');
+					document.querySelector('#textarea').classList.toggle('dark');
+
+
+				}
+				const chk = document.getElementById('chk')
+
+
+				chk.addEventListener('change', () => {
+					dark();
+				})
+
+				function ampli(){
+					document.body.classList.toggle('ampli');
+					document.querySelector('.campos').classList.toggle('ampli');
+					document.querySelector('.campos2').classList.toggle('ampli');
+					document.querySelector('#idde').classList.toggle('ampli');
+					document.querySelector('#rua').classList.toggle('ampli');
+					document.querySelector('#bairro').classList.toggle('ampli');
+					document.querySelector('#cidade').classList.toggle('ampli');
+					document.querySelector('#numerores').classList.toggle('ampli');
+					document.querySelector('#textarea').classList.toggle('ampli');
+				}
+
+				const chk2 = document.getElementById('chk2')
+
+				chk2.addEventListener('change', () => {
+					ampli();
+
+				})
+
+
+
+
+				</script>
+
 			</div>
 
 			<div id="ajuste" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
+				<h1>Algum problema? Nos comunique!</h1>
+				<p>Empresa: </p>
+				<p>Data de criação: </p><br>
 			</div>
 
 			<div id="contato" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p><br>
+				<h2>Informações de Contato</h2>
+				<i class="fa-solid fa-phone">Telefone:40028922 </i>
+				<i class="fa-brands fa-whatsapp">Whatsapp:13982192428 </i>
+				<i class="fa-solid fa-at">E-mail:abura@gmail.com </i>
 			</div>
 
 			<div class="w3-container w3-light-grey w3-padding">
@@ -100,12 +164,11 @@
 			</div>
 
 		</div>
-	</div>
-	
-	<img src="img/enfeite_azul.png" id="canto">
 
-</body>
+		<img src="img/enfeite_azul.png" id="canto">
 
-<script src="motor.js"></script>
+	</body>
 
-</html>
+	<script src="motor.js"></script>
+
+	</html>

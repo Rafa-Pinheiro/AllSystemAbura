@@ -2,11 +2,11 @@
 	font-family: 'Dosis', sans-serif;
 }
 
-#canto {
+#canto{
 	width: 500px;
 	height: 450px;
 	margin-left: 1200px;
-	margin-top: -225px;
+	margin-top: -220px
 }
 
 .renatinha {
@@ -189,6 +189,226 @@ textarea {
 
 
 /****config do madal****/
+
+.campos.ampli{
+	font-size: 21px;
+}
+.campos2.ampli{
+	font-size: 21px;
+}
+
+#idde.ampli{
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+#rua.ampli{
+	font-size: 21px;
+}
+
+#bairro.ampli{
+	font-size: 21px;
+}
+
+#cidade.ampli{
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+#numerores.ampli{
+	font-size: 21px;
+}
+
+#canto.ampli{
+	font-size: 21px;
+	margin-top: -206px;
+}
+
+#textarea.ampli{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: solid;
+	padding: 30px;
+}
+.campos.dark , .campos2.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#idde.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#rua.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#bairro.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#cidade.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#numerores.dark{
+border-style: none;
+top: 3px;
+border-radius: 10px 50px;
+}
+
+#numerores.dark:focus::placeholder{
+color: gray;
+}
+
+#textarea.dark{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: none;
+	padding: 30px;
+
+}
+
+.campos.dark:focus::placeholder{
+	font-size: 0.9em;
+	color: gray;
+
+
+}
+
+#canto.dark{
+	margin-top: -192px;
+}
+.checkbox{
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox2{
+  opacity: 0;
+  position: absolute;
+}
+
+.label2{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: relative;
+  height: 26px;
+  width: 50px;
+
+
+}
+
+.label{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: absolute;
+  height: 26px;
+  width: 50px;
+
+
+}
+
+.label .bola{
+  background-color: #5ed4e3;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+
+.label2 .bola2{
+  background-color: #5ed4e3;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+
+ul.dark{
+	background: #232c35;
+}
+
+body.dark{
+  background: #232c35;
+  color: gray;
+
+}
+
+
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    display: table;
+    margin-left: -1px;
+    margin-top: 21px;
+
+    }
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.checkbox2:checked + .label2 .bola2{
+  transform: translate(24px);
+}
+
+.checkbox:checked + .label .bola{
+  transform: translate(24px);
+}
+
+#ampliar{
+margin-right:615px;
+}
+
+#escuro{
+margin-right:615px;
+}
+
+#Aparencia{
+	margin-top: -36px;
+    margin-left: 28px;
+}
+
 
 .container {
 	position: relative;
