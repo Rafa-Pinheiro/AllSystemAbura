@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
-<head class="fonte">
+		<head class="fonte">]
 	<meta charset="utf-8">
 
+<script src="https://kit.fontawesome.com/c9619274ba.js" crossorigin="anonymous"></script>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -80,135 +81,170 @@
 			</div>
 
 			<div id="telas" class="w3-container city">
-				<div class="switch__container">
-					<h1 id="escuro">modo escuro</h1>
-					<div>
-						<input type="checkbox" class="checkbox" id="chk" name="">
-						<label class="label" for="chk">
-							<div class="bola"></div>
-						</label>
-					</div>
+						 <i id="edit" class="fa-solid fa-pen-to-square"><h1 id="Aparencia">Aparencia</h1></i>
+						<div>
+							<h2 id="ampliarn">Ampliar fonte</h2>
+							<input type="checkbox" class="checkbox2" id="chk2" name="idd">
+							<label class="label2" for="chk2">
+								<div class="bola2"></div>
+							</label>
+						</div>
+					   <div>
+					    	<h2 id="escuron">modo escuro</h2>
+								<input type="checkbox" class="checkbox" id="chk" name="id" >
 
-					<script type="text/javascript">
-						function dark() {
-							document.body.classList.toggle('dark');
-							document.querySelector('.navbar').classList.toggle('dark');
-							document.querySelector('.customers').classList.toggle('dark');
-							document.querySelector('#qntd').classList.toggle('dark');
-							document.querySelector('#cabecalho').classList.toggle('dark');
-							document.querySelector('#select1').classList.toggle('dark');
-							document.querySelector('#select2').classList.toggle('dark');
-							document.querySelector('#cidade').classList.toggle('dark');
-							document.querySelector('#numerores').classList.toggle('dark');
-							document.querySelector('#textarea').classList.toggle('dark');
-							document.querySelector('#canto').classList.toggle('dark');
+								<label class="label" for="chk">
+						<div class="bola"></div>
+								</label>
+						</div>
+
+								<script type="text/javascript">
+
+										function dark( ){
+										document.body.classList.toggle('dark');
+										document.querySelector('.navbar').classList.toggle('dark');
+										document.querySelector('.customers').classList.toggle('dark');
+										document.querySelector('#qntd').classList.toggle('dark');
+										document.querySelector('#cabecalho').classList.toggle('dark');
+										document.querySelector('#select1').classList.toggle('dark');
+										document.querySelector('#select2').classList.toggle('dark');
+										document.querySelector('#numerores').classList.toggle('dark');
+										document.querySelector('#textarea').classList.toggle('dark');
+										document.querySelector('#canto').classList.toggle('dark');
 
 
 
 
-						}
-						const chk = document.getElementById('chk')
+										}
+										const chk = document.getElementById('chk')
 
 
-						chk.addEventListener('change', () => {
-							dark();
-						})
-					</script>
+										chk.addEventListener('change', () => {
+											dark();
+										})
+
+										function ampli(){
+										document.body.classList.toggle('ampli');
+										document.querySelector('#select1').classList.toggle('ampli');
+										document.querySelector('#select2').classList.toggle('ampli');
+										document.querySelector('.camp').classList.toggle('ampli');
+										document.querySelector('#e1').classList.toggle('ampli');
+										document.querySelector('#e2').classList.toggle('ampli');
+										document.querySelector('#e3').classList.toggle('ampli');
+										document.querySelector('#e4').classList.toggle('ampli');
+										document.querySelector('#e5').classList.toggle('ampli');
+										document.querySelector('#e6').classList.toggle('ampli');
+										document.querySelector('#e7').classList.toggle('ampli');
+										document.querySelector('#e8').classList.toggle('ampli');
+										document.querySelector('#e9').classList.toggle('ampli');
+										document.querySelector('#e10').classList.toggle('ampli');
+										document.querySelector('#e12').classList.toggle('ampli');
+										document.querySelector('#e13').classList.toggle('ampli');
+										document.querySelector('.customers').classList.toggle('ampli');
+										}
+
+										const chk2 = document.getElementById('chk2')
+
+										chk2.addEventListener('change', () => {
+											ampli();
+
+										})
+
+
+									</script>
 
 				</div>
 
-			</div>
+						<div id="ajuste" class="w3-container city">
+					    	<h1>Algum problema? Nos comunique!</h1>
+	                        <p>Empresa: </p>
+	                        <p>Data de criação: </p><br>
+						</div>
 
-			<div id="ajuste" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
-			</div>
+						<div id="contato" class="w3-container city">
+					    	<h2>Informações de Contato</h2>
+	                        <i class="fa-solid fa-phone">Telefone:40028922 </i>
+	                        <i class="fa-brands fa-whatsapp">Whatsapp:13982192428 </i>
+	                        <i class="fa-solid fa-at">E-mail:abura@gmail.com </i>
+						</div>
 
-			<div id="contato" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p><br>
-			</div>
+						<div class="w3-container w3-light-grey w3-padding">
+					    	<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">fechar</button>
+						</div>
 
-			<div class="w3-container w3-light-grey w3-padding">
-				<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">fechar</button>
-			</div>
+					 	</div>
 
-		</div>
+					</div>
 
-	</div>
-	<img src="img/enfeite.png" id="canto">
+					 	<img src="img/enfeite.png" id="canto">
 
-	<div id="qntd">
-		<p id="qtd">QNTD.AMBULÂNCIA</p>
-	</div>
+	<div id="qntd"><p id="qtd">QNTD.AMBULÂNCIA</p></div>
 
-	<div class="distancia4">
-		<div id="tabela">
+					 	<div class="distancia4">
+							<div id="tabela">
 
-			<table class="customers">
+								<table class="customers">
 
-				<th id="cabecalho"> Ambulâncias </th>
+											<th id="cabecalho"> Ambulâncias </th>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e1" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e2" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e3" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e4" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td  id="e5" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td  id="e6" class="amb">exemplo</td>
+												</tr>
+												<tr class="camp">
+													<td id="e7" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e8" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e9" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e10" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e11" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
+												<tr class="camp">
+													<td id="e12" class="amb">exemplo</td>
+												</tr>
 
-				<tr class="camp">
-					<td class="amb">exemplo</td>
-				</tr>
-
-
-			</table>
-		</div>
-	</div>
+												<tr class="camp">
+													<td id="e13" class="amb">exemplo</td>
+												</tr>
+												
+								</table>
+							</div>
+						</div>
 
 </body>
 

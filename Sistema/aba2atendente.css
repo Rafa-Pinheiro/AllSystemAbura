@@ -177,6 +177,73 @@ body.dark {
 
 }
 
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    display: table;
+    margin-left: -1px;
+    margin-top: 21px;
+
+    }
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+#Aparencia{
+	margin-top: -36px;
+    margin-left: 28px;
+}
+
+.checkbox{
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox2{
+  opacity: 0;
+  position: absolute;
+}
+
+.label2{
+  background-color: #808080;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: -39px;
+   margin-left: 234px;
+  display: flex;
+  align-items: center;
+
+  padding: 5;
+  position: relative;
+  height: 26px;
+  width: 50px;
+
+
+}
+
+
+.label2 .bola2{
+  background-color: #70eec2;
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translate(0px);
+  transition: transform
+  0.2s linear;
+}
+
+.checkbox2:checked + .label2 .bola2{
+  transform: translate(24px);
+}
+
 .checkbox {
 	opacity: 0;
 	position: absolute;
@@ -196,7 +263,6 @@ body.dark {
 	height: 26px;
 	width: 50px;
 
-	transform: scale(1.5);
 }
 
 .label .bola {
@@ -218,7 +284,70 @@ body.dark {
 }
 
 /*********tabela*********/
+#select1.ampli{
+	font-size: 21px;
+}
 
+#e1.ampli{
+	font-size: 21px;
+}
+
+#e2.ampli{
+	font-size: 21px;
+}
+
+#e3.ampli{
+	font-size: 21px;
+}
+
+#e4.ampli{
+	font-size: 21px;
+}
+
+#e5.ampli{
+	font-size: 21px;
+}
+
+#e6.ampli{
+	font-size: 21px;
+}
+
+#e7.ampli{
+	font-size: 21px;
+}
+
+#e8.ampli{
+	font-size: 21px;
+}
+
+#e9.ampli{
+	font-size: 21px;
+}
+
+#e10.ampli{
+	font-size: 21px;
+}
+
+#e11.ampli{
+	font-size: 21px;
+}
+
+#e12.ampli{
+	font-size: 21px;
+}
+
+#e13.ampli{
+	font-size: 21px;
+}
+.customers.ampli{
+	width:799px;
+}
+.camp.ampli{
+	font-size: 21px;
+}
+#select2.ampli{
+	font-size: 21px;
+}
 
 .distancia4 {
 	margin-left: 220px
@@ -366,7 +495,7 @@ body.dark {
 
 .customers {
 
-	width: 776px;
+	width: 777px;
 
 	height: 380px;
 
@@ -409,6 +538,21 @@ body.dark {
 }
 
 /*********responsividade 1366*********/
+@media (max-width: 1366px) {
+	.customers {
+	margin-top: -277px;
+	position: absolute;
+	}
+}
+
+@media (max-width: 1366px) {
+	#qntd {
+	margin-top: -277px;
+	position: absolute;
+	margin-top: -956px;
+  margin-left: 142px;
+	}
+}
 
 @media (max-width: 1366px) {
 	.renatinha {
@@ -472,7 +616,7 @@ body.dark {
 		display: block;
 		width: 200px;
 		height: 200px;
-		margin-top: 125px;
+		margin-top: 393px;
 		margin-left: 385px;
 	}
 }
