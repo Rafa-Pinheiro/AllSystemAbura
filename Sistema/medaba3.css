@@ -78,7 +78,7 @@
 	color: #ff6ed0;
 }
 
-/****config do madal****/
+/****config do modal****/
 
 .container {
 	position: relative;
@@ -96,7 +96,9 @@
 	display: block;
 	width: 150px;
 	height: 150px;
-	margin-top: 152px;
+	margin-top: 350px;
+	margin-left: 60px;
+	z-index: 9999;
 }
 
 .container:hover .overlay {
@@ -391,6 +393,7 @@
 			margin-left: 550px;
 		}
 	}
+}
 
 	/*********responsividade 1024*********/
 
@@ -481,9 +484,8 @@
 
 	#amb {
 		position: relative;
+		margin-top: 10vh;
 		z-index: 2;
-		margin-left: 65vw;
-		margin-top: 8vh;
 		background-color: rgba(200, 200, 200, 0.8);
 		padding: 1vh;
 	}
@@ -494,4 +496,3 @@
 		float: right;
 		margin-right: 1.7vw;
 	}
-}
