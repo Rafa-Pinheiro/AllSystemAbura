@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
-<head class="fonte">]
+<head class="fonte">
 	<meta charset="utf-8">
 
 	<script src="https://kit.fontawesome.com/c9619274ba.js" crossorigin="anonymous"></script>
