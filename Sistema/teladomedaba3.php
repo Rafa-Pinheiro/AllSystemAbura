@@ -5,6 +5,7 @@
 <head class="fonte">
 	<meta charset="utf-8">
 
+ <script src="https://kit.fontawesome.com/c9619274ba.js" crossorigin="anonymous"></script>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -28,7 +29,7 @@
 	</ul>
 
 	<main>
-		
+
 
 
 
@@ -47,7 +48,7 @@
 
 	</main>
 	<div class="container">
-		<img src="img/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
+		<img src="assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
 
 	</div>
 
@@ -65,20 +66,48 @@
 			</div>
 
 			<div id="telas" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
+				<i id="edit" class="fa-solid fa-pen-to-square"><h1 id="Aparencia">Aparencia</h1></i>
+				<div>
+					<h2 id="escuro">modo escuro</h2>
+					<input type="checkbox" class="checkbox" id="chk" name="id" >
+
+					<label class="label" for="chk">
+						<div class="bola"></div>
+					</label>
+				</div>
+				<script type="text/javascript">
+
+				function dark( ){
+					document.body.classList.toggle('dark');
+					document.querySelector('.navbar').classList.toggle('dark');
+
+
+
+				}
+				const chk = document.getElementById('chk')
+
+
+				chk.addEventListener('change', () => {
+					dark();
+				})
+
+
+
+				</script>
+
 			</div>
 
 			<div id="ajuste" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p>
-				<p>Conteudo</p>
+				<h1>Algum problema? Nos comunique!</h1>
+				<p>Empresa: </p>
+				<p>Data de criação: </p><br>
 			</div>
 
 			<div id="contato" class="w3-container city">
-				<h1>Aqui vai o titulo</h1>
-				<p>Conteudo</p><br>
+				<h2>Informações de Contato</h2>
+				<i class="fa-solid fa-phone">Telefone:40028922 </i>
+				<i class="fa-brands fa-whatsapp">Whatsapp:13982192428 </i>
+				<i class="fa-solid fa-at">E-mail:abura@gmail.com </i>
 			</div>
 
 			<div class="w3-container w3-light-grey w3-padding">
@@ -86,8 +115,6 @@
 			</div>
 
 		</div>
-
-	</div>
 	<!-- https://netbeans.apache.org/kb/docs/php/configure-php-environment-ubuntu_pt_BR.html#specifyDocumentRoot  -SITE DE CONFIGURAÇÃO DO LAMP NO LINUX- -->
 	<!-- https://www.youtube.com/watch?v=twLFmELptnQ -ALTERAÇÃO DE DIRETÓRIO NO APACHE2 LINUX-->
 </body>
