@@ -45,6 +45,7 @@
 
 .input-entrar, .submit-entrar {
     font-size: large;
+    width: 300px;
     padding: 8px;
     margin-bottom: 20px;
     border-radius: 6px;
@@ -53,7 +54,7 @@
 }
 
 .submit-entrar {
-    width: 230px;
+    width: 300px;
     background-color: rgb(115, 115, 255);
     color: aliceblue;
 }

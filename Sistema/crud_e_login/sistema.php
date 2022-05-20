@@ -9,10 +9,10 @@
     }
     $logado = $_SESSION['email'];
 
-    $sql = "SELECT * FROM tb_funcionarios";
+    $sql = "SELECT * FROM tb_funcionario";
     $result = $con->query($sql);
 
-    print_r($result);
+    /* print_r($result); */
 
 ?>
 
@@ -36,44 +36,54 @@
     <a href="sair.php">Sair</a>
 
     <div>
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">CD</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Senha</th>
-      <th scope="col">CPF</th> 
-      <th scope="col">CNH</th> 
-      <th scope="col">Cargo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
-    print_r($result);
-      /* while ($dado = $result->fetch_array()) {
-        echo $dado["cd_rm_funcionario"];
-        echo $dado["nm_funcionario"];
-        echo $dado["ds_senha"];
-        echo $dado["cd_cpf"];
-        echo $dado["nr_cnh"];
-        echo $dado["id_cargo"];
-      } */
+      <div class="m-5">
+        <table class="table text-white table-bg">
 
+          <thead>
+            <tr>
+              <th scope="col">CÓDIGO</th>
+              <th scope="col">NOME</th>
+              <th scope="col">SENHA</th>
+              <th scope="col">CPF</th> 
+              <th scope="col">CNH</th> 
+              <th scope="col">CARGO</th>
+            </tr>
+          </thead>
 
+          <style>
+            body {
+              background-color: rgb(20, 147, 220);
+            }
+            .table-bg {
+              background-color: rgba(0,0,0,0.5);
+              border-radius: 5px;
+            }
 
-      /* while ($user_data = mysqli_fetch_assoc($result)) {
-          echo "<tr>";
-          echo "<tr>".$user_data['cd_rm_funcionario']."</tr>";
-          echo "<tr>".$user_data['nm_funcionario']."</tr>";
-          echo "<tr>".$user_data['ds_senha']."</tr>";
-          echo "<tr>".$user_data['cd_cpf']."</tr>";
-          echo "<tr>".$user_data['nr_cnh']."</tr>";
-          echo "<tr>".$user_data['id_cargo']."</tr>";
-          echo "<tr>";
-      } */
-    ?>
-  </tbody>
-</table>
+            tr, th {
+              text-align: center;
+            }
+          </style>
+
+          <tbody>
+            <?php
+
+              while ($user_data = mysqli_fetch_assoc($result)) {
+                  echo "<tr>";
+                  echo "<th>".$user_data['cd_rm_funcionario']."</th>";
+                  echo "<th>".$user_data['nm_funcionario']."</th>";
+                  echo "<th>".$user_data['ds_senha']."</th>";
+                  echo "<th>".$user_data['cd_cpf']."</th>";
+                  echo "<th>".$user_data['nr_cnh']."</th>";
+                  echo "<th>".$user_data['id_cargo']."</th>";
+                  echo "</tr>";
+              }
+
+            ?>
+          </tbody>
+
+        </table>
+      </div>
     </div>
+
 </body>
 </html>
