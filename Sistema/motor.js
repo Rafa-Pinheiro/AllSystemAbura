@@ -20,6 +20,7 @@ window.onload = function () {
 
   // var chamado = 'Avenida Paula Ferreira, 3108, Pirituba, São Paulo, SP';
   var uma = ['Rua Manoel Ribeiro dos Santos,101, Itanhaém, SP', 'Avenida Estados Unidos, 859, Jardim São fernando, Itanhaém SP', 'Rua Oswaldo Cruz, 277, Boqueirão, Santos, SP'];
+  var chamado = "Avenida Paula Ferreira, 3108, Itanhaém, SP";
   var hospital = ['Rua Valter José Alves, 485, Nova Mirim, Praia Grande, SP'];
 
 
@@ -65,7 +66,7 @@ window.onload = function () {
   // }
   //FIM DA ESTRUTURA FOR DO CHAMADO
 
-  var chamado = JSON.parse(localStorage.endereco).logradouro + ", " + JSON.parse(localStorage.endereco).numero + ", " + JSON.parse(localStorage.endereco).bairro + ", " + JSON.parse(localStorage.endereco).cidade + ", " + JSON.parse(localStorage.endereco).estado + ", " + JSON.parse(localStorage.endereco).pais;
+//   var chamado = JSON.parse(localStorage.endereco).logradouro + ", " + JSON.parse(localStorage.endereco).numero + ", " + JSON.parse(localStorage.endereco).bairro + ", " + JSON.parse(localStorage.endereco).cidade + ", " + JSON.parse(localStorage.endereco).estado + ", " + JSON.parse(localStorage.endereco).pais; *TEMPORARIO*
 
   //CASO PRECISE EM VARIÁVEIS DIFERENTES\\
   // var logra = JSON.parse(localStorage.endereco).logradouro;

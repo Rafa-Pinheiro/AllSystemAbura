@@ -47,23 +47,6 @@
 					</div>
 			</form>
 	<main>
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</main>
 	<div class="container">
 		<img src="assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
