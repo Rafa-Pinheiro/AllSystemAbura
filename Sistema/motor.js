@@ -134,6 +134,7 @@ window.onload = function () {
 
   function createMap(error, response) {
       // Initialize the Map
+      console.log("Até a criação ok");
       var map = L.mapquest.map('map', {
           layers: L.mapquest.tileLayer('map'),
           center: [0, 0],
