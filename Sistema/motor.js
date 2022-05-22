@@ -267,3 +267,11 @@ window.onload = function() {
 
 
 // git push --set-upstream Abura_System master
+
+/* COMMIT ATUAL DO GIT
+
+git branch -M main
+git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
+git push -u origin main
+
+*/
