@@ -1,4 +1,4 @@
-<?php include('conexao.php') ?>
+<?php include('../conection/conexao.php') ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
@@ -11,7 +11,7 @@
 
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<link rel="stylesheet" href="aba2atendente.css">
+	<link rel="stylesheet" href="../css/aba2atendente.css">
 
 	<title>Tela do Atendente</title>
 
@@ -21,7 +21,7 @@
 
 	<ul class="navbar">
 
-		<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="assets/axolote.png"></a></li>
+		<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="../assets/axolote.png"></a></li>
 		<li><a id="aba1" href="teladoatendenteaba1.php">Aba1</a></li>
 		<li><a id="aba2" href="teladoatendenteaba2.php">Aba2</a></li>
 
@@ -63,7 +63,7 @@
 </main>
 
 <div class="container">
-	<img src="assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
+	<img src="../assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
 
 </div>
 
@@ -176,7 +176,7 @@
 
 </div>
 
-<img src="img/enfeite.png" id="canto">
+<img src="../img/enfeite.png" id="canto">
 
 <div id="qntd"><p id="qtd">QNTD.AMBULÂNCIA</p></div>
 
@@ -248,7 +248,7 @@
 
 </body>
 
-<script src="motor.js"></script>
-<script src="script.js"></script>
+<script src="../js/motor.js"></script>
+<script src="../js/script.js"></script>
 
 </html>

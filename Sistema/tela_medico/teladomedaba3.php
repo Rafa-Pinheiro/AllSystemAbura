@@ -1,4 +1,4 @@
-<?php include('conexao.php') ?>
+<?php include('../conection/conexao.php') ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
@@ -20,7 +20,7 @@
 
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<link rel="stylesheet" href="medaba3.css">
+	<link rel="stylesheet" href="../css/medaba3.css">
 
 	<title>Tela do Médico</title>
 
@@ -30,7 +30,7 @@
 
 	<ul class="navbar">
 
-		<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="assets/axolote.png"></a></li>
+		<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="../assets/axolote.png"></a></li>
 		<li><a id="aba1" href="teladomedaba1.php">Aba1</a></li>
 		<li><a id="aba2" href="teladomedaba2.php">Aba2</a></li>
 		<li><a id="aba3" href="teladomedaba3.php">Aba3</a></li>
@@ -54,7 +54,7 @@
 	<main>
 	</main>
 	<div class="container">
-		<img src="assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
+		<img src="../assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
 
 	</div>
 
@@ -99,6 +99,6 @@
 	<!-- https://www.youtube.com/watch?v=twLFmELptnQ -ALTERAÇÃO DE DIRETÓRIO NO APACHE2 LINUX-->
 </body>
 
-<script src="motor.js"></script>
+<script src="../js/motor.js"></script>
 
 </html>

@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
     <title>Entrar</title>
 </head>
@@ -20,11 +20,11 @@
     <div class="entrar-container">
         <div class="row">
             <div class="col-3 seta">
-                <a href="home.php"><img src="seta.png" height="50px" width="50px"></a>
+                <a href="crud_e_login/home.php"><img src="assets/seta.png" height="50px" width="50px"></a>
             </div>
             <div class="col-6 form-entrar">
                 <div id="form-entrar">
-                    <form action="testLogin.php" method="post">
+                    <form action="crud_e_login/testLogin.php" method="post">
                         <h1 id="h1-entrar">Entrar</h1>
                         <input type="text" class="input-entrar" name="email" placeholder="Usuário">
                         <input type="password" class="input-entrar" name="senha" placeholder="Senha">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="col-3 logo-entrar">
-                <img src="../../Logo/SEM_EFEITOS.png" alt="logo" height="370px" width="400px">
+                <img src="../Logo/SEM_EFEITOS.png" alt="logo" height="370px" width="400px">
             </div>
         </div>
     </div>

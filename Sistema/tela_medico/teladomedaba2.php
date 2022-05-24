@@ -1,11 +1,11 @@
-<?php include('conexao.php') ?>
+<?php include('../conection/conexao.php') ?>
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
 <head class="fonte">
 	<meta charset="utf-8">
 
-	<script src="motor.js"></script>
+	<script src="../js/motor.js"></script>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<link rel="stylesheet" href="medaba2.css">
+	<link rel="stylesheet" href="../css/medaba2.css">
 
 	<title>Tela do Médico</title>
 
@@ -23,7 +23,7 @@
 
 	<ul class="navbar">
 
-		<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="assets/axolote.png"></a></li>
+		<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="../assets/axolote.png"></a></li>
 		<li><a id="aba1" href="teladomedaba1.php">Aba1</a></li>
 		<li><a id="aba2" href="teladomedaba2.php">Aba2</a></li>
 		<li><a id="aba3" href="teladomedaba3.php">Aba3</a></li>
@@ -76,7 +76,7 @@
 
 	</main>
 	<div class="container">
-		<img src="assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
+		<img src="../assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image">
 
 	</div>
 
@@ -166,10 +166,10 @@
 			</div>
 
 		</div>
-		<img src="img/enfeite_azul.png" id="canto">
+		<img src="../img/enfeite_azul.png" id="canto">
 
 	</body>
 
-	<script src="motor.js"></script>
+	<script src="../js/motor.js"></script>
 
 	</html>
