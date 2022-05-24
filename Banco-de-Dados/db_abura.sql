@@ -95,9 +95,10 @@ INSERT INTO `tb_cargo`(`cd_cargo`, `nm_cargo`, `ds_funcao`) VALUES
  (null,"abastecedor",5);
 
 /* Registro de funcionário */
-INSERT INTO `tb_funcionario`(`cd_rm_funcionario`, `nm_funcionario`, `ds_senha`, `cd_cpf`, `nr_cnh`, `id_cargo`, `dt_nasc`) VALUES 
-(1, "luiz", 123, 12345678, 12345, 1, "2000-02-12"),
-(2, "dino", 123, 87654321, 84623, 2, "2000-02-12"),
-(3, "rafa", 123, 65748392, 94836, 3, "2000-02-12"),
-(4, "raylla", 123, 73548263, 53827, 4, "2000-02-12"),
-(5, "diego", 123, 87654321, 84937, 5, "2000-02-12");
+
+INSERT INTO `tb_funcionario`(`cd_rm_funcionario`, `nm_funcionario`, `cd_cpf`, `cd_crm_medico`, `nr_cnh`, `dt_vencimento_cnh`, `ds_senha`, `dt_nasc`, `id_cargo`) VALUES 
+(1, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 1),
+(2, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 2),
+(3, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 3),
+(4, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 4),
+(5, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 5);
