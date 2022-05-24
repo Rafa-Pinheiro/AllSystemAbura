@@ -5,17 +5,28 @@
     overflow-y: hidden;
 }
 
+#body-cadastrar {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 #h1-entrar {
     margin-bottom: 30px;
     color: rgba(0, 0, 0, 0.795);
 }
 
-.seta-entrar, .logo-entrar {
+#h1-cadastrar {
+    margin-bottom: 15px;
+    color: rgba(0, 0, 0, 0.795);
+}
+
+.seta, .logo-entrar {
     margin-left: 10px;
     margin-top: 40px;
 }
 
-.seta-entrar {
+.seta {
     padding-left: 50px;
 }
 
@@ -28,22 +39,26 @@
     opacity: 0.2;
 }
 
-.form-entrar {
+.form-cadastrar, .form-entrar{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-#form-entrar {
-    margin-top: 20%;
+#form-cadastrar, #form-entrar {
+    margin-top: 8%;
     height: 400px;
     width: 400px;
     padding: 10px;
     text-align: center;
 }
 
-.input-entrar, .submit-entrar {
+#form-entrar {
+    margin-top: 20% !important;
+}
+
+.input-entrar, .input-cadastrar, .submit-entrar, .submit-cadastrar {
     font-size: large;
     width: 300px;
     padding: 8px;
@@ -53,8 +68,10 @@
     text-transform: uppercase;
 }
 
-.submit-entrar {
+.submit-entrar, .submit-cadastrar {
     width: 300px;
-    background-color: rgb(115, 115, 255);
+    background-color: rgb(115, 136, 255);
     color: aliceblue;
+    font-weight: bold;
+    margin-bottom: 80px;
 }

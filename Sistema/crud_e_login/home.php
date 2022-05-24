@@ -9,6 +9,7 @@
 <body>
     <h1>home</h1>
     <a href="login.php">Login</a>
-    <a href="">Cadastrar</a>
+    <a href="cadastrar_fun.php">Cadastrar Funcionário</a>
+    <a href="cadastrar_uma.php">Cadastrar UMA</a>
 </body>
 </html>

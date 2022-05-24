@@ -12,25 +12,38 @@
 
     <link rel="stylesheet" href="estilo.css">
 
-    <title>Entrar</title>
+    <title>Cadastrar Funcionário</title>
 </head>
 
-<body id="body-entrar">
+<body id="body-cadastrar">
 
-    <div class="entrar-container">
+    <div class="cadastrar-container">
         <div class="row">
             <div class="col-3 seta">
                 <a href="home.php"><img src="seta.png" height="50px" width="50px"></a>
             </div>
-            <div class="col-6 form-entrar">
-                <div id="form-entrar">
+            <div class="col-6 form-cadastrar">
+                <div id="form-cadastrar">
                     <form action="testLogin.php" method="post">
-                        <h1 id="h1-entrar">Entrar</h1>
-                        <input type="text" class="input-entrar" name="email" placeholder="Usuário">
-                        <input type="password" class="input-entrar" name="senha" placeholder="Senha">
-                        <input type="submit" class="submit-entrar" name="submit" value="Enviar">
-                        <br><br>
-                        <p>USUÁRIOS DE TESTE: funcionario, <br> admin <br> SENHAS DE TESTE: 123</p>
+                        <h1 id="h1-cadastrar">Cadastrar Funcionário</h1>
+                        <input type="text" class="input-cadastrar" name="name_fun" placeholder="Nome Completo">
+                        <input type="date" class="input-cadastrar" name="date_nasc">
+                        <input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM">
+                        <input type="number" class="input-cadastrar" name="cpf" placeholder="CPF">
+                        
+                        <select class="input-cadastrar" name="" id="">
+                            <option value="">Motorista</option>
+                            <option value="">Atendente</option>
+                            <option value="">Médico</option>
+                            <option value="">Administrador</option>
+                            <option value="">Moderador</option>
+                        </select>
+
+                        <input type="number" class="input-cadastrar" name="cnh" placeholder="CNH">
+                        <input type="text" class="input-cadastrar" name="categoria_cnh" placeholder="Categoria da CNH">
+                        <input type="date" class="input-cadastrar" name="vencimento_cnh" placeholder="Vencimento da CNH">
+                        <input type="password" class="input-cadastrar" name="senha" placeholder="Senha">
+                        <input type="submit" class="submit-cadastrar" name="submit" value="Cadastrar">
                     </form>
                 </div>
             </div>
