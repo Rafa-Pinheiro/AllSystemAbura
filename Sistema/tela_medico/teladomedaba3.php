@@ -1,4 +1,13 @@
-<?php include('../conection/conexao.php') ?>
+<?php
+	session_start();
+	include_once('../conection/conexao.php');
+		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+		unset($_SESSION['rm']);
+		unset($_SESSION['senha']);
+		header('Location: ../index.php');
+		}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
@@ -38,6 +47,8 @@
 	</ul>
 	<div id="map"></div>
 			<form action="" class="form-group form" method="get">
+				<a href="../crud_e_login/encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
+
 				<div class="row">
 					<label for="uma" id="amb" class="col-sm-2 col-form-label offset-sm-8">Nível da ambulância</label>
 				</div>

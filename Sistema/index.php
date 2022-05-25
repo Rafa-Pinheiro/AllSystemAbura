@@ -31,7 +31,7 @@
 <div class="entrar-container">
         <div class="row">
             <div class="col-3 seta">
-                <a href="#"><img src="assets/seta.png" height="50px" width="50px"></a>
+               <!--  <a href="#"><img src="assets/seta.png" height="50px" width="50px"></a> -->
             </div>
             <div class="col-6 form-entrar">
                 <div id="form-entrar">

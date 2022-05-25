@@ -1,4 +1,13 @@
-<?php include('../conection/conexao.php') ?>
+<?php
+	session_start();
+	include_once('../conection/conexao.php');
+		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+		unset($_SESSION['rm']);
+		unset($_SESSION['senha']);
+		header('Location: ../index.php');
+		}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 
@@ -31,6 +40,7 @@
 	</ul>
 
 	<main>
+		<a href="../crud_e_login/encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
 
 		<label class="s1">*</label>
 		<p class="letra"> Descrição detalhada</p>

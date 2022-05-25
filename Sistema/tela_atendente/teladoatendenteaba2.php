@@ -1,5 +1,11 @@
 <?php
-	include('../conection/conexao.php')
+	session_start();
+	include_once('../conection/conexao.php');
+		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+		unset($_SESSION['rm']);
+		unset($_SESSION['senha']);
+		header('Location: ../index.php');
+		}
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +36,8 @@
 
 		<!-- SELECT -->
 		<main>
+			<a href="../crud_e_login/encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
+			
 			<table>
 				<tr>
 					<td> <select name="ambulancia" id="select1" class="campos distancia2 distancia3">
