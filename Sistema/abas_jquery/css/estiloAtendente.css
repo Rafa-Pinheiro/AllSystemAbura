@@ -1,0 +1,39 @@
+.container{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tab_navigation{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tab_navigation li{
+    display: inline-block;
+    padding: 5px 15px;
+    background: #000;
+    min-width: 100px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    transition: all 0.3 ease-in-out;
+}
+
+.tab_navigation li.active, .tab_navigation li:hover{
+    background: #f249d6;
+    color: #fff;
+}
+
+.tab_container_area{
+    
+}
+
+.tab_container{
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 0 5px 5px 5px;
+    display: none;
+}
