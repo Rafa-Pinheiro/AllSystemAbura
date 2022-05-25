@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	include_once('../conection/conexao.php');
+		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+		unset($_SESSION['rm']);
+		unset($_SESSION['senha']);
+		header('Location: ../index.php');
+		}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,6 +35,10 @@
 
 	<div class="box-inserir">
 		<h2>Cadastrar Aluno</h2>
+		<div class="col-3 seta">
+			<a href="admin.php">Voltar para ADMIN</a>
+            <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
+        </div>
 
 		<?php include('conectar.php');
 

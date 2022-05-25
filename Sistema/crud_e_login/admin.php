@@ -53,15 +53,16 @@ include_once('../conection/conexao.php');
         		<table class="table text-white table-bg">
 					<thead>
 						<tr>
-						<th scope="col">RM</th>
-						<th scope="col">NOME</th>
-						<th scope="col">CPF</th>
-						<th scope="col">CRM</th> 
-						<th scope="col">CNH</th> 
-						<th scope="col">VECIMENTO DA CNH</th>
-						<th scope="col">SENHA</th> 
-						<th scope="col">NASCIMENTO</th> 
-						<th scope="col">CARGO</th> 
+							<th scope="col">RM</th>
+							<th scope="col">NOME</th>
+							<th scope="col">CPF</th>
+							<th scope="col">CRM</th> 
+							<th scope="col">CNH</th> 
+							<th scope="col">VECIMENTO DA CNH</th>
+							<th scope="col">SENHA</th> 
+							<th scope="col">NASCIMENTO</th> 
+							<th scope="col">CARGO</th> 
+							<th scope="col">...</th>
 						</tr>
 					</thead>
 
@@ -84,21 +85,25 @@ include_once('../conection/conexao.php');
 
 					while ($row = $result->fetch_object()) {
 						echo "<tr>";
-							echo "<th> $row->cd_rm_funcionario </th>";
-							echo "<th> $row->nm_funcionario </th>";
-							echo "<th> $row->cd_cpf </th>";
-							echo "<th> $row->cd_crm_medico </th>";
-							echo "<th> $row->nr_cnh </th>";
-							echo "<th> $row->dt_vencimento_cnh </th>";
-							echo "<th> $row->ds_senha </th>";
-							echo "<th> $row->dt_nasc </th>";
-							echo "<th> $row->id_cargo </th>";
+							echo "<td> $row->cd_rm_funcionario </td>";
+							echo "<td> $row->nm_funcionario </td>";
+							echo "<td> $row->cd_cpf </td>";
+							echo "<td> $row->cd_crm_medico </td>";
+							echo "<td> $row->nr_cnh </td>";
+							echo "<td> $row->dt_vencimento_cnh </td>";
+							echo "<td> $row->ds_senha </td>";
+							echo "<td> $row->dt_nasc </td>";
+							echo "<td> $row->id_cargo </td>";
+							echo "<td>
+									<a href='apagar.php?funcionario=<?php echo '$row->cd_rm_funcionario'; ?>'><img style='width: 2vw; height: 4vh;' src='../img/excluir.png' alt='Deletar registro'></a>
+									<a href='alterar.php?funcionario=<?php echo '$row->cd_rm_funcionario'; ?>'><img style='width: 2vw; height: 4vh;'' src='../img/editar.png' alt='Alterar registro'></a> 
+								 </td>";
 						echo "</tr>";
 					?>
 
 				<br>
-				<a href="php/apagar.php?funcionario=<?php echo "$row->cd_rm_funcionario"; ?>"><img style="width: 2vw; height: 4vh;" src="../img/excluir.png" alt="Deletar registro"></a> 
-				<a href="php/alterar.php?funcionario=<?php echo "$row->cd_rm_funcionario"; ?>"><img style="width: 2vw; height: 4vh;" src="../img/editar.png" alt="Alterar registro"></a> 
+				<a href="apagar.php?funcionario=<?php echo "$row->cd_rm_funcionario"; ?>"><img style="width: 2vw; height: 4vh;" src="../img/excluir.png" alt="Deletar registro"></a> 
+				<a href="alterar.php?funcionario=<?php echo "$row->cd_rm_funcionario"; ?>"><img style="width: 2vw; height: 4vh;" src="../img/editar.png" alt="Alterar registro"></a> 
 		
 				<?php
 				}

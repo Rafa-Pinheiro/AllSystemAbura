@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	include_once('../conection/conexao.php');
+		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+		unset($_SESSION['rm']);
+		unset($_SESSION['senha']);
+		header('Location: ../index.php');
+		}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,6 +34,10 @@
 <body>
 
 	<div class="box-alterar">
+		<div class="col-3 seta">
+			<a href="admin.php">Voltar para ADMIN</a>
+            <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
+        </div>
 		<h2>Alterar</h2>
 
 		<?php include('conectar.php');

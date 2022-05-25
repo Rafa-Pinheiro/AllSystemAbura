@@ -1,5 +1,11 @@
-<?php 
-	include('../conection/conexao.php') 
+<?php
+	session_start();
+	include_once('../conection/conexao.php');
+		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+		unset($_SESSION['rm']);
+		unset($_SESSION['senha']);
+		header('Location: ../index.php');
+		}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +38,8 @@
 		<!-- CONTEÚDO PRINCIPAL -->
 		<main>                                                                 
 			<form>
-
+				<a href="../crud_e_login/encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
+				
 				<input id="distancia" class="campos" type="text" name="nome" placeholder="Nome Completo" required readonly>
 				<input class="campos2" type="text" name="nome" placeholder="Nome Completo do acidentado" required readonly>
 				<input class="campos idade" id="idde" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="numerores" placeholder="Informe a faixa etária" required readonly>
