@@ -30,6 +30,7 @@
 		<!-- CONTEÚDO PRINCIPAL -->
 		<main>
 			<form>
+
 				<label class="s1">*</label> <input id="distancia" class="campos" type="text" name="nome" placeholder="Nome Completo" required>
 				<input class="campos2" id="distancia2" type="text" name="nome" placeholder="Nome Completo do acidentado" required>
 				<label class="n1">*</label> <input id="faixa_etaria"  class="campos idade" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="numerores" placeholder="Informe a faixa etária" required>
@@ -47,6 +48,7 @@
 				<label class="s2">*</label> <input class="campos2" id="bairro" type="text" name="bairro" placeholder="Informe o bairro" required>
 				<label class="n1">*</label> <input class="campos cidade" id="cidade" type="text" name="cidade" placeholder="Informe a cidade" required>
 				<label class="s1">*</label> <input id="numerores" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="numerores" placeholder="Informe o n°" required>
+			
 			</form>
 
 			<h4 class="letrac letrah4"> 

@@ -140,8 +140,8 @@
 
 				<div id="ajuste" class="w3-container city">
 					<h1>Algum problema? Nos comunique!</h1>
-					<p>Empresa: </p>
-					<p>Data de criação: </p><br>
+					<p>Equipe: Abura</p>
+					<p>Data de criação: 24/05/2022</p><br>
 				</div>
 
 				<div id="contato" class="w3-container city">
