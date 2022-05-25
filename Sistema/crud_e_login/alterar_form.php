@@ -1,4 +1,4 @@
-<?php include('conectar.php');
+<?php include('../conection/conexao.php');
 
 	$rmOriginal = $_POST['original'];
 	$rm = $_POST['rm_fun'];

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('conectar.php');
+	include('../conection/conexao.php');
 
 	if (isset($_POST['rm'])) {
 

@@ -34,6 +34,7 @@
 			<li><a id="aba1" href="teladomedaba1.php">Aba1</a></li>
 			<li><a id="aba2" href="teladomedaba2.php">Aba2</a></li>
 			<li><a id="aba3" href="teladomedaba3.php">Aba3</a></li>
+			<a href="../crud_e_login/encerrar_session.php"><span class="span-sair">sair</span></a>
 		</ul>
 
 		<!-- DIV MAPA -->

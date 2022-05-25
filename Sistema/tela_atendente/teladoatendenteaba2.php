@@ -32,7 +32,8 @@
 			<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="../assets/axolote.png"></a></li>
 			<li><a id="aba1" href="teladoatendenteaba1.php">Aba1</a></li>
 			<li><a id="aba2" href="teladoatendenteaba2.php">Aba2</a></li>
-		</ul>
+			<a href="../crud_e_login/encerrar_session.php"><span class="span-sair">sair</span></a>
+		]</ul>
 
 		<!-- SELECT -->
 		<main>

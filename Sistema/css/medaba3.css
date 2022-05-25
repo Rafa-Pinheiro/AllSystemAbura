@@ -9,6 +9,16 @@
 	margin-top: -225px
 }
 
+/* BOTÃO SAIR */
+.span-sair {
+    background-color: #DC143C;
+    color: white;
+	font-size: x-large;
+    padding: 8px;
+    text-transform: uppercase;
+	border-radius: 8px;
+}
+
 .renatinha {
 	width: 80px;
 	height: 50px;
@@ -74,7 +84,7 @@
 
 #aba3 {
 	margin-left: 815px;
-	margin-top: -38px;
+	margin-top: -80px;
 	color: #ff6ed0;
 }
 

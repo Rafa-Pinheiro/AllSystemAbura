@@ -20,6 +20,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="../css/aba1atendente.css">
+		<link rel="stylesheet" href="../css/estilo.css">
 
 		<title>Tela do Atendente</title>
 	</head>
@@ -31,12 +32,12 @@
 			<li><a href="#"><img class="renatinha" alt="Renatinha, logo do sistema. Em cor totalmente branca mostrando apenas a cabeça da axolote (logo)." src="../assets/axolote.png"></a></li>
 			<li><a id="aba1" href="teladoatendenteaba1.php">Aba1</a></li>
 			<li><a id="aba2" href="teladoatendenteaba2.php">Aba2</a></li>
+			<a href="../crud_e_login/encerrar_session.php"><span class="span-sair">sair</span></a>
 		</ul>
 
 		<!-- CONTEÚDO PRINCIPAL -->
 		<main>
 			<form>
-            	<a href="../crud_e_login/encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
 
 				<label class="s1">*</label> <input id="distancia" class="campos" type="text" name="nome" placeholder="Nome Completo" required>
 				<input class="campos2" id="distancia2" type="text" name="nome" placeholder="Nome Completo do acidentado" required>

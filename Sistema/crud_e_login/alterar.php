@@ -35,12 +35,12 @@
 
 	<div class="box-alterar">
 		<div class="col-3 seta">
-			<a href="admin.php">Voltar para ADMIN</a>
+			<a href="admin.php">Voltar para ADMIN</a><br><br>
             <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
         </div>
 		<h2>Alterar</h2>
 
-		<?php include('conectar.php');
+		<?php include('../conection/conexao.php');
 
 		$rm = $_GET['funcionario'];
 		$sql = "SELECT * FROM tb_funcionario WHERE cd_rm_funcionario = $rm";

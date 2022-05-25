@@ -40,11 +40,15 @@
             <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
         </div>
 
-		<?php include('conectar.php');
+		<?php include('../conection/conexao.php');
+			$consulta = "SELECT * FROM tb_cargo";
+			$result = $mysqli->query($consulta);
+			$row = $result->fetch_object();
 
 			$sql = "SELECT * FROM tb_funcionario";
 			if ($lista = $mysqli->query($sql)) {
-			?>
+		?>
+
 
 				<form class="form-signin" action="inserir_form.php" method="POST">
 					<input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM">
@@ -57,13 +61,13 @@
 					<input type="password" class="input-cadastrar" name="senha" placeholder="Senha">
 					<input type="number" class="input-cadastrar" name="cargo" placeholder="Cargo">
 
-					<!-- <select class="input-cadastrar" name="" id="">
-						<option value="Motorista" name="cargo_name">Motorista</option>
-						<option value="Atendente" name="cargo_name">Atendente</option>
+					<select class="input-cadastrar" name="" id="">
+						<option value="Motorista" name="cargo_name"><?php echo "$row->nm_cargo"; ?></option>
+						<option value="Atendente" name="cargo_name"><?php echo "$row->nm_cargo"; ?></option>
 						<option value="Médico" name="cargo_name">Médico</option>
 						<option value="Administrador" name="cargo_name">Administrador</option>
 						<option value="Moderador" name="cargo_name">Moderador</option>
-					</select> -->
+					</select>
 			
 					<button class="btn btn-lg btn-block" type="submit">INSERIR</button>
 					<a href="javascript:history.go(-1)">VOLTAR</a>

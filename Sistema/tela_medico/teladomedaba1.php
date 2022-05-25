@@ -33,12 +33,12 @@
 			<li><a id="aba1" href="teladomedaba1.php">Aba1</a></li>
 			<li><a id="aba2" href="teladomedaba2.php">Aba2</a></li>
 			<li><a id="aba3" href="teladomedaba3.php">Aba3</a></li>
+			<a href="../crud_e_login/encerrar_session.php"><span class="span-sair">sair</span></a>
 		</ul>
 
 		<!-- CONTEÚDO PRINCIPAL -->
 		<main>                                                                 
 			<form>
-				<a href="../crud_e_login/encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
 				
 				<input id="distancia" class="campos" type="text" name="nome" placeholder="Nome Completo" required readonly>
 				<input class="campos2" type="text" name="nome" placeholder="Nome Completo do acidentado" required readonly>

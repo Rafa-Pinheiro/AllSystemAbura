@@ -10,6 +10,16 @@
 	font-family: 'Dosis', sans-serif;
 }
 
+/* BOTÃO SAIR */
+.span-sair {
+    background-color: #DC143C;
+    color: white;
+	font-size: x-large;
+    padding: 8px;
+    text-transform: uppercase;
+	border-radius: 8px;
+}
+
 #canto {
 	width: 500px;
 	height: 450px;
