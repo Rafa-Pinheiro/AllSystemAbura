@@ -33,6 +33,9 @@ include_once('../conection/conexao.php');
 
 <body>
 	<h1>Registros</h1>
+		<div class="col-3 seta">
+            <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px"></a>
+        </div>
 
 		<div>
 			<a href="inserir.php">

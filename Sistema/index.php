@@ -24,9 +24,9 @@
 
 <body id="body-entrar">
 
-<script>
+<!-- <script>
 	alert("Insira o banco de dados p/ que tudo funcione!");
-</script>
+</script> -->
 
 <div class="entrar-container">
         <div class="row">
