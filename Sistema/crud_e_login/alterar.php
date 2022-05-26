@@ -57,7 +57,7 @@
 
 					<input type="hidden" name="original" value="<?php echo $item_lista->cd_rm_funcionario ?>">
 					<input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM" value="<?php echo $item_lista->cd_rm_funcionario ?>">
-					<input type="text" class="input-cadastrar" name="name_fun" placeholder="Nome Completo" value="<?php echo $item_lista->nm_funcionario ?>">
+					<input type="text" class="input-cadastrar" name="nm_fun" placeholder="Nome Completo" value="<?php echo $item_lista->nm_funcionario ?>">
 					<input type="date" class="input-cadastrar" name="date_nasc" value="<?php echo $item_lista->dt_nasc ?>">
 					<input type="number" class="input-cadastrar" name="cpf" placeholder="CPF" value="<?php echo $item_lista->cd_cpf ?>">
 					<input type="number" class="input-cadastrar" name="crm_fun" placeholder="CRM" value="<?php echo $item_lista->cd_crm_medico ?>">

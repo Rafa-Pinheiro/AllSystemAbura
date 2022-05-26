@@ -75,7 +75,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 	<h1>Registros</h1>
 
 	<div>
-		<a id="isso" href="inserir.php">
+		<a id="isso" href="cadastrar.php">
 			<img style="width: 3vw; height: 6vh;" src="../img/adicionar.png">
 			<span id="insert">Inserir novo registro</span>
 		</a>
@@ -140,7 +140,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 							echo "</tr>";
 						}
 					?>
-					
+
 				</tbody>
 			</table>
 		</div>

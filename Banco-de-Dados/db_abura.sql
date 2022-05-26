@@ -88,11 +88,11 @@ CREATE TABLE tb_ocorrencia_usuario (
 
 /* Declaração de cargo */
 INSERT INTO `tb_cargo`(`cd_cargo`, `nm_cargo`, `ds_funcao`) VALUES 
- (null,"motorista",1),
- (null,"atentende",2),
- (null,"medico",3),
- (null,"admin",4),
- (null,"abastecedor",5);
+ (null,"Motorista",1),
+ (null,"Atentende",2),
+ (null,"Medico",3),
+ (null,"Admin",4),
+ (null,"Abastecedor",5);
 
 /* Registro de funcionário */
 

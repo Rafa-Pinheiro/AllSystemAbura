@@ -16,7 +16,7 @@
 	VALUES ('". $rm ."', '". $nome ."', '". $cpf ."', '". $crm_fun."', '". $cnh ."', '". $vencimento_cnh ."', '". $senha ."', '". $date_nasc ."', '". $cargo ."')";
 
 	if ($lista = $mysqli->query($inserir)) {
-		?> <script>	window.location.href = "../admin.php"; </script> <?php 
+		?> <script>	window.location.href = "admin.php"; </script> <?php 
 
 	} else {
 		echo $mysqli->error;
