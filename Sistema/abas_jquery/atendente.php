@@ -1,3 +1,4 @@
+<?php include_once('../conection/conexao.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -18,12 +19,12 @@
             </ul>
             <div class="tab_container_area">
                 <div class="tab_container">
-                    <form action="medico.php" method="POST">
+                    <form action="recebe_atendente.php" method="POST">
                         
                         <center>
                             <label>Campos de nome</label><br>
                                 <input type="text" name="nomeCompleto" placeholder="Nome completo"required><br>
-                                <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" required><br>
+                                <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" ><br>
                                 <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" required><br><br>
                             
                             <label>Possui Comorbidades</label><br>
@@ -34,9 +35,9 @@
                                 <input type="text" name="cidadeLocal" placeholder="Insira a cidade" required>
                                 <input type="text" name="bairroLocal" placeholder="Insira o bairro" required><br>
                                 <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
-                                <input type="number" name="numeroLocal" placeholder="Informe o n°" required><br><br>
+                                <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
 
-                            <textarea name="descricao" placeholder="Insira a descrição" required></textarea>
+                            <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">
                         </center>

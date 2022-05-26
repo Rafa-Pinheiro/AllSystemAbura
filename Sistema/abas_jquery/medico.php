@@ -1,13 +1,7 @@
 <?php
-    $nome = $_POST['nomeCompleto'];
-    $nomeAcidentado = $_POST['nomeSocorrido'];
-    $faixaEtaria = $_POST['faixaEtaria'];
-    $comorbidades = $_POST['coms'];
-    $cidade = $_POST['cidadeLocal'];
-    $bairro = $_POST['bairroLocal'];
-    $rua = $_POST['ruaLocal'];
-    $numero = $_POST['numeroLocal'];
-    $descricao = $_POST['descricao'];
+include_once('../conection/conexao.php');
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +52,7 @@
 
                     <main>
                         <label>*</label> <p>Descrição detalhada</p>
-                        <textarea id="textarea" ></textarea>
+                        <textarea id="textarea" name="descricaoDetalhada" ></textarea>
 
                         <table>
                             <tr>
