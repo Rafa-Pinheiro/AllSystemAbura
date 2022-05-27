@@ -683,10 +683,19 @@ body.dark {
 @media (max-width: 1280px) {
 	#image {
 		display: block;
-		width: 200px;
-		height: 200px;
-		margin-top: 122px;
-		margin-left: 450px;
+    width: 200px;
+    height: 200px;
+    margin-top: 427px;
+    margin-left: 450px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.customers {
+	    margin-top: -277px;
+	    position: absolute;
+	    height: 413px;
+	    width: 781px;
 	}
 }
 
@@ -762,7 +771,7 @@ body.dark {
 
 @media (max-width: 1024px) {
 	.customers {
-		margin-top: -600px;
+		margin-top: -671px;
 		width: 956px;
 		height: 504px;
 	}
@@ -770,7 +779,7 @@ body.dark {
 
 @media (max-width: 1024px) {
 	#qntd {
-		margin-top: -168vh;
+		margin-top: -176vh;
 		margin-left: 165px;
 	}
 }
@@ -793,5 +802,74 @@ body.dark {
 }
 
 @media (max-width: 1024px) {
-	.campos {}
+	.campos {
+		margin-left: 182vh;
+	}
+}
+
+/*********responsividade 1024*********/
+
+
+@media (max-width: 1600px) {
+	.customers {
+	margin-top: -277px;
+	position: absolute;
+	}
+}
+
+@media (max-width: 1600px) {
+	#qntd {
+	margin-top: -277px;
+	position: absolute;
+	margin-top: -956px;
+  margin-left: 142px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.renatinha {
+		width: 80px;
+		height: 50px;
+		position: absolute;
+		margin-top: -21px;
+		margin-right: 20px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.navbar {
+		margin-bottom: 60px;
+		margin-top: 0;
+		height: 60px;
+		width: 1945px;
+		max-width: 2000px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.camponav {
+		float: left;
+	}
+}
+
+@media (max-width: 1600px) {
+
+	#aba2,
+	#aba {
+		margin-top: -10px;
+		margin-bottom: -30px;
+	}
+}
+
+@media (max-width: 1600px) {
+	#aba {
+		margin-left: 50px;
+	}
+}
+
+@media (max-width: 1600px) {
+	#aba2 {
+		margin-left: -130px;
+		margin-right: 1145px;
+	}
 }
