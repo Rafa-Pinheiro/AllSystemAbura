@@ -59,12 +59,26 @@
 					<input type="number" class="input-cadastrar" name="cnh" placeholder="CNH">
 					<input type="date" class="input-cadastrar" name="vencimento_cnh" placeholder="Vencimento da CNH">
 					<input type="password" class="input-cadastrar" name="senha" placeholder="Senha">
-					<input type="number" class="input-cadastrar" name="cargo" placeholder="Cargo">
+					<!-- <input type="number" class="input-cadastrar" name="cargo" placeholder="Cargo"> -->
 
-					<select class="input-cadastrar" name="" id="">
+					<select class="input-cadastrar" name="cd_cargo">
 						<?php
 							while ($row = $result->fetch_object()) {
-								echo "<option name='cargo_name'>$row->nm_cargo</option>";
+								if ($row->cd_cargo == 1) {
+									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+								}
+								elseif ($row->cd_cargo == 2) {
+									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+								}
+								elseif ($row->cd_cargo == 3) {
+									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+								}
+								elseif ($row->cd_cargo == 4) {
+									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+								}
+								elseif ($row->cd_cargo == 5) {
+									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+								}
 							}
 						?>
 					</select>

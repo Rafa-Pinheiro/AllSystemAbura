@@ -132,7 +132,23 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 							echo "<td> $row->dt_vencimento_cnh </td>";
 							echo "<td> $row->ds_senha </td>";
 							echo "<td> $row->dt_nasc </td>";
-							echo "<td> $row->id_cargo </td>";
+							
+							if ($row->id_cargo == 1) {
+								echo "<td>Motorista</td>";
+							}
+							if ($row->id_cargo == 2) {
+								echo "<td>Atendente</td>";
+							}
+							if ($row->id_cargo == 3) {
+								echo "<td>Médico</td>";
+							}
+							if ($row->id_cargo == 4) {
+								echo "<td>Admin</td>";
+							}
+							if ($row->id_cargo == 5) {
+								echo "<td>Abastecedor</td>";
+							}
+						
 							echo "<td>
 									<a href='apagar.php?funcionario=".$row->cd_rm_funcionario."'><img style='width: 2vw; height: 4vh;' src='../img/excluir.png' alt='Deletar registro'></a>
 									<a href='alterar.php?funcionario=".$row->cd_rm_funcionario."'><img style='width: 2vw; height: 4vh;'' src='../img/editar.png' alt='Alterar registro'></a> 

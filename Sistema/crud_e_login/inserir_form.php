@@ -8,12 +8,12 @@
 	$vencimento_cnh = $_POST['vencimento_cnh'];
 	$senha = $_POST['senha'];
 	$date_nasc = $_POST['date_nasc'];
-	$cargo = $_POST['cargo'];
+	$cd_cargo = $_POST['cd_cargo'];
 	
 	/* fazer post do select de profissão */
 
 	$inserir = "INSERT INTO tb_funcionario (cd_rm_funcionario, nm_funcionario, cd_cpf, cd_crm_medico, nr_cnh, dt_vencimento_cnh, ds_senha, dt_nasc, id_cargo) 
-	VALUES ('". $rm ."', '". $nome ."', '". $cpf ."', '". $crm_fun."', '". $cnh ."', '". $vencimento_cnh ."', '". $senha ."', '". $date_nasc ."', '". $cargo ."')";
+	VALUES ('". $rm ."', '". $nome ."', '". $cpf ."', '". $crm_fun."', '". $cnh ."', '". $vencimento_cnh ."', '". $senha ."', '". $date_nasc ."', '". $cd_cargo ."')";
 
 	if ($lista = $mysqli->query($inserir)) {
 		?> <script>	window.location.href = "admin.php"; </script> <?php 
