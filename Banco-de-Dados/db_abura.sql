@@ -4,7 +4,6 @@ USE  db_abura;
 CREATE TABLE tb_cargo(
 	cd_cargo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nm_cargo VARCHAR(20) NOT NULL,
-    ds_funcao LONGTEXT NOT NULL
 );
 
 CREATE TABLE tb_funcionario(

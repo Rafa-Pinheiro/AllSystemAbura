@@ -26,17 +26,20 @@
 	<!-- BOOTSTRAP AND CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 
 	<title>Inserir</title>
 </head>
 
 <body>
 
-	<div class="box-inserir">
+	<div class="container">
+		<div class="row">
+		
 		<h2>Cadastrar Aluno</h2>
-		<div class="col-3 seta">
-			<a href="admin.php">Voltar para ADMIN</a>
+
+		<div class="row seta">
+			<a href="javascript:history.go(-1)">VOLTAR</a>
             <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
         </div>
 
@@ -50,46 +53,63 @@
 		?>
 
 
-				<form class="form-signin" action="inserir_form.php" method="POST">
-					<input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM">
-					<input type="text" class="input-cadastrar" name="name_fun" placeholder="Nome Completo">
-					<input type="number" class="input-cadastrar" name="cpf" placeholder="CPF">
-					<input type="number" class="input-cadastrar" name="crm_fun" placeholder="CRM">
-					<input type="date" class="input-cadastrar" name="date_nasc">
-					<input type="number" class="input-cadastrar" name="cnh" placeholder="CNH">
-					<input type="date" class="input-cadastrar" name="vencimento_cnh" placeholder="Vencimento da CNH">
-					<input type="password" class="input-cadastrar" name="senha" placeholder="Senha">
-					<!-- <input type="number" class="input-cadastrar" name="cargo" placeholder="Cargo"> -->
+				<form class="form-cadastrar" action="inserir_form.php" method="POST">
+					
+					<div class="col-6 form-entrar">
+					<div class="row">
+						<label>RM</label>
+						<input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM" required>
+						<label>NOME</label>
+						<input type="text" class="input-cadastrar" name="name_fun" placeholder="Nome Completo" required>
+						<label>CPF</label>
+						<input type="number" class="input-cadastrar" name="cpf" placeholder="CPF" required>
+						<label>CRM</label>
+						<input type="number" class="input-cadastrar" name="crm_fun" placeholder="CRM" required>
+						<label>DATA DE NASCIMENTO</label>
+						<input type="date" class="input-cadastrar" name="date_nasc" required>
+						<label>CNH</label>
+						<input type="number" class="input-cadastrar" name="cnh" placeholder="CNH">
+						<label>VENCIMENTO DA CNH</label>
+						<input type="date" class="input-cadastrar" name="vencimento_cnh" placeholder="Vencimento da CNH">
+						<label>SENHA</label>
+						<input type="password" class="input-cadastrar" name="senha" placeholder="Senha" required>
+						
+						<label>CARGO</label>
+						<select class="input-cadastrar" name="cd_cargo" required>
+							<?php
+								while ($row = $result->fetch_object()) {
+									if ($row->cd_cargo == 1) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 2) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 3) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 4) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 5) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+								}
+							?>
+						</select>
 
-					<select class="input-cadastrar" name="cd_cargo">
-						<?php
-							while ($row = $result->fetch_object()) {
-								if ($row->cd_cargo == 1) {
-									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
-								}
-								elseif ($row->cd_cargo == 2) {
-									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
-								}
-								elseif ($row->cd_cargo == 3) {
-									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
-								}
-								elseif ($row->cd_cargo == 4) {
-									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
-								}
-								elseif ($row->cd_cargo == 5) {
-									echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
-								}
-							}
-						?>
-					</select>
-			
-					<button class="btn btn-lg btn-block" type="submit">INSERIR</button>
-					<a href="javascript:history.go(-1)">VOLTAR</a>
+						<div class="row">
+							<button class="btn btn-lg btn-block bg-danger col-4 text-white mb-5" type="submit">INSERIR</button>
+						</div>
+						
+					</div>
+					</div>
 				</form>
+				
 
 			<?php
 			}
 			?>
+		</div>
 	</div>
 </body>
 

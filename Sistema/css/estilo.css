@@ -58,6 +58,14 @@
     margin-top: 20% !important;
 }
 
+label {
+    width: 100%;
+}
+
+.inputs-cadastrar {
+    
+}
+
 .input-entrar, .input-cadastrar, .submit-entrar, .submit-cadastrar {
     font-size: large;
     width: 300px;
@@ -66,6 +74,7 @@
     border-radius: 6px;
     border: 1px solid rgb(189, 186, 252);
     text-transform: uppercase;
+    display: block;
 }
 
 .submit-entrar, .submit-cadastrar {
@@ -86,4 +95,12 @@
 	border-radius: 8px;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
