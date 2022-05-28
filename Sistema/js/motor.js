@@ -101,8 +101,9 @@ window.onload = function() {
 
         var markeracidente = L.icon({
             // https://www.flaticon.com/br/icone-gratis/ligacao-de-emergencia_2991158?term=emergencia&related_id=2991158
-            iconUrl: 'img/emergencia.ico',
-            iconRetinaUrl: 'img/emergencia.ico',
+            iconUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991158.png',
+            //<a href="https://www.flaticon.com/br/icones-gratis/emergencia" title="emergência ícones">Emergência ícones criados por Freepik - Flaticon</a>
+            iconRetinaUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991158.png',
             iconSize: markerSize.sm,
             iconAnchor: markerAnchor.sm,
             popupAnchor: markerPopupAnchor.sm
@@ -111,8 +112,9 @@ window.onload = function() {
 
         var markerviatura = L.icon({
             //https://www.flaticon.com/br/icone-premium/ambulancia_2991996?term=ambulanci&page=1&position=14&page=1&position=14&related_id=2991996&origin=search
-            iconUrl: 'img/ambulancia.ico',
-            iconRetinaUrl: 'img/ambulancia.ico',
+            iconUrl: 'https://cdn-icons.flaticon.com/png/512/2991/premium/2991996.png?token=exp=1653614934~hmac=a8024458bd7491e7c75a234b26e04754',
+            //<a href="https://www.flaticon.com/br/icones-gratis/ambulancia" title="ambulância ícones">Ambulância ícones criados por vectorsmarket15 - Flaticon</a>
+            iconRetinaUrl: 'https://cdn-icons.flaticon.com/png/512/2991/premium/2991996.png?token=exp=1653614934~hmac=a8024458bd7491e7c75a234b26e04754',
             iconSize: markerSize.md,
             iconAnchor: markerAnchor.md,
             popupAnchor: markerPopupAnchor.md
@@ -121,8 +123,9 @@ window.onload = function() {
 
         var markerhospital = L.icon({
             //https://www.flaticon.com/br/icone-premium/hospital_2866287?term=hospital&page=1&position=2&page=1&position=2&related_id=2866287&origin=search
-            iconUrl: 'img/hospital.ico',
-            iconRetinaUrl: 'img/hospital.ico',
+            iconUrl: 'https://cdn-icons.flaticon.com/png/512/2866/premium/2866287.png?token=exp=1653614878~hmac=a0e8129990e997bfa68bd9e57dfa664e',
+            //<a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
+            iconRetinaUrl: 'https://cdn-icons.flaticon.com/png/512/2866/premium/2866287.png?token=exp=1653614878~hmac=a0e8129990e997bfa68bd9e57dfa664e',
             iconSize: markerSize.md,
             iconAnchor: markerAnchor.md,
             popupAnchor: markerPopupAnchor.md
@@ -134,9 +137,11 @@ window.onload = function() {
 
         function createMap(error, response) {
             // Initialize the Map
+            console.log(response);
+            // console.log(response.results[0].)
             var map = L.mapquest.map('map', {
                 layers: L.mapquest.tileLayer('map'),
-                center: [0, 0],
+                center: [location[0].latLng],
                 zoom: 12
             });
 
@@ -204,47 +209,47 @@ window.onload = function() {
             map.fitBounds(featureGroup.getBounds());
         }
 
-        function generateMarkersFeatureGroup(response) {
-            var group = [];
-            for (var i = 0; i < response.results.length; i++) {
-                var location = response.results[i].locations[0];
-                var locationLatLng = location.latLng;
+        // function generateMarkersFeatureGroup(response) {
+        //     var group = [];
+        //     for (var i = 0; i < response.results.length; i++) {
+        //         var location = response.results[i].locations[0];
+        //         var locationLatLng = location.latLng;
 
-                // Create a marker for each location\\
-                //    Forma Antiga (Rodolfo)
-                var qual = (i == 0) ? markeracidente : markerviatura
-                var marker = L.marker(locationLatLng, {
-                        icon: qual
-                    })
-                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
+        //         // Create a marker for each location\\
+        //         //    Forma Antiga (Rodolfo)
+        //         var qual = (i == 0) ? markeracidente : markerviatura
+        //         var marker = L.marker(locationLatLng, {
+        //                 icon: qual
+        //             })
+        //             .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
 
-                group.push(marker);
-                //    end\\
-                // var qual = function() {
-                //     switch (response.results[i].location) {
-                //         case chamado:
-                //             markeracidente;
-                //             break;
-                //         case viatura:
-                //             markerviatura;
-                //             break;
-                //         case hospital:
-                //             markerhospital;
-                //             break;
-                //         default:
-                //             alert("Ocorreu um erroo na definição do endereço no mapa! Por favor, tente novamente.");
-                //     };
-                // }
-                var marker = L.marker(locationLatLng, {
-                        icon: qual
-                    })
-                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3); //CLIQUE COM O TEMPO, ALTERAR AQUI
+        //         group.push(marker);
+        //         //    end\\
+        //         // var qual = function() {
+        //         //     switch (response.results[i].location) {
+        //         //         case chamado:
+        //         //             markeracidente;
+        //         //             break;
+        //         //         case viatura:
+        //         //             markerviatura;
+        //         //             break;
+        //         //         case hospital:
+        //         //             markerhospital;
+        //         //             break;
+        //         //         default:
+        //         //             alert("Ocorreu um erroo na definição do endereço no mapa! Por favor, tente novamente.");
+        //         //     };
+        //         // }
+        //         var marker = L.marker(locationLatLng, {
+        //                 icon: qual
+        //             })
+        //             .bindPopup(location.adminArea5 + ', ' + location.adminArea3); //CLIQUE COM O TEMPO, ALTERAR AQUI
 
-                group.push(marker);
-                //end\\
-            }
-            return L.featureGroup(group);
-        };
+        //         group.push(marker);
+        //         //end\\
+        //     }
+        //     return L.featureGroup(group);
+        // };
 
 
 
@@ -255,20 +260,23 @@ window.onload = function() {
     //ICONES NA ROTA
     // https://developer.mapquest.com/documentation/mapquest-js/v1.0/examples/directions-with-custom-icons-and-ribbons/
 
+//API RESTANTES
+//------------------------------- Configuração apache linux ---------------------------------------\\
+// https://www.youtube.com/watch?v=twLFmELptnQ - alterando deretório de execução
+// https://www.youtube.com/watch?v=l9uZ3gk0Kzk - Arrumando o mysql
+//https://pt.linkedin.com/pulse/instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-mysql-linux-mint-20-ubuntu-yenny-delgado?trk=pulse-article_more-articles_related-content-card
+
+
 //------------------------------- Gia De Commit terminal/git ---------------------------------------\\
 
-// // Para Abrir novo projeto\\ \\
-
-// git init / git status/ git add . / git commmit -m "mensagem de atualização" / código colado do git!!!
-
-// //Para Atualizar o Projeto\\ \\
-
-// git init / git status/ git add . / git commmit -m "mensagem de atualização" /  git push
-
-
-// git push --set-upstream Abura_System master
-
 /* COMMIT ATUAL DO GIT
+
+git pull
+git init
+git add .
+git status
+git commit -m ""
+
 
 git branch -M main
 git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
