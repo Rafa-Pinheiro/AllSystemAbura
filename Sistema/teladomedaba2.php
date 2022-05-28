@@ -166,6 +166,8 @@
 			</div>
 
 		</div>
+
+</div>
 		<img src="img/enfeite_azul.png" id="canto">
 
 	</body>

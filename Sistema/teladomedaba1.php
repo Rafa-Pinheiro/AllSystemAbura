@@ -165,10 +165,12 @@
 
 		</div>
 
-		<img src="img/enfeite_azul.png" id="canto">
+	</div>
 
-	</body>
+	<img src="img/enfeite_azul.png" id="canto">
 
-	<script src="motor.js"></script>
+</body>
 
-	</html>
+<script src="motor.js"></script>
+
+</html>

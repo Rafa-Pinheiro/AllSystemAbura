@@ -6,7 +6,7 @@
 	width: 500px;
 	height: 450px;
 	margin-left: 1200px;
-	margin-top: -220px
+	margin-top: -225px
 }
 
 .renatinha {
@@ -516,6 +516,18 @@ margin-right:615px;
 		margin-right: 1145px;
 	}
 }
+
+@media (max-width: 1366px) {
+	#canto {
+		width: 580px;
+		height: 500px;
+		margin-left: 1367px;
+		margin-top: -270px;
+	}
+}
+
+
+/*********responsividade 1366*********/
 
 @media (max-width: 1920px) {
 	#aba3 {
