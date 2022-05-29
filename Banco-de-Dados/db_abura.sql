@@ -35,7 +35,7 @@ CREATE TABLE tb_atendimento(
     nr_celular_contato INT(12) NOT NULL,
     ds_descricao_atendente LONGTEXT NOT NULL,
     ds__descricao_medico LONGTEXT NOT NULL,
-    st_comorbidade TINYINT,
+    st_comorbidade ENUM('s', 'n'),
     id_endereco INT NOT NULL,
     FOREIGN KEY (id_endereco) REFERENCES tb_endereco(cd_endereco)
 );
