@@ -13,7 +13,6 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="author" content="Raylla S." />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -25,147 +24,143 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 	<!-- BOOTSTRAP AND CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/estilo.css">
+	<!-- <link rel="stylesheet" href="../css/style.css"> -->
+
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/button.css">
+	<link rel="stylesheet" href="../css/records.css">
+	<link rel="stylesheet" href="../css/modal.css">
+	<script src="../js/main.js" defer></script>
 
 	<title>Admin - Registros</title>
 
 	<style>
-		h1 {
+		body {
 			text-align: center;
-			margin-top: 20px;
-			color: white;
 		}
-		.span-sair {
-			background-color: #DC143C;
-			color: white;
-			font-size: x-large;
-			padding: 8px;
-			text-transform: uppercase;
-			border-radius: 8px;
-			text-decoration: none;
-		}
-		#span-sair {
-			text-decoration: none;
-		}
-
-		#isso {
-			margin-left: 50px;
-			color: black;
+		table {
+			borderborder-radius: 8px;
 		}
 	</style>
 </head>
 
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Abura</a>
-			<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-					</li>
-				</ul>
-				<a href="../crud_e_login/encerrar_session.php" id="span-sair">
-					<span class="span-sair">sair</span>
-				</a>
+	<div class="modal" tabindex="-1" id="add_registro">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Modal body text goes here.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
 			</div>
-		</div>
-	</nav>
-	<h1>Registros</h1>
-
-	<div>
-		<a id="isso" href="cadastrar.php">
-			<img style="width: 3vw; height: 6vh;" src="../img/adicionar.png">
-			<span id="insert">Inserir novo registro</span>
-		</a>
-
-		<?php
-		include('../conection/conexao.php');
-		$consulta = "SELECT * FROM tb_funcionario";
-		$result = $mysqli->query($consulta);
-		?>
-
-		<div class="m-5">
-			<table class="table text-white table-bg">
-				<thead>
-					<tr>
-						<th scope="col">RM</th>
-						<th scope="col">NOME</th>
-						<th scope="col">CPF</th>
-						<th scope="col">CRM</th>
-						<th scope="col">CNH</th>
-						<th scope="col">VECIMENTO DA CNH</th>
-						<th scope="col">SENHA</th>
-						<th scope="col">NASCIMENTO</th>
-						<th scope="col">CARGO</th>
-						<th scope="col">OPÇÕES</th>
-					</tr>
-				</thead>
-
-				<style>
-					body {
-						background-color: rgb(20, 147, 220);
-					}
-
-					.table-bg {
-						background-color: rgba(0, 0, 0, 0.5);
-						border-radius: 5px;
-					}
-
-					tr,
-					th {
-						text-align: center;
-					}
-				</style>
-
-				<tbody>
-
-					<?php
-						while ($row = $result->fetch_object()) {
-							echo "<tr>";
-							echo "<td> $row->cd_rm_funcionario </td>";
-							echo "<td> $row->nm_funcionario </td>";
-							echo "<td> $row->cd_cpf </td>";
-							echo "<td> $row->cd_crm_medico </td>";
-							echo "<td> $row->nr_cnh </td>";
-							echo "<td> $row->dt_vencimento_cnh </td>";
-							echo "<td> $row->ds_senha </td>";
-							echo "<td> $row->dt_nasc </td>";
-							
-							if ($row->id_cargo == 1) {
-								echo "<td>Motorista</td>";
-							}
-							if ($row->id_cargo == 2) {
-								echo "<td>Atendente</td>";
-							}
-							if ($row->id_cargo == 3) {
-								echo "<td>Médico</td>";
-							}
-							if ($row->id_cargo == 4) {
-								echo "<td>Admin</td>";
-							}
-							if ($row->id_cargo == 5) {
-								echo "<td>Abastecedor</td>";
-							}
-						
-							echo "<td>
-									<a href='apagar.php?funcionario=".$row->cd_rm_funcionario."'><img style='width: 2vw; height: 4vh;' src='../img/excluir.png' alt='Deletar registro'></a>
-									<a href='alterar.php?funcionario=".$row->cd_rm_funcionario."'><img style='width: 2vw; height: 4vh;'' src='../img/editar.png' alt='Alterar registro'></a> 
-								</td>";
-							echo "</tr>";
-						}
-					?>
-
-				</tbody>
-			</table>
 		</div>
 	</div>
 
+	<header>
+		<h1 class="header-title">Cadastro de Funcionários</h1>
+		<!-- <span class="bg-danger"><a href="../crud_e_login/encerrar_session.php" id="span-sair"><span> -->
+	</header>
+
+	<main>
+		<button type="button" class="button blue mobile" onclick="exibir_add_registro()">Adicionar</button>
+		<table class="records">
+			<thead>
+				<tr>
+					<th>RM</th>
+					<th>NOME</th>
+					<th>CPF</th>
+					<th>CRM</th>
+					<th>CNH</th>
+					<th>VENC. DA CNH</th>
+					<th>SENHA</th>
+					<th>NASCIMENTO</th>
+					<th>CARGO</th>
+					<th>AÇÕES</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<?php
+					include('../conection/conexao.php');
+					$consulta = "SELECT * FROM tb_funcionario";
+					$result = $mysqli->query($consulta);
+					
+					while ($row = $result->fetch_object()) {
+						echo "<tr>";
+						echo "<td> $row->cd_rm_funcionario </td>";
+						echo "<td> $row->nm_funcionario </td>";
+						echo "<td> $row->cd_cpf </td>";
+						echo "<td> $row->cd_crm_medico </td>";
+						echo "<td> $row->nr_cnh </td>";
+						echo "<td> $row->dt_vencimento_cnh </td>";
+						echo "<td> $row->ds_senha </td>";
+						echo "<td> $row->dt_nasc </td>";
+						
+						if ($row->id_cargo == 1) {
+							echo "<td>Motorista</td>";
+						}
+						if ($row->id_cargo == 2) {
+							echo "<td>Atendente</td>";
+						}
+						if ($row->id_cargo == 3) {
+							echo "<td>Médico</td>";
+						}
+						if ($row->id_cargo == 4) {
+							echo "<td>Admin</td>";
+						}
+						if ($row->id_cargo == 5) {
+							echo "<td>Abastecedor</td>";
+						}
+					
+						echo "<td>
+							<a href='alterar.php?funcionario=".$row->cd_rm_funcionario."'><button type='submit' id='alterar' class='button green''>EDITAR</button></a>
+							<a href='apagar.php?funcionario=".$row->cd_rm_funcionario."'><button type='submit' id='excluir' class='button red'>EXCLUIR</button></a>
+							</td>";
+						echo "</tr>";
+					}
+				?>
+			</tbody>
+		</table>
+
+	</main>
+
+	<footer>
+		Copyright &copy; Eu.
+	</footer>
+
 	<?php
 	$mysqli->close();
-	?>
+	?> 
+
+	<!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- JQUERY -->
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+
+	<script>
+    function exibir_add_registro() {
+        var modal = document.getElementById("add_registro");
+        var modal_add = new bootstrap.Modal(modal);
+        modal_add.show();
+    }
+	</script>
 
 </body>
-
 </html>
