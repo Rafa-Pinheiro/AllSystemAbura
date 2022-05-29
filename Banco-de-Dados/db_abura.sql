@@ -3,7 +3,7 @@ USE  db_abura;
 
 CREATE TABLE tb_cargo(
 	cd_cargo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nm_cargo VARCHAR(20) NOT NULL,
+    nm_cargo VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE tb_funcionario(
@@ -35,7 +35,9 @@ CREATE TABLE tb_atendimento(
     nr_celular_contato INT(12) NOT NULL,
     ds_descricao_atendente LONGTEXT NOT NULL,
     ds__descricao_medico LONGTEXT NOT NULL,
-    st_comorbidade TINYINT
+    st_comorbidade TINYINT,
+    id_endereco INT NOT NULL,
+    FOREIGN KEY (id_endereco) REFERENCES tb_endereco(cd_endereco)
 );
 
 CREATE TABLE tb_prioridade (
@@ -86,16 +88,16 @@ CREATE TABLE tb_ocorrencia_usuario (
 /* INSERTS PARA TESTE */
 
 /* Declaração de cargo */
-INSERT INTO `tb_cargo`(`cd_cargo`, `nm_cargo`, `ds_funcao`) VALUES 
- (null,"Motorista",1),
- (null,"Atentende",2),
- (null,"Medico",3),
- (null,"Admin",4),
- (null,"Abastecedor",5);
+INSERT INTO tb_cargo (cd_cargo, nm_cargo) VALUES 
+ (null,"Motorista"),
+ (null,"Atentende"),
+ (null,"Medico"),
+ (null,"Admin"),
+ (null,"Abastecedor");
 
 /* Registro de funcionário */
 
-INSERT INTO `tb_funcionario`(`cd_rm_funcionario`, `nm_funcionario`, `cd_cpf`, `cd_crm_medico`, `nr_cnh`, `dt_vencimento_cnh`, `ds_senha`, `dt_nasc`, `id_cargo`) VALUES 
+INSERT INTO tb_funcionario(cd_rm_funcionario, nm_funcionario, cd_cpf, cd_crm_medico, nr_cnh, dt_vencimento_cnh, ds_senha, dt_nasc, id_cargo) VALUES 
 (1, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 1),
 (2, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 2),
 (3, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 3),

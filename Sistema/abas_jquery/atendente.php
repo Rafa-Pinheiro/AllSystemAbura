@@ -28,8 +28,8 @@
                                 <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" required><br><br>
                             
                             <label>Possui Comorbidades</label><br>
-                                <input type="radio" name="coms" value="não" required>não.<br>
-                                <input type="radio" name="coms" value="sim" required>sim.<br><br>
+                                <input type="radio" name="coms" value="s" required>Sim<br>
+                                <input type="radio" name="coms" value="n" required>Não<br><br>
 
                             <label>Endereço</label><br>
                                 <input type="text" name="cidadeLocal" placeholder="Insira a cidade" required>
