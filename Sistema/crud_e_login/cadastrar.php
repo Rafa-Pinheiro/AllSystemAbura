@@ -26,22 +26,22 @@
 	<!-- BOOTSTRAP AND CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/estilo.css">
+    <!-- <link rel="stylesheet" href="../css/estilo.css"> -->
 
-	<title>Inserir</title>
+	<title>Cadastrar</title>
 </head>
 
 <body>
 
 	<div class="container">
-		<div class="row">
+		< class="row">
 		
 		<h2>Cadastrar Aluno</h2>
 
-		<div class="row seta">
+		
 			<a href="javascript:history.go(-1)">VOLTAR</a>
             <a href="encerrar_session.php"><img src="../assets/seta.png" height="50px" width="50px">Sair da conta</a>
-        </div>
+    
 
 		<?php include('../conection/conexao.php');
 			$consulta = "SELECT * FROM tb_cargo";
@@ -55,8 +55,7 @@
 
 				<form class="form-cadastrar" action="inserir_form.php" method="POST">
 					
-					<div class="col-6 form-entrar">
-					<div class="row">
+					
 						<label>RM</label>
 						<input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM" required>
 						<label>NOME</label>
@@ -97,12 +96,9 @@
 							?>
 						</select>
 
-						<div class="row">
-							<button class="btn btn-lg btn-block bg-danger col-4 text-white mb-5" type="submit">INSERIR</button>
-						</div>
 						
-					</div>
-					</div>
+							<button class="btn btn-lg btn-block bg-danger col-4 text-white mb-5" type="submit">INSERIR</button>
+						
 				</form>
 				
 

@@ -3,7 +3,6 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="author" content="Raylla S." />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,46 +13,42 @@
 	<link rel="manifest" href="assets/favicon/site.webmanifest">
 
 	 <!-- BOOTSTRAP AND CSS -->
-	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 	
     <title>Entrar</title>
-
 </head>
 
-<body id="body-entrar">
+<body>
 
-<!-- <script>
-	alert("Insira o banco de dados p/ que tudo funcione!");
-</script> -->
+    <section>
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-6 m-auto">
+                    <div class="card border-0">
+                        <div class="card-body shadow">
+                            <img class="rounded mx-auto d-block" src="img/Renata-reduzida-branca.png" alt="" height="80px" width="130px">
+                            
+                            <form class="" action="crud_e_login/login.php" method="POST">
+                                <div class="form-group">
+                                    <input type="number" class="form-control my-3 py-2" id="input-rm-login" name="rm" placeholder="RM" required autofocus />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control my-3 py-2" id="input-senha-login" name="senha" placeholder="Senha" required autofocus />
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn text-white">Entrar</button>
+                                </div>
+                            </form>
 
-<div class="entrar-container">
-        <div class="row">
-            <div class="col-3 seta">
-               <!--  <a href="#"><img src="assets/seta.png" height="50px" width="50px"></a> -->
-            </div>
-            <div class="col-6 form-entrar">
-                <div id="form-entrar">
-					<form class="form-signin" action="crud_e_login/login.php" method="POST">
-						<img class="mb-4" src="img/login.png" alt="img-login" width="110" height="120" />
-
-						<input type="text" name="rm" class="input-entrar" placeholder="RM" required autofocus />
-						<input type="password" name="senha" id="inputPassword" class="input-entrar" placeholder="Senha" required />
-						<button class="submit-entrar" type="submit">Entrar</button>
-
-						<p>ATENDENTE: RM = 2, SENHA = 123</p>
-						<p>MEDICO: RM = 3, SENHA = 123</p>
-						<p>ADMIN: RM = 4, SENHA = 123</p>
-						</form>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-3 logo-entrar">
-                <img src="../Logo/SEM_EFEITOS.png" alt="logo" height="370px" width="400px">
-            </div>
         </div>
-    </div>
+    </section>
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -65,7 +60,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    
+
     <!-- JQUERY -->
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 

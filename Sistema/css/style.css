@@ -62,10 +62,6 @@ label {
     width: 100%;
 }
 
-.inputs-cadastrar {
-    
-}
-
 .input-entrar, .input-cadastrar, .submit-entrar, .submit-cadastrar {
     font-size: large;
     width: 300px;
@@ -103,4 +99,33 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+/* ---------------------- PÁGINA DE LOGIN (ENTRAR) ------------------------- */
+
+.card-body {
+    border: 1px solid #42f4bd;
+    border-radius: 10px;
+}
+
+input[type="number"],
+input[type="password"] {
+    border:  2px solid #42f4bd !important;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="number"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: none;
+    margin: 0;
+} 
+
+.btn {
+    background-color: #42f4bd !important;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ---------------------- .PÁGINA DE LOGIN (ENTRAR) ------------------------- */
 
