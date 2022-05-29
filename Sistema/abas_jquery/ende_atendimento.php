@@ -19,6 +19,21 @@
             </ul>
             <div class="tab_container_area">
                 <div class="tab_container">
+
+                <form action="recebe_atendimento_endereco.php" method="POST">
+                        
+                        <center>
+                            <label>Endereço</label><br>
+                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" required>
+                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" required><br>
+                                <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
+                                <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
+                        </center>
+
+                        <input type="submit" value="Enviar">
+
+                    </form>
+
                     <form action="recebe_atendente.php" method="POST">
                         
                         <center>
@@ -31,18 +46,13 @@
                                 <input type="radio" name="coms" value="s" required>Sim<br>
                                 <input type="radio" name="coms" value="n" required>Não<br><br>
 
-                            <label>Endereço</label><br>
-                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" required>
-                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" required><br>
-                                <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
-                                <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
-
                             <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">
                         </center>
 
                     </form>
+
                 </div>
 
                 <div class="tab_container">
