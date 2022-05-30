@@ -15,6 +15,7 @@ CREATE TABLE tb_funcionario(
 	dt_vencimento_cnh DATE NULL,
 	ds_senha INT NOT NULL,
 	dt_nasc DATE NOT NULL,
+    ic_genero ENUM('f', 'm') NOT NULL,
 	id_cargo INT NOT NULL,
     FOREIGN KEY (id_cargo) REFERENCES tb_cargo(cd_cargo)
 );

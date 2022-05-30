@@ -9,6 +9,7 @@
 	$senha = $_POST['senha'];
 	$date_nasc = $_POST['date_nasc'];
 	$cd_cargo = $_POST['cd_cargo'];
+	$ic_genero = $_POST['ic_genero'];
 	
 	/* fazer post do select de profissão */
 
