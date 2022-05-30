@@ -47,18 +47,62 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 <body>
 
 	<div class="modal" tabindex="-1" id="add_registro">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Modal title</h5>
+					<h5 class="modal-title">Cadastrar Usuário</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<p>Modal body text goes here.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<?php
+						$consulta = "SELECT * FROM tb_cargo";
+						$result = $mysqli->query($consulta);
+						$sql = "SELECT * FROM tb_funcionario";
+						if ($lista = $mysqli->query($sql)) {
+					?>
+
+					<form class="modal-form" action="inserir_form.php" method="POST">
+						<input type="number" class="modal-field" name="rm_fun" placeholder="RM" required>
+						<input type="text" class="modal-field" name="name_fun" placeholder="Nome Completo" required>
+						<input type="number" class="modal-field" name="cpf" placeholder="CPF" required>
+						<input type="number" class="modal-field" name="crm_fun" placeholder="CRM" required>
+						<input type="date" class="modal-field" name="date_nasc" required>
+						<input type="number" class="modal-field" name="cnh" placeholder="CNH">
+						<input type="date" class="modal-field" name="vencimento_cnh" placeholder="Vencimento da CNH">
+						<input type="password" class="modal-field" name="senha" placeholder="Senha" required>
+						<input type="text" class="modal-field" name="genero" placeholder="Gênero" required>
+
+						<select class="modal-field" name="cd_cargo" required>
+							<?php
+								echo "<option></option>";
+								while ($row = $result->fetch_object()) {
+									if ($row->cd_cargo == 1) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 2) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 3) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 4) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+									elseif ($row->cd_cargo == 5) {
+										echo "<option value='".$row->cd_cargo."'> $row->nm_cargo </option>";
+									}
+								}
+							?>
+						</select>
+	
+						<div class="modal-footer content-center">
+							<button type="reset" class="button red">LIMPAR</button>
+							<button type="submit" class="button green">CADASTRAR</button>
+						</div>	
+					</form>
+						<?php
+						}
+						?>
 				</div>
 			</div>
 		</div>

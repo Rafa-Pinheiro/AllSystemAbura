@@ -46,8 +46,6 @@
 		<?php include('../conection/conexao.php');
 			$consulta = "SELECT * FROM tb_cargo";
 			$result = $mysqli->query($consulta);
-		
-
 			$sql = "SELECT * FROM tb_funcionario";
 			if ($lista = $mysqli->query($sql)) {
 		?>
