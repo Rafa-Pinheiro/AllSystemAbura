@@ -51,7 +51,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 	</header>
 
     <!------ CONTEÚDO PRINCIPAL -----------> 
-	<main>
+	
 		<div class="main-content">
 			<div class="row">
 			<div class="col-md-12">
@@ -131,7 +131,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 							}
 						
 							echo "<th>
-								<a href='alterar.php?funcionario=".$row->cd_rm_funcionario."' class='edit' data-toggle='modal'><button type='submit' id='alterar' onclick='exibir_add_registro()'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></button></a>
+								<a href='admin.php?funcionario=".$row->cd_rm_funcionario."' class='edit' data-toggle='modal'><button type='submit' id='alterar' onclick='exibir_add_registro()'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></button></a>
 								<a href='apagar.php?funcionario=".$row->cd_rm_funcionario."' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i><button type='submit' id='excluir'></button></a>
 								</th>";
 							echo "</tr>";
@@ -235,7 +235,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 					
 					</div>
 				</div>
-					</main>
+				
 			
 			<!------ FIM DO CONTEÚDO PRINCIPAL -----------> 
 			
