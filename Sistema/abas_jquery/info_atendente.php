@@ -46,6 +46,8 @@
                                 <input type="radio" name="coms" value="s" required>Sim<br>
                                 <input type="radio" name="coms" value="n" required>Não<br><br>
 
+                            <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 203px;">
+
                             <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">

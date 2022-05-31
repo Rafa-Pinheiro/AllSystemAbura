@@ -20,7 +20,7 @@
             <div class="tab_container_area">
                 <div class="tab_container">
 
-                <form action="recebe_atendimento_endereco.php" method="POST">
+                <form action="recebe_atendente.php" method="POST">
                         
                         <center>
                             <label>Endereço</label><br>
@@ -28,15 +28,7 @@
                                 <input type="text" name="bairroLocal" placeholder="Insira o bairro" required><br>
                                 <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
                                 <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
-                        </center>
 
-                        <input type="submit" value="Enviar">
-
-                    </form>
-
-                    <form action="recebe_atendente.php" method="POST">
-                        
-                        <center>
                             <label>Campos de nome</label><br>
                                 <input type="text" name="nomeCompleto" placeholder="Nome completo"required><br>
                                 <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" ><br>
@@ -45,7 +37,8 @@
                             <label>Possui Comorbidades</label><br>
                                 <input type="radio" name="coms" value="s" required>Sim<br>
                                 <input type="radio" name="coms" value="n" required>Não<br><br>
-
+                            
+                            <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 203px;">
                             <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">
