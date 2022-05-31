@@ -1,5 +1,7 @@
 <?php 
 
+    $cpf = $_POST['cpf'];
+
     function isCpf($cpf){
         $cpf = preg_replace("/[^0-9]/", "", $cpf);
         $digitoUm = 0;
@@ -22,9 +24,8 @@
         }
     }
 
-    $cpf = '391.328.528-86';
     if (isCpf($cpf)) {
-        echo 'CPF válido';
-    }else{ 
-        echo 'Inválido';
+        ?> <script>	window.location.href = "inserir_form.php"; </script> <?php 
+    }else{
+        echo "Erro ao Efetuar Cadastro: ". $mysqli->error;
     }
