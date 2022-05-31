@@ -10,7 +10,7 @@ include_once('../conection/conexao.php');
     VALUES ('".$cidadeLocal."', '".$bairroLocal."', '".$ruaLocal."', '".$numeroLocal."')";
 
     if ($lista = $mysqli->query($insereEndereco)){
-		?> <script>	window.location.href = "atendente.php"; </script> <?php 
+		?> <script>	window.location.href = "#"; </script> <?php 
 	} else {
 		echo $mysqli->error;
 	} 
