@@ -24,6 +24,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/custom.css">
 
 	<!--google fonts -->
@@ -34,6 +35,8 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 	<!--google material icon-->
 	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+	
 
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/button.css">
@@ -141,8 +144,8 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 								}
 
 								echo "<th>
-								<a href='#?funcionario=" . $row->cd_rm_funcionario . "' class='edit'><i class='material-icons' data-toggle='tooltip' title='Edit' onclick='exibir_alter_registro()'>&#xE254;</i></a>
-								<a href='apagar.php?funcionario=" . $row->cd_rm_funcionario . "' class='delete'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
+								<a href='#?funcionario=".$row->cd_rm_funcionario."' class='edit' onclick='exibir_alter_registro()'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
+								<a href='apagar.php?funcionario=".$row->cd_rm_funcionario."' class='delete'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
 								</th>";
 								echo "</tr>";
 							}
@@ -156,77 +159,72 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 	<!-- MODAL CADASTRAR FUNCIONÁRIO -->
 	<div class="modal" tabindex="-1" id="add_registro">
-		<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Cadastrar Usuário</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<?php
-					$consulta = "SELECT * FROM tb_cargo";
-					$result = $mysqli->query($consulta);
-					$sql = "SELECT * FROM tb_funcionario";
-					if ($lista = $mysqli->query($sql)) {
-					?>
-
-						<form class="modal-form" action="inserir_form.php" method="POST">
-							<input type="number" class="modal-field" name="rm_fun" placeholder="RM" required>
-							<input type="text" class="modal-field" name="name_fun" placeholder="Nome Completo" required>
-							<input type="number" class="modal-field" name="cpf" placeholder="CPF" required>
-							<input type="number" class="modal-field" name="crm_fun" placeholder="CRM" required>
-							<input type="date" class="modal-field" name="date_nasc" required>
-							<input type="number" class="modal-field" name="cnh" placeholder="CNH">
-							<input type="date" class="modal-field" name="vencimento_cnh" placeholder="Vencimento da CNH">
-							<input type="password" class="modal-field" name="senha" placeholder="Senha" required>
-							<input type="radio" class="modal-field" name="ic_genero" value="f">
-							<input type="radio" class="modal-field" name="ic_genero" value="m">
-
-							<select class="modal-field" name="cd_cargo" required>
-								<?php
-								echo "<option></option>";
-								while ($row = $result->fetch_object()) {
-									if ($row->cd_cargo == 1) {
-										echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
-									} elseif ($row->cd_cargo == 2) {
-										echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
-									} elseif ($row->cd_cargo == 3) {
-										echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
-									} elseif ($row->cd_cargo == 4) {
-										echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
-									} elseif ($row->cd_cargo == 5) {
-										echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
-									}
+			<div class="modal-header">
+				<h5 class="modal-title">Cadastrar Funcionário</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+			<?php
+				$consulta = "SELECT * FROM tb_cargo";
+				$result = $mysqli->query($consulta);
+				$sql = "SELECT * FROM tb_funcionario";
+				if ($lista = $mysqli->query($sql)) {
+				?>
+					<form class="modal-form" action="inserir_form.php" method="POST">
+						<input type="number" class="modal-field" name="rm_fun" placeholder="RM" required>
+						<input type="text" class="modal-field" name="name_fun" placeholder="Nome Completo" required>
+						<input type="number" class="modal-field" name="cpf" placeholder="CPF" required>
+						<input type="number" class="modal-field" name="crm_fun" placeholder="CRM" required>
+						<input type="date" class="modal-field" name="date_nasc" required>
+						<input type="number" class="modal-field" name="cnh" placeholder="CNH">
+						<input type="date" class="modal-field" name="vencimento_cnh" placeholder="Vencimento da CNH">
+						<input type="password" class="modal-field" name="senha" placeholder="Senha" required>
+						<input type="radio" class="modal-field" name="ic_genero" value="f">
+						<input type="radio" class="modal-field" name="ic_genero" value="m">
+						<select class="modal-field" name="cd_cargo" required>
+							<?php
+							echo "<option></option>";
+							while ($row = $result->fetch_object()) {
+								if ($row->cd_cargo == 1) {
+									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+								} elseif ($row->cd_cargo == 2) {
+									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+								} elseif ($row->cd_cargo == 3) {
+									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+								} elseif ($row->cd_cargo == 4) {
+									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+								} elseif ($row->cd_cargo == 5) {
+									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
 								}
-								?>
-							</select>
-
-							<div class="modal-footer content-center">
-								<button type="reset" class="button red">LIMPAR</button>
-								<button type="submit" class="button green">CADASTRAR</button>
-							</div>
-						</form>
-					<?php
-					}
-					?>
-				</div>
+							}
+							?>
+						</select>
+						<div class="modal-footer bg-white">
+							<button type="reset" class="button red">LIMPAR</button>
+							<button type="submit" class="button green">CADASTRAR</button>
+						</div>
+					</form>
+				<?php
+				}
+				?>
+			</div>
 			</div>
 		</div>
 	</div>
 	<!---- FIM DO MODAL CADASTRAR FUNCIONÁRIO --------->
 
 	<!----  MODAL PARA ALTERAR REGISTRO --------->
-	<div class="modal fade" tabindex="-1" id="alter_registro" role="dialog">
-		<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal" tabindex="-1" id="alter_registro">
+		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">ALERTA DE EXCLUSÃO</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+					<h5 class="modal-title">Alterar Cadastro</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<?php
+				<?php
 					$consulta = "SELECT * FROM tb_cargo";
 					$result = $mysqli->query($consulta);
 					$rm = $_GET['funcionario'];
@@ -237,7 +235,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 					?>
 
 					<form class="modal-form" action="alterar_form.php" method="POST">
-						<input type="hidden" name="original" value="<?php echo $item_lista->cd_rm_funcionario ?>">
+						<input type="number" name="original" value="<?php echo $item_lista->cd_rm_funcionario ?>">
 						<input type="number" class="input-cadastrar" name="rm_fun" placeholder="RM" value="<?php echo $item_lista->cd_rm_funcionario ?>">
 						<input type="text" class="input-cadastrar" name="nm_fun" placeholder="Nome Completo" value="<?php echo $item_lista->nm_funcionario ?>">
 						<input type="date" class="input-cadastrar" name="date_nasc" value="<?php echo $item_lista->dt_nasc ?>">
@@ -253,15 +251,15 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 							echo "<option></option>";
 							while ($row = $result->fetch_object()) {
 								if ($row->cd_cargo == 1) {
-									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+									echo "<option value='".$row->cd_cargo."'>$row->nm_cargo</option>";
 								} elseif ($row->cd_cargo == 2) {
-									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+									echo "<option value='".$row->cd_cargo."'>$row->nm_cargo</option>";
 								} elseif ($row->cd_cargo == 3) {
-									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+									echo "<option value='".$row->cd_cargo."'>$row->nm_cargo</option>";
 								} elseif ($row->cd_cargo == 4) {
-									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+									echo "<option value='".$row->cd_cargo."'>$row->nm_cargo</option>";
 								} elseif ($row->cd_cargo == 5) {
-									echo "<option value='" . $row->cd_cargo . "'> $row->nm_cargo </option>";
+									echo "<option value='".$row->cd_cargo."'>$row->nm_cargo</option>";
 								}
 							}
 							?>
@@ -285,7 +283,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 	<!---- FIM DO MODAL PARA ALTERAR REGISTRO --------->
 
 	<!----  MODAL PARA CONFIRMAR DELEÇÃO --------->
-	<div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
+	<!-- <div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -304,7 +302,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!---- FIM DO MODAL PARA CONFIRMAR DELEÇÃO --------->
 
 	<!------ FIM DO CONTEÚDO PRINCIPAL ----------->
@@ -324,10 +322,19 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 
 	<!-- SCRIPTS -->
-	<script src="../js/jquery-3.3.1.slim.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+
 	<script src="../js/jquery-3.3.1.min.js"></script>
+
+	<!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 
 	<script>
 		function exibir_add_registro() {
@@ -341,18 +348,6 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 			var modal_add = new bootstrap.Modal(modal);
 			modal_add.show();
 		}
-
-		$(document).ready(function() {
-			$(".xp-menubar").on('click', function() {
-				$("#sidebar").toggleClass('active');
-				$("#content").toggleClass('active');
-			});
-
-			$('.xp-menubar,.body-overlay').on('click', function() {
-				$("#sidebar,.body-overlay").toggleClass('show-nav');
-			});
-
-		});
 	</script>
 
 </body>
