@@ -33,26 +33,26 @@ include_once('../conection/conexao.php');
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    <th scope="col">ID Chamado</th>
-                                    <th scope="col">Nome Socorrido</th>
-                                    <th scope="col">Descrição Básica do Caso</th>
+                                        <th scope="col">ID Chamado</th>
+                                        <th scope="col">Nome Socorrido</th>
+                                        <th scope="col">Descrição Básica do Caso</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                    <th scope="row">Numero do atendimento</th>
-                                    <td>Nome</td>
-                                    <td>Desc</td>
+                                        <th scope="row">Numero do atendimento</th>
+                                        <td>Nome</td>
+                                        <td>Desc</td>
                                     </tr>
                                     <tr>
-                                    <th scope="row">Numero do atendimento</th>
-                                    <td>Nome</td>
-                                    <td>Desc</td>
+                                        <th scope="row">Numero do atendimento</th>
+                                        <td>Nome</td>
+                                        <td>Desc</td>
                                     </tr>
                                     <tr>
-                                    <th scope="row">Numero do atendimento</th>
-                                    <td>Nome</td>
-                                    <td>Desc</td>
+                                        <th scope="row">Numero do atendimento</th>
+                                        <td>Nome</td>
+                                        <td>Desc</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -65,19 +65,20 @@ include_once('../conection/conexao.php');
 
                         <center>
                             <label>Campos de nome</label><br>
-                                <input type="text" name="nomeCompleto" placeholder="Nome completo" value="" style="text-align: center;" readonly><br>
-                                <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" value="" style="text-align: center;" readonly><br>
-                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" value="" style="width: 205px; text-align: center;" readonly><br><br>
+                                <input type="text" name="nomeCompleto" placeholder="Nome completo" value="" readonly><br>
+                                <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" value="" readonly><br>
+                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" value="" style="width: 238px;" readonly><br><br>
                             
                             <label>Possui Comorbidades</label><br>
-                                <input type="text" name="comorbs" value="sim ou não" style="text-align: center;" readonly><br><br>
+                                <input type="text" name="comorbs" value="" placeholder="sim ou não" readonly><br><br>
 
                             <label>Endereço</label><br>
-                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" value="" style="margin-left: 10px; text-align: center;" readonly>
-                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" value="" style="margin-left: 10px; text-align: center;" readonly><br>
-                                <input type="text" name="ruaLocal" placeholder="Insira a rua" value="" style="margin-left: 10px; text-align: center;" readonly>
-                                <input type="number" name="numeroLocal" placeholder="Informe o n°" value="" style="margin-left: 10px; text-align: center;" readonly><br><br>
+                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" value="" readonly>
+                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" value="" readonly><br>
+                                <input type="text" name="ruaLocal" placeholder="Insira a rua" value="" readonly>
+                                <input type="number" name="numeroLocal" placeholder="Informe o n°" value="" readonly><br><br>
 
+                                <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 238px;" readonly>
                                 <textarea name="descricao" style="text-align: center;" readonly>aaa</textarea>
                         </center>
 

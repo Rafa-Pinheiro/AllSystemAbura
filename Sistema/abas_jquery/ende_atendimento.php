@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" >
         <link rel="stylesheet" type="text/css" href="css/estiloAtendente.css">
 
         <title>Tela Atendente</title>
@@ -45,13 +46,13 @@
                         <label>Campos de nome</label><br>
                                 <input type="text" name="nomeCompleto" placeholder="Nome completo"required><br>
                                 <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" required><br><br>
+                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 238px;" required><br><br>
                             
                             <label>Possui Comorbidades</label><br>
                                 <input type="radio" name="coms" value="s" required>Sim<br>
                                 <input type="radio" name="coms" value="n" required>Não<br><br>
                             
-                            <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 203px;">
+                            <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 238px;">
                             <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">
