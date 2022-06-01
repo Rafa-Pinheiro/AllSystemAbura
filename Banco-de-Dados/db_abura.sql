@@ -34,7 +34,7 @@ CREATE TABLE tb_atendimento(
     nm_socorrido VARCHAR(45),
     ds_faixa_etaria_socorrido VARCHAR(20) NOT NULL,
     nr_celular_contato INT(12) NOT NULL,
-    ds_descricao_atendente LONGTEXT NOT NULL,
+    ds_descricao_atendente VARCHAR(80) NOT NULL,
     ds__descricao_medico LONGTEXT NOT NULL,
     st_comorbidade ENUM('s', 'n')
 );

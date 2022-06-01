@@ -12,42 +12,44 @@
     </head>
     <body>
         
-        <div class="container">
+    <div class="container">
             <ul class="tab_navigation">
                 <li>ABA 1</li>
                 <li>ABA 2</li>
+                <li>ABA 3</li>
             </ul>
             <div class="tab_container_area">
                 <div class="tab_container">
 
-                <form action="recebe_atendimento_endereco.php" method="POST">
+                <form action="" method="POST">
                         
                         <center>
                             <label>Endereço</label><br>
-                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" required>
-                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" required><br>
-                                <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
-                                <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
+                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" readonly>
+                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" readonly><br>
+                                <input type="text" name="ruaLocal" placeholder="Insira a rua" readonly>
+                                <input type="number" name="numeroLocal" placeholder="Informe o n°" readonly><br><br>
                         </center>
-
-                        <input type="submit" value="Enviar">
 
                     </form>
 
-                    <form action="recebe_atendente.php" method="POST">
+                </div>
+
+                <div class="tab_container">
+
+                <form action="recebe_atendente.php" method="POST">
                         
                         <center>
-                            <label>Campos de nome</label><br>
+                        <label>Campos de nome</label><br>
                                 <input type="text" name="nomeCompleto" placeholder="Nome completo"required><br>
                                 <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" required><br><br>
+                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" required><br><br>
                             
                             <label>Possui Comorbidades</label><br>
                                 <input type="radio" name="coms" value="s" required>Sim<br>
                                 <input type="radio" name="coms" value="n" required>Não<br><br>
-
+                            
                             <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 203px;">
-
                             <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">

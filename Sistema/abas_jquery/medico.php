@@ -10,7 +10,8 @@ include_once('../conection/conexao.php');
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/estiloAtendente.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" >
+        <link rel="stylesheet" type="text/css" href="css/estiloAtendente.css" >
 
         <title>Tela do Médico</title>
 
@@ -22,27 +23,62 @@ include_once('../conection/conexao.php');
                 <li>ABA 1</li>
                 <li>ABA 2</li>
                 <li>ABA 3</li>
+                <li>ABA 4</li>
             </ul>
             <div class="tab_container_area">
                 <div class="tab_container">
                     <form method="POST" style="margin-top: 20px">
 
                         <center>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">ID Chamado</th>
+                                    <th scope="col">Nome Socorrido</th>
+                                    <th scope="col">Descrição Básica do Caso</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Numero do atendimento</th>
+                                    <td>Nome</td>
+                                    <td>Desc</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">Numero do atendimento</th>
+                                    <td>Nome</td>
+                                    <td>Desc</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">Numero do atendimento</th>
+                                    <td>Nome</td>
+                                    <td>Desc</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </center>
+
+                     </form>
+                </div>
+                <div class="tab_container">
+                    <form method="POST" style="margin-top: 20px">
+
+                        <center>
                             <label>Campos de nome</label><br>
-                                <input type="text" name="nomeCompleto" placeholder="Nome completo" value="<?php echo $nome ?>" style="text-align: center;" readonly><br>
-                                <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" value="<?php echo $nomeAcidentado ?>" style="text-align: center;" readonly><br>
-                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" value="<?php echo $faixaEtaria ?>" style="width: 205px; text-align: center;" readonly><br><br>
+                                <input type="text" name="nomeCompleto" placeholder="Nome completo" value="" style="text-align: center;" readonly><br>
+                                <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" value="" style="text-align: center;" readonly><br>
+                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" value="" style="width: 205px; text-align: center;" readonly><br><br>
                             
                             <label>Possui Comorbidades</label><br>
-                                <input type="text" name="comorbs" value="<?php if($comorbidades == "não"){echo $comorbidades;} else { echo $comorbidades;} ?>" style="text-align: center;" readonly><br><br>
+                                <input type="text" name="comorbs" value="sim ou não" style="text-align: center;" readonly><br><br>
 
                             <label>Endereço</label><br>
-                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" value="<?php echo $cidade ?>" style="margin-left: 10px; text-align: center;" readonly>
-                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" value="<?php echo $bairro ?>" style="margin-left: 10px; text-align: center;" readonly><br>
-                                <input type="text" name="ruaLocal" placeholder="Insira a rua" value="<?php echo $rua ?>" style="margin-left: 10px; text-align: center;" readonly>
-                                <input type="number" name="numeroLocal" placeholder="Informe o n°" value="<?php echo $numero ?>" style="margin-left: 10px; text-align: center;" readonly><br><br>
+                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" value="" style="margin-left: 10px; text-align: center;" readonly>
+                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" value="" style="margin-left: 10px; text-align: center;" readonly><br>
+                                <input type="text" name="ruaLocal" placeholder="Insira a rua" value="" style="margin-left: 10px; text-align: center;" readonly>
+                                <input type="number" name="numeroLocal" placeholder="Informe o n°" value="" style="margin-left: 10px; text-align: center;" readonly><br><br>
 
-                                <textarea name="descricao" style="text-align: center;" readonly><?php echo htmlspecialchars($descricao); ?></textarea>
+                                <textarea name="descricao" style="text-align: center;" readonly>aaa</textarea>
                         </center>
 
                      </form>

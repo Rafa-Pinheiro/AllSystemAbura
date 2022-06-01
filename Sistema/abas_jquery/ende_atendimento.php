@@ -16,11 +16,12 @@
             <ul class="tab_navigation">
                 <li>ABA 1</li>
                 <li>ABA 2</li>
+                <li>ABA 3</li>
             </ul>
             <div class="tab_container_area">
                 <div class="tab_container">
 
-                <form action="recebe_atendente.php" method="POST">
+                <form action="recebe_atendimento_endereco.php" method="POST">
                         
                         <center>
                             <label>Endereço</label><br>
@@ -29,10 +30,22 @@
                                 <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
                                 <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
 
-                            <label>Campos de nome</label><br>
+                            <input type="submit" value="Enviar">
+                        </center>
+
+                    </form>
+
+                </div>
+
+                <div class="tab_container">
+
+                <form action="recebe_atendente.php" method="POST">
+                        
+                        <center>
+                        <label>Campos de nome</label><br>
                                 <input type="text" name="nomeCompleto" placeholder="Nome completo"required><br>
                                 <input type="text" name="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" required><br><br>
+                                <input type="number" name="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" required><br><br>
                             
                             <label>Possui Comorbidades</label><br>
                                 <input type="radio" name="coms" value="s" required>Sim<br>
