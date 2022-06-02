@@ -285,4 +285,6 @@ git branch -M main
 git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
 git push -u origin main
 
+CHAVE GIT HUB
+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
 */
