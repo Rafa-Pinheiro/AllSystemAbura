@@ -19,18 +19,18 @@ CREATE TABLE tb_endereco (
     nm_cidade VARCHAR(30) NOT NULL,
     nm_bairro VARCHAR(40) NOT NULL,
     nm_rua VARCHAR(40) NOT NULL,
-    nr_numero INT
+    nr_numero INT NULL
 );
 
 CREATE TABLE tb_atendimento(
 	cd_atendimento INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nm_solicitante VARCHAR(45) NOT NULL,
-    nm_socorrido VARCHAR(45),
+    nm_socorrido VARCHAR(45) NULL,
     ds_faixa_etaria_socorrido VARCHAR(20) NOT NULL,
     nr_celular_contato INT(12) NOT NULL,
     ds_descricao_atendente LONGTEXT NOT NULL,
-    ds__descricao_medico LONGTEXT NOT NULL,
-    st_comorbidade ENUM('s', 'n')
+    ds__descricao_medico LONGTEXT NULL,
+    st_comorbidade ENUM('s', 'n') NULL
 );
 
 CREATE TABLE tb_prioridade (
@@ -51,7 +51,7 @@ CREATE TABLE tb_usuario (
     cd_cpf INT NOT NULL,
     nm_nome_completo VARCHAR(60) NOT NULL,
     ds_email VARCHAR(60) NOT NULL,
-    cd_senha VARCHAR(30) NOT NULL,
+    cd_senha VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE tb_ocorrencia (
