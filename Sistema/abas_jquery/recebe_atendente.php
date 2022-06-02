@@ -10,4 +10,3 @@ if (isset($_POST['nomeComplSend']) && ($_POST['nomeSocorrSend']) && ($_POST['fai
   $result = mysqli_query($mysqli,$sql);
 }
 
-
