@@ -19,46 +19,64 @@ include_once('../conection/conexao.php');
 </head>
 <body>
     
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand navbar-light bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <a href="../conection/encerrar_session.php"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">SAIR</button></a>
+    </nav>
+    <!-- FIM NAVIGATION -->
+
+    <div class="container my-3">
+        <h1 class="text-center h1-crud mt-5 mb-2">Ocorrências</h1>
+        <button type="button" class="btn btn-dark my-3" data-toggle="modal" onclick="exibirMapa()" data-target="#completeModal">
+            Mapa
+        </button>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
     <div class="container">
-        <ul class="tab_navigation">
-            <li>ABA 1</li>
-            <li>ABA 2</li>
-        </ul>
-        <div class="tab_container">
-            <form method="GET">
-                <!-- CÓDIGO ABA 1 -->
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID Chamado</th>
-                            <th scope="col">Nome Socorrido</th>
-                            <th scope="col">Descrição Básica do Caso</th>
-                            <th scope="col">Comorbidades</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        $consulta = "SELECT * FROM tb_atendimento";
-                        $result = $mysqli->query($consulta);
-                        while ($row = $result->fetch_object()) {
-                            echo "<tr>";
-                            echo "<td> $row->cd_atendimento </td>";
-                            echo "<td> $row->nm_socorrido </td>";
-                            echo "<td> $row->ds_descricao_atendente </td>";
-                            echo "<td> $row->st_comorbidade </td>";
-                            echo "<td><a href='#'>Visualizar</a></td>";
+        <div class="div-table mb-5">
+            <!-- CÓDIGO ABA 1 -->
+            <table class="table table-striped mb-1">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome Socorrido</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Comorbidades</th>
+                        <th scope="col">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    $consulta = "SELECT * FROM tb_atendimento";
+                    $result = $mysqli->query($consulta);
+                    while ($row = $result->fetch_object()) {
+                        echo "<tr>";
+                        echo "<td> $row->cd_atendimento </td>";
+                        echo "<td> $row->nm_socorrido </td>";
+                        echo "<td> $row->ds_descricao_atendente </td>";
+                        echo "<td> $row->st_comorbidade </td>";
+                        echo "<td>
+                                <button class='btn btn-dark' onclick='Visualizar('".$cd_atendimento."')'>Visualizar</button>
+                                <button class='btn btn-danger' onclick='Atender('".$cd_atendimento."')'>Atender</button>
+                            </td>";
                         }
                         ?>
 				    </tbody>
                 </table>
-             </form>
+            </form>
         </div>
-        <div class="tab_container">
-            <form method="POST" style="margin-top: 20px">
-                <!-- CÓDIGO ABA DOIS -->
+            <div class="tab_container">
+                <form method="POST">
+                    <!-- CÓDIGO ABA DOIS -->
                     MAPA PARA VER AMBULÂNCIAS
-             </form>
-        </div>    
+                 </form>
+            </div> 
+        </div>   
     </div>
 
 
