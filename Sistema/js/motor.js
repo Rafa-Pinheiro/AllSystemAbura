@@ -15,10 +15,10 @@ function abrir(evt, cityName) {
     evt.currentTarget.classList.add("w3-light-grey");
 }
 //FIM CÓDIGO MODAL
+
 window.onload = function() {
 
-
-        // var chamado = 'Avenida Paula Ferreira, 3108, Pirituba, São Paulo, SP';
+        var chamado = 'Avenida Paula Ferreira, 3108, Pirituba, São Paulo, SP';
         var uma = ['Rua Manoel Ribeiro dos Santos,101, Itanhaém, SP', 'Avenida Estados Unidos, 859, Jardim São fernando, Itanhaém SP', 'Rua Oswaldo Cruz, 277, Boqueirão, Santos, SP'];
         var chamado = "Avenida Paula Ferreira, 3108, Itanhaém, SP";
         var hospital = ['Rua Valter José Alves, 485, Nova Mirim, Praia Grande, SP'];
