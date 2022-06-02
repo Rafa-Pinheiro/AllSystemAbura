@@ -2,6 +2,7 @@
 
 body {
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -40,7 +41,6 @@ body {
 .navbar-expand {
     font-size: medium;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* botão de sair */
@@ -83,7 +83,7 @@ body {
     background-position: 0;
 }
 
-.h1-crud {
+.h1-titulo {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
 }
@@ -119,7 +119,7 @@ td {
 }
 
 
-/* ESTILIZAÇÃO DA TABELA DE OCORRENCIAS */
+/* ESTILIZAÇÃO DA ABA DO ATENDENTE */
 .tab_navigation{
     padding: 0;
     margin: 0;
@@ -153,6 +153,30 @@ td {
 
 input, textarea{
     text-align: center;
+}
+
+/* ESTILIZAÇÃO DA TELA DE OCORRENCIAS */
+.btn-ocorrencia {
+    width: 130px;
+}
+
+.navbar-ocorrencia, .btn-ocorrencia {
+    background-color: #2f0058 ;
+}
+
+.btn-ocorrencia:hover {
+    color: white;
+    background-image: -webkit-linear-gradient(45deg, #1f0138  50%, transparent 50%);
+    background-image: linear-gradient(45deg, #1f0138  50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 600ms ease-in-out;
+    transition: background 600ms ease-in-out;
+}
+
+.btn-login {
+    color: white;
+    background-position: 0;
 }
 
 

@@ -20,7 +20,7 @@ include_once('../conection/conexao.php');
 <body>
     
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand navbar-light bg-dark">
+    <nav class="navbar navbar-expand navbar-light navbar-ocorrencia">
         <a class="navbar-brand" href="#">
             <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
         </a>
@@ -30,8 +30,8 @@ include_once('../conection/conexao.php');
     <!-- FIM NAVIGATION -->
 
     <div class="container my-3">
-        <h1 class="text-center h1-crud mt-5 mb-2">Ocorrências</h1>
-        <button type="button" class="btn btn-dark my-3" data-toggle="modal" onclick="exibirMapa()" data-target="#completeModal">
+        <h1 class="text-center h1-titulo mt-5 mb-2">Ocorrências</h1>
+        <button type="button" class="btn btn-ocorrencia text-white my-3" data-toggle="modal" onclick="exibirMapa()" data-target="#completeModal">
             Mapa
         </button>
     </div>
@@ -61,7 +61,7 @@ include_once('../conection/conexao.php');
                         echo "<td> $row->ds_descricao_atendente </td>";
                         echo "<td> $row->st_comorbidade </td>";
                         echo "<td>
-                                <button class='btn btn-dark' onclick='Visualizar('".$cd_atendimento."')'>Visualizar</button>
+                                <button class='btn btn-ocorrencia text-white' onclick='Visualizar('".$cd_atendimento."')'>Visualizar</button>
                                 <button class='btn btn-danger' onclick='Atender('".$cd_atendimento."')'>Atender</button>
                             </td>";
                         }
