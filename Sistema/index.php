@@ -28,7 +28,7 @@
                 <div class="col-12 col-sm-12 col-md-8 col-lg-6 m-auto">
                     <div class="card border-0">
                         <div class="card-body shadow">
-                            <img class="rounded mx-auto d-block" src="img/Renata-reduzida-branca.png" alt="" height="80px" width="130px">
+                            <img class="rounded mx-auto d-block" src="img/Renata-reduzida-branca.png" alt="" height="80px" width="140px">
                             
                             <form class="" action="conection/login.php" method="POST">
                                 <div class="form-group">
@@ -38,7 +38,7 @@
                                     <input type="password" class="form-control my-3 py-2" id="input-senha-login" name="senha" placeholder="Senha" required autofocus />
                                 </div>
                                 <div class="text-center mt-3">
-                                    <button type="submit" class="btn text-white">Entrar</button>
+                                    <button type="submit" class="btn btn-login">Entrar</button>
                                 </div>
                             </form>
 
