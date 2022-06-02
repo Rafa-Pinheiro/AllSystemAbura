@@ -20,29 +20,16 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Ambulâncias</title>
-
-    <!-- Será retirado e passado para o .css -->
-    <style>
-        input[type="number"]::-webkit-outer-spin-button,
-        input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-    </style>
     
 </head>
 
 <body>
 
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand navbar-light bg-dark">
         <a class="navbar-brand" href="#">
             <img src="../assets/axolote.png" width="62" height="48" alt="logo-abura">
         </a>
@@ -65,7 +52,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <!-- FIM NAVIGATION -->
 
     <div class="container my-3">
-        <h1 class="text-center">Ambulâncias</h1>
+        <h1 class="text-center h1-crud mt-5">Ambulâncias</h1>
         <button type="button" class="btn btn-dark my-3" data-toggle="modal" data-target="#completeModal">
             Adicionar
         </button>
@@ -74,8 +61,8 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
     <!-- Modal de Cadastro -->
     <div class="modal fade" id="completeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content p-5">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Cadastrar Ambulância</h5>
                     <button type="button" class="close button" data-dismiss="modal" aria-label="Close">
@@ -102,7 +89,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                 </div>
 
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mx-auto mt-3">
                     <button type="button" class="btn btn-dark" onclick="adduma()">Salvar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                 </div>
@@ -113,8 +100,8 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
     <!-- Modal de Edição -->
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content p-5">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Editar Cadastro</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -141,7 +128,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                 </div>
 
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer mx-auto mt-3">
                     <button type="button" class="btn btn-dark" onclick="updateDetails()">Alterar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                     <input type="hidden" id="hiddendata">

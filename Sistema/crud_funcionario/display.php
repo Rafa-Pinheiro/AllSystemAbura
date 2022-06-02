@@ -2,7 +2,7 @@
 include '../conection/conexao.php';
 
 if (isset($_POST['displaySend'])) {
-    $table='<table class="table table-striped mb-5">
+    $table='<div class="div-table mb-5"><table class="table table-striped mb-1">
     <thead>
       <tr>
         <th scope="col">RM</th>
@@ -30,18 +30,18 @@ if (isset($_POST['displaySend'])) {
         $cargo = $row['nm_cargo'];
         $table .= '<tr>
         
-        <td>'.$rm.'</td>
-        <td>'.$nome.'</td>
-        <td>'.$cpf.'</td>
-        <td>'.$cnh.'</td>
-        <td>'.$cargo.'</td>
+        <td class="td-tabela">'.$rm.'</td>
+        <td class="td-tabela">'.$nome.'</td>
+        <td class="td-tabela">'.$cpf.'</td>
+        <td class="td-tabela">'.$cnh.'</td>
+        <td class="td-tabela">'.$cargo.'</td>
         <td>
             <button class="btn btn-dark" onclick="GetDetails('.$cd_funcionario.')">Visualizar</button>
             <button class="btn btn-danger" onclick="DeleteFun('.$cd_funcionario.')">Deletar</button>
         </td>
       </tr>';
     }
-    $table .= '</table>';
+    $table .= '</table></div>';
     echo $table;
 }
 
