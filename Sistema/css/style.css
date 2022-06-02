@@ -4,6 +4,7 @@ body {
     margin: 0;
 }
 
+
 /* ESTILIZAÇÃO DO LOGIN */
 .card-body {
     border: 1px solid #42f4bd;
@@ -118,6 +119,44 @@ td {
 }
 
 
+/* ESTILIZAÇÃO DA TABELA DE OCORRENCIAS */
+.tab_navigation{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tab_navigation li{
+    display: inline-block;
+    padding: 5px 15px;
+    background: #000;
+    min-width: 100px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    transition: all 0.3 ease-in-out;
+}
+
+.tab_navigation li.active, .tab_navigation li:hover{
+    background: #f249d6;
+    color: #fff;
+}
+
+.tab_container{
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 0 5px 5px 5px;
+    display: none;
+}
+
+input, textarea{
+    text-align: center;
+}
+
+
+/* ESTILIZAÇÃO GERAL */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
