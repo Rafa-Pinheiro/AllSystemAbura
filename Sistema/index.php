@@ -30,7 +30,7 @@
                         <div class="card-body shadow">
                             <img class="rounded mx-auto d-block" src="img/Renata-reduzida-branca.png" alt="" height="80px" width="140px">
                             
-                            <form class="" action="conection/login.php" method="POST">
+                            <form action="conection/login.php" method="POST">
                                 <div class="form-group">
                                     <input type="number" class="form-control my-3 py-2" id="input-rm-login" name="rm" placeholder="RM" required autofocus />
                                 </div>
