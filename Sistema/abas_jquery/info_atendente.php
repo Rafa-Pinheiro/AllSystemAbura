@@ -17,28 +17,12 @@
             <ul class="tab_navigation">
                 <li>ABA 1</li>
                 <li>ABA 2</li>
-                <li>ABA 3</li>
             </ul>
             <div class="tab_container_area">
-                <div class="tab_container">
-
-                <form action="" method="POST">
-                        
-                        <center>
-                            <label>Endereço</label><br>
-                                <input type="text" name="cidadeLocal" placeholder="Insira a cidade" readonly>
-                                <input type="text" name="bairroLocal" placeholder="Insira o bairro" readonly><br>
-                                <input type="text" name="ruaLocal" placeholder="Insira a rua" readonly>
-                                <input type="number" name="numeroLocal" placeholder="Informe o n°" readonly><br><br>
-                        </center>
-
-                    </form>
-
-                </div>
 
                 <div class="tab_container">
 
-                <form action="recebe_atendente.php" method="POST">
+                    <form action="recebe_atendente.php" method="POST">
                         
                         <center>
                         <label>Campos de nome</label><br>
@@ -50,7 +34,6 @@
                                 <input type="radio" name="coms" value="s" required>Sim<br>
                                 <input type="radio" name="coms" value="n" required>Não<br><br>
                             
-                            <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 203px;">
                             <textarea name="descricaoSimples" placeholder="Insira a descrição" required></textarea>
 
                             <input type="submit" value="Enviar">

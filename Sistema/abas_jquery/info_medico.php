@@ -23,45 +23,12 @@ include_once('../conection/conexao.php');
                 <li>ABA 1</li>
                 <li>ABA 2</li>
                 <li>ABA 3</li>
-                <li>ABA 4</li>
             </ul>
             <div class="tab_container_area">
                 <div class="tab_container">
                     <form method="POST" style="margin-top: 20px">
 
-                        <center>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID Chamado</th>
-                                        <th scope="col">Nome Socorrido</th>
-                                        <th scope="col">Descrição Básica do Caso</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Numero do atendimento</th>
-                                        <td>Nome</td>
-                                        <td>Desc</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Numero do atendimento</th>
-                                        <td>Nome</td>
-                                        <td>Desc</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Numero do atendimento</th>
-                                        <td>Nome</td>
-                                        <td>Desc</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </center>
-
-                     </form>
-                </div>
-                <div class="tab_container">
-                    <form method="POST" style="margin-top: 20px">
+                        <!-- codigo aba um -->    
 
                         <center>
                             <label>Campos de nome</label><br>
@@ -79,13 +46,15 @@ include_once('../conection/conexao.php');
                                 <input type="number" name="numeroLocal" placeholder="Informe o n°" value="" readonly><br><br>
 
                                 <input type="number" name="telContato" id="telefoneContato" placeholder="Digite um telefone para Contato" style="width: 238px;" readonly>
-                                <textarea name="descricao" style="text-align: center;" readonly>aaa</textarea>
+                                <textarea name="descricao" style="text-align: center;" placeholder="aaa" readonly></textarea>
                         </center>
 
                      </form>
                 </div>
 
                 <div class="tab_container">
+
+                    <!-- codigo aba dois -->
 
                     <main>
                         <label>*</label> <p>Descrição detalhada</p>
@@ -118,7 +87,17 @@ include_once('../conection/conexao.php');
                         </table>
                     </main>
 
-                </div>    
+                </div>
+                
+                <div class="tab_container">
+
+                    <!-- codigo aba tres -->
+
+                    <main>
+                        
+                    </main>
+
+                </div>
             </div>
         </div>
 
