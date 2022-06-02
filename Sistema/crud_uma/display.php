@@ -1,8 +1,8 @@
 <?php
-include '../conexão/connect.php';
+include '../conection/conexao.php';
 
 if (isset($_POST['displaySend'])) {
-    $table='<table class="table table-striped">
+    $table='<table class="table table-striped mb-5">
     <thead>
       <tr>
         <th scope="col">Placa</th>
@@ -30,7 +30,7 @@ if (isset($_POST['displaySend'])) {
         <td>'.$tipo.'</td>
         <td>
             <button class="btn btn-dark" onclick="GetDetails('.$cd_ambulancia.')">Editar</button>
-            <button class="btn btn-danger" onclick="DeleteUma('.$cd_ambulancia.')">Deletar</button>
+            <button class="btn btn-danger button" onclick="DeleteUma('.$cd_ambulancia.')">Deletar</button>
         </td>
       </tr>';
     }
