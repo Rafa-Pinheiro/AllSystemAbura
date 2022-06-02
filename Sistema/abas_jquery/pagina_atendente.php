@@ -20,11 +20,11 @@ include_once('../conection/conexao.php');
 </head>
 <body>
     
-    <div class="container">
-        <ul class="tab_navigation">
-            <li>ABA 1</li>
-            <li>ABA 2</li>
-        </ul>
+        <div class="container">
+            <ul class="tab_navigation">
+                <li>ABA 1</li>
+                <li>ABA 2</li>
+            </ul>
         <div class="tab_container_area">
             <div class="tab_container">
                     
@@ -100,7 +100,7 @@ include_once('../conection/conexao.php');
                 numeroSend: numeroAdd,
             },
             success: function () {
-                console.log('foi1');
+                //console.log('foi1');
             }
           });
         }
@@ -124,7 +124,7 @@ include_once('../conection/conexao.php');
                 comorbidadesSend: comorbidadesAdd,
             },
             success: function () {
-                console.log('foi sim');
+                //console.log('foi sim');
             }
           });
         }
