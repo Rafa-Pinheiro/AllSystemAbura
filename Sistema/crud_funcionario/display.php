@@ -1,8 +1,8 @@
 <?php
-include '../conexão/connect.php';
+include '../conection/conexao.php';
 
 if (isset($_POST['displaySend'])) {
-    $table='<table class="table table-striped">
+    $table='<table class="table table-striped mb-5">
     <thead>
       <tr>
         <th scope="col">RM</th>

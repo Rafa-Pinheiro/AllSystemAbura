@@ -9,10 +9,35 @@
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/button.css">
+
     <title>Ambulâncias</title>
 </head>
 
 <body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/axolote.png" width="62" height="48" alt="logo-abura">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Opções de CRUD
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../crud_funcionario/crud_funcionario.php">Funcionários</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Ambulâncias</a>
+                    </div>
+                </li>
+            </ul>   
+        </div>
+    </nav>
+    <!-- FIM NAVIGATION -->
 
     <div class="container my-3">
         <h1 class="text-center">Ambulâncias</h1>
@@ -28,7 +53,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Cadastrar Ambulância</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

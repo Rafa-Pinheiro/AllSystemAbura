@@ -1,5 +1,5 @@
 <?php
-include '../conexão/connect.php';
+include '../conection/conexao.php';
 
 if (isset($_POST['updateid'])) {
     $uma_id = $_POST['updateid'];

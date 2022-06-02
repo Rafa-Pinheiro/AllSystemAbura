@@ -14,6 +14,28 @@
 
 <body>
 
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/axolote.png" width="62" height="48" alt="logo-abura">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Opções de CRUD
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Funcionários</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../crud_uma/">Ambulâncias</a>
+                    </div>
+                </li>
+            </ul>   
+        </div>
+    </nav>
+    <!-- FIM NAVIGATION -->
+
     <div class="container my-3">
         <h1 class="text-center">Funcionários</h1>
         <button type="button" class="btn btn-dark my-3" data-toggle="modal" data-target="#completeModal">

@@ -13,9 +13,8 @@
 	<link rel="manifest" href="assets/favicon/site.webmanifest">
 
 	 <!-- BOOTSTRAP AND CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
     <link rel="stylesheet" href="css/style.css">
 	
     <title>Entrar</title>
@@ -31,7 +30,7 @@
                         <div class="card-body shadow">
                             <img class="rounded mx-auto d-block" src="img/Renata-reduzida-branca.png" alt="" height="80px" width="130px">
                             
-                            <form class="" action="crud_e_login/login.php" method="POST">
+                            <form class="" action="conection/login.php" method="POST">
                                 <div class="form-group">
                                     <input type="number" class="form-control my-3 py-2" id="input-rm-login" name="rm" placeholder="RM" required autofocus />
                                 </div>
@@ -60,9 +59,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-
-    <!-- JQUERY -->
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>
