@@ -95,19 +95,19 @@ include_once('../conection/conexao.php');
 				</div>
 
 				<div id="telas" class="w3-container city">
-					<i id="edit" class="fa-solid fa-pen-to-square"><h1 id="Aparencia">Aparência</h1></i>
-					<div>
+					<i id="edit" class="fa-solid fa-pen-to-square"><br><br><h1 id="Aparencia">Aparência</h1></i>
+					<div class="row">
+                        <input type="checkbox" class="checkbox2" id="chk2" name="idd">
 						<h2 id="ampliar">Ampliar fonte</h2>
-						<input type="checkbox" class="checkbox2" id="chk2" name="idd">
 						<label class="label2" for="chk2">
 							<div class="bola2"></div>
 						</label>
 					</div>
 
-					<div>
-						<h2 id="escuro">modo escuro</h2>
-						<input type="checkbox" class="checkbox" id="chk" name="id" >
-
+					<div class="row">
+                        <input type="checkbox" class="checkbox" id="chk" name="id" >	
+                        <h2 id="escuro">modo escuro</h2>
+					
 						<label class="label" for="chk">
 							<div class="bola"></div>
 						</label>
