@@ -26,7 +26,7 @@ include_once('../conection/conexao.php');
         </ul>
         <div class="tab_container_area">
             <div class="tab_container">
-                <form method="POST" style="margin-top: 20px">
+                <form method="GET" style="margin-top: 20px">
 
                     <!-- CÓDIGO ABA 1 -->
                     <center>
@@ -49,6 +49,7 @@ include_once('../conection/conexao.php');
                                     echo "<td> $row->nm_socorrido </td>";
                                     echo "<td> $row->ds_descricao_atendente </td>";
                                     echo "<td> $row->st_comorbidade </td>";
+                                    echo "<td><a href='#'>Visualizar</a></td>";
                                 }
                                 ?>
 					        </tbody>
@@ -61,6 +62,7 @@ include_once('../conection/conexao.php');
                 <form method="POST" style="margin-top: 20px">
                     <!-- CÓDIGO ABA DOIS -->
                     <center>
+                        MAPA PARA VER AMBULÂNCIAS
                     </center>
                  </form>
             </div>    

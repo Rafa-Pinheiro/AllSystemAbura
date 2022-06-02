@@ -27,19 +27,28 @@ include_once('../conection/conexao.php');
         </ul>
         <div class="tab_container_area">
             <div class="tab_container">
-                <form action="recebe_atendimento_endereco.php" method="POST">
                     
                     <center>
                         <label>Endereço</label><br>
-                            <input type="text" name="cidadeLocal" placeholder="Insira a cidade" required>
-                            <input type="text" name="bairroLocal" placeholder="Insira o bairro" required><br>
-                            <input type="text" name="ruaLocal" placeholder="Insira a rua" required>
-                            <input type="number" name="numeroLocal" placeholder="Informe o n°" ><br><br>
+                            <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
+                            <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
+                            <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
+                            <input type="number" id="numeroLocal" placeholder="Informe o n°" ><br><br>
+
+                            <label>Campos de nome</label><br>
+                            <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
+                            <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
+                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" required><br><br>
+                        
+                        <label>Possui Comorbidades</label><br>
+                            <input type="radio" id="coms" value="s" required>Sim<br>
+                            <input type="radio" id="coms" value="n" required>Não<br><br>
+                        
+                        <textarea id="descBasica" placeholder="Insira a descrição" required></textarea>
 
                         <input type="submit" value="Enviar">
                     </center>
-
-                </form>
+                
             </div>
 
             <div class="tab_container">
@@ -74,6 +83,32 @@ include_once('../conection/conexao.php');
 
 
     <!-- SCRIPTS -->
+    <script>
+
+        function addAtendimento() {
+          var placaAdd=$('#placa').val();
+          var chassiAdd=$('#chassi').val();
+          var fabricacaoAdd=$('#fabricacao').val();
+          var tipoAdd=$('#tipo').val();
+
+          $.ajax({
+            url: 'cadastrar.php',
+            type: 'post',
+            data:{
+                placaSend: placaAdd,
+                chassiSend: chassiAdd,
+                fabricacaoSend: fabricacaoAdd,
+                tipoSend: tipoAdd,
+            },
+            success: function (data,status) {
+                //console.log(status);
+                $('#completeModal').modal('hide');
+                displayData();
+            }
+          });
+        }
+
+    </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
