@@ -41,12 +41,11 @@ include_once('../conection/conexao.php');
                             <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" required><br><br>
                         
                         <label>Possui Comorbidades</label><br>
-                            <input type="radio" id="coms" value="s" required>Sim<br>
-                            <input type="radio" id="coms" value="n" required>Não<br><br>
+                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 258px;" required><br>
                         
                         <textarea id="descBasica" placeholder="Insira a descrição" required></textarea>
 
-                        <input type="submit" value="Enviar">
+                        <input type="submit" onclick="addCadastroAtendimento();" value="Enviar">
                     </center>
                 
             </div>
@@ -85,27 +84,53 @@ include_once('../conection/conexao.php');
     <!-- SCRIPTS -->
     <script>
 
-        function addAtendimento() {
-          var placaAdd=$('#placa').val();
-          var chassiAdd=$('#chassi').val();
-          var fabricacaoAdd=$('#fabricacao').val();
-          var tipoAdd=$('#tipo').val();
+        function addEndereco() {
+          var cidadeAdd=$('#cidadeLocal').val();
+          var bairroAdd=$('#bairroLocal').val();
+          var ruaAdd=$('#ruaLocal').val();
+          var numeroAdd=$('#numeroLocal').val();
 
           $.ajax({
-            url: 'cadastrar.php',
-            type: 'post',
+            url: 'recebe_atendimento_endereco.php',
+            type: 'POST',
             data:{
-                placaSend: placaAdd,
-                chassiSend: chassiAdd,
-                fabricacaoSend: fabricacaoAdd,
-                tipoSend: tipoAdd,
+                cidadeSend: cidadeAdd,
+                bairroSend: bairroAdd,
+                ruaSend: ruaAdd,
+                numeroSend: numeroAdd,
             },
-            success: function (data,status) {
-                //console.log(status);
-                $('#completeModal').modal('hide');
-                displayData();
+            success: function () {
+                console.log('foi1');
             }
           });
+        }
+        
+        function addDados() {
+          var nomeComplAdd=$('#nomeCompleto').val();
+          var nomeSocorrAdd=$('#nomeSocorrido').val();
+          var faixaEtariaAdd=$('#faixaEtaria').val();
+          var comorbidadesAdd=$('#coms').val();
+          var descBasicaAdd=$('#descBasica').val();
+
+          $.ajax({
+            url: 'recebe_atendente.php',
+            type: 'POST',
+            data:{
+                nomeComplSend: nomeComplAdd,
+                nomeSocorrSend: nomeSocorrAdd,
+                faixaEtariaSend: faixaEtariaAdd,
+                comorbidadesSend: comorbidadesAdd,
+                descBasicaSend: descBasicaAdd,
+            },
+            success: function () {
+                console.log('foi2');
+            }
+          });
+        }
+
+        function addCadastroAtendimento(){
+            addEndereco();
+            addDados();
         }
 
     </script>
