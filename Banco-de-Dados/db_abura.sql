@@ -51,7 +51,7 @@ CREATE TABLE tb_usuario (
     cd_cpf INT NOT NULL,
     nm_nome_completo VARCHAR(60) NOT NULL,
     ds_email VARCHAR(60) NOT NULL,
-    cd_senha VARCHAR(30) NOT NULL,
+    cd_senha VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE tb_ocorrencia (
