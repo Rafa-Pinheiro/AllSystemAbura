@@ -29,7 +29,7 @@ CREATE TABLE tb_atendimento(
     ds_faixa_etaria_socorrido VARCHAR(20) NOT NULL,
     ds_descricao_atendente VARCHAR(80) NOT NULL,
     ds__descricao_medico LONGTEXT NULL,
-    st_comorbidade ENUM('s', 'n') NULL
+    st_comorbidade ENUM('s', 'sim', 'Sim', 'SIM', 'n', 'nao', 'Nao', 'NAO', 'não', 'Não', 'NÃO') NULL
 );
 
 CREATE TABLE tb_prioridade (

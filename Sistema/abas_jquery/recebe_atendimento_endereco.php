@@ -1,18 +1,11 @@
 <?php
 include_once('../conection/conexao.php');
 
-  $cidadeLocal = $_POST['cidadeLocal'];
-  $bairroLocal = $_POST['bairroLocal'];
-  $ruaLocal = $_POST['ruaLocal'];
-  $numeroLocal = $_POST['numeroLocal'];
+extract($_POST);
 
-  $insereEndereco = "INSERT INTO tb_endereco (nm_cidade, nm_bairro, nm_rua, nr_numero)
-    VALUES ('".$cidadeLocal."', '".$bairroLocal."', '".$ruaLocal."', '".$numeroLocal."')";
+if (isset($_POST['cidadeSend']) && isset($_POST['bairroSend']) && isset($_POST['ruaSend']) && isset($_POST['numeroSend'])) {
+  $sql = "INSERT INTO tb_endereco (nm_cidade, nm_bairro, nm_rua, nr_numero)
+  VALUES ('$cidadeSend', '$bairroSend', '$ruaSend', '$numeroSend')";
 
-    if ($lista = $mysqli->query($insereEndereco)){
-		?> <script>	window.location.href = "info_atendente.php"; </script> <?php 
-	} else {
-		echo $mysqli->error;
-	} 
-
-?>
+  $result = mysqli_query($mysqli,$sql);
+}
