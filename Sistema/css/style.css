@@ -21,7 +21,8 @@
     color: rgba(0, 0, 0, 0.795);
 }
 
-.seta, .logo-entrar {
+.seta,
+.logo-entrar {
     margin-left: 10px;
     margin-top: 40px;
 }
@@ -39,14 +40,16 @@
     opacity: 0.2;
 }
 
-.form-cadastrar, .form-entrar{
+.form-cadastrar,
+.form-entrar {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-#form-cadastrar, #form-entrar {
+#form-cadastrar,
+#form-entrar {
     margin-top: 8%;
     height: 400px;
     width: 400px;
@@ -62,7 +65,10 @@ label {
     width: 100%;
 }
 
-.input-entrar, .input-cadastrar, .submit-entrar, .submit-cadastrar {
+.input-entrar,
+.input-cadastrar,
+.submit-entrar,
+.submit-cadastrar {
     font-size: large;
     width: 300px;
     padding: 8px;
@@ -73,7 +79,8 @@ label {
     display: block;
 }
 
-.submit-entrar, .submit-cadastrar {
+.submit-entrar,
+.submit-cadastrar {
     width: 300px;
     background-color: rgb(115, 136, 255);
     color: aliceblue;
@@ -81,14 +88,258 @@ label {
     margin-bottom: 80px;
 }
 
+
+
+
+
+@media (max-width: 1920px) {
+    .renatinha {
+        width: 80px;
+        height: 50px;
+        position: absolute;
+        margin-top: -6px;
+        margin-right: 20px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .navbar {
+        margin-bottom: 60px;
+        margin-top: 0;
+        height: 60px;
+        width: 1967px;
+        max-width: 2000px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .camponav {
+        float: left;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+
+
+
+    #aba2,
+    #aba {
+        margin-top: 0px;
+        margin-bottom: -30px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    #aba1 {
+        margin-right: 1521px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    #aba2 {
+        margin-left: 455px;
+        margin-top: -22px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    #aba3 {
+        margin-top: -36px;
+        margin-bottom: -30px;
+        margin-left: 805px;
+    }
+}
+
+
+
+
+
+@media (max-width: 1920px) {
+    #btn {
+        margin-top: -43px;
+        margin-left: -62px;
+        position: absolute;
+    }
+}
+
+
+
+
+
+@media (max-width: 1920px) {
+    #distancia {
+        margin-top: 130px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .campos2 {
+        width: 600px;
+        margin-right: -230px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .campos {
+        width: 600px;
+        margin-bottom: 10px;
+        margin-left: 80px;
+        margin-right: 60px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .radio {
+        margin-right: -780px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .rd {
+        margin-left: 800px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .na {
+        margin-right: 0px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    #numerores {
+        width: 300px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .idade {
+        margin-left: 80px;
+        margin-top: 70px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .cidade {
+        margin-left: 80px;
+        margin-top: 60px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .nome2 {
+        margin-right: 0px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .letrah4 {
+        margin-left: 80px;
+        margin-top: 40px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .letrah2 {
+        margin-right: -120px;
+        margin-top: 30px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    .letrah3 {
+        margin-top: -50px;
+        margin-left: 800px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    textarea {
+        width: 800px;
+        height: 350px;
+        margin-left: 80px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    #canto {
+        width: 580px;
+        height: 502px;
+        margin-left: 1341px;
+        margin-top: -229px;
+    }
+}
+
+
+
+@media (max-width: 1920px) {
+    #image {
+        margin-left: 34px;
+        margin-top: 29px;
+    }
+}
+
+.span-sair {
+    background-color: #DC143C;
+    color: white;
+    font-size: x-large;
+    padding: 8px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-top: -41px;
+    margin-left: -109px;
+    position: absolute;
+}
+
+
 /* BOTÃO SAIR */
 .span-sair {
     background-color: #DC143C;
     color: white;
-	font-size: x-large;
+    font-size: x-large;
     padding: 8px;
     text-transform: uppercase;
-	border-radius: 8px;
+    border-radius: 8px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -96,6 +347,7 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
@@ -109,7 +361,7 @@ input[type="number"] {
 
 input[type="number"],
 input[type="password"] {
-    border:  2px solid #42f4bd !important;
+    border: 2px solid #42f4bd !important;
     border-radius: 10px;
     margin-bottom: 25px;
 }
@@ -119,7 +371,7 @@ input[type="password"]:focus {
     outline: none;
     border: none;
     margin: 0;
-} 
+}
 
 .btn {
     background-color: #42f4bd !important;
@@ -131,4 +383,3 @@ input[type="password"]:focus {
 
 
 /* ---------------------- ADMIN ------------------------- */
-

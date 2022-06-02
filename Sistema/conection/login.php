@@ -31,10 +31,7 @@
 					} elseif ($linha->nm_cargo == "administrador") {
 	                	?> <script> window.location.href = "../crud_funcionario/crud_funcionario.php"; </script> <?php
 
-	                } else {
-	                	echo $result->error;
-
-	                }
+	                } 
 	            }
 	        }
 	    }

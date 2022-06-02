@@ -64,12 +64,3 @@
 </html>
 
 
-<?php
-session_start();
-include_once('../conection/conexao.php');
-if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
-	unset($_SESSION['rm']);
-	unset($_SESSION['senha']);
-	header('Location: ../index.php');
-}
-?>

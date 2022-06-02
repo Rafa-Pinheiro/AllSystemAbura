@@ -1,3 +1,13 @@
+<?php
+session_start();
+include_once('../conection/conexao.php');
+if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
+	unset($_SESSION['rm']);
+	unset($_SESSION['senha']);
+	header('Location: ../index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,6 +20,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <title>Funcionários</title>
+
+    <!-- Será retirado e passado para o .css -->
+    <style>
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -33,6 +57,7 @@
                 </li>
             </ul>   
         </div>
+        <a href="../conection/encerrar_session.php"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">SAIR</button></a>
     </nav>
     <!-- FIM NAVIGATION -->
 
