@@ -28,7 +28,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Funcionários</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../crud_uma/">Ambulâncias</a>
+                        <a class="dropdown-item" href="../crud_uma/crud_uma.php">Ambulâncias</a>
                     </div>
                 </li>
             </ul>   
