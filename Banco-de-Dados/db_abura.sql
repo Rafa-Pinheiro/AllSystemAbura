@@ -1,13 +1,9 @@
 CREATE DATABASE db_abura;
 USE  db_abura;
 
-CREATE TABLE tb_cargo(
-	cd_cargo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nm_cargo VARCHAR(20) NOT NULL
-);
-
 CREATE TABLE tb_funcionario(
-	cd_rm_funcionario INT PRIMARY KEY NOT NULL,
+	cd_funcionario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	cd_rm_funcionario INT NOT NULL,
 	nm_funcionario VARCHAR(45) NOT NULL,
 	cd_cpf INT(15) NOT NULL,
 	cd_crm_medico INT NULL,
@@ -15,9 +11,7 @@ CREATE TABLE tb_funcionario(
 	dt_vencimento_cnh DATE NULL,
 	ds_senha INT NOT NULL,
 	dt_nasc DATE NOT NULL,
-    ic_genero ENUM('f', 'm') NOT NULL,
-	id_cargo INT NOT NULL,
-    FOREIGN KEY (id_cargo) REFERENCES tb_cargo(cd_cargo)
+	nm_cargo ENUM('motorista','Motorista','MOTORISTA','atendente','Atendente','ATENDENTE','medico','Medico','MEDICO','administrador','Administrador','ADMINISTRADOR') NOT NULL
 );
 
 CREATE TABLE tb_endereco (
@@ -33,7 +27,8 @@ CREATE TABLE tb_atendimento(
     nm_solicitante VARCHAR(45) NOT NULL,
     nm_socorrido VARCHAR(45),
     ds_faixa_etaria_socorrido VARCHAR(20) NOT NULL,
-    ds_descricao_atendente VARCHAR(80) NOT NULL,
+    nr_celular_contato INT(12) NOT NULL,
+    ds_descricao_atendente LONGTEXT NOT NULL,
     ds__descricao_medico LONGTEXT NOT NULL,
     st_comorbidade ENUM('s', 'n')
 );
@@ -44,11 +39,11 @@ CREATE TABLE tb_prioridade (
 );
 
 CREATE TABLE tb_ambulancia (
-	cd_placa INT(10) PRIMARY KEY NOT NULL,
-    nr_chassi INT(45) NOT NULL,
-    nr_documento INT NOT NULL,
-    dt_ano_fabricacao DATE NOT NULL,
-    cd_tipo CHAR(1) NOT NULL
+	cd_ambulancia INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	cd_placa VARCHAR(20) NOT NULL,
+    nr_chassi VARCHAR(25) NOT NULL,
+    dt_ano_fabricacao YEAR NOT NULL,
+    nm_tipo CHAR(1) NOT NULL
 );
 
 CREATE TABLE tb_usuario (
@@ -57,7 +52,6 @@ CREATE TABLE tb_usuario (
     nm_nome_completo VARCHAR(60) NOT NULL,
     ds_email VARCHAR(60) NOT NULL,
     cd_senha VARCHAR(30) NOT NULL,
-    tel_celular_ativo INT(12) NOT NULL
 );
 
 CREATE TABLE tb_ocorrencia (
@@ -68,11 +62,11 @@ CREATE TABLE tb_ocorrencia (
     id_endereco INT NOT NULL,
     id_atendimento INT NOT NULL,
     id_prioridade INT NOT NULL,
-    id_placa INT NOT NULL,
+    id_ambulancia INT NOT NULL,
     FOREIGN KEY (id_endereco) REFERENCES tb_endereco(cd_endereco),
     FOREIGN KEY (id_atendimento) REFERENCES tb_atendimento(cd_atendimento),
     FOREIGN KEY (id_prioridade) REFERENCES tb_prioridade(cd_prioridade),
-    FOREIGN KEY (id_placa) REFERENCES tb_ambulancia(cd_placa)
+    FOREIGN KEY (id_ambulancia) REFERENCES tb_ambulancia(cd_ambulancia)
 );
 
 CREATE TABLE tb_ocorrencia_usuario (
@@ -85,19 +79,17 @@ CREATE TABLE tb_ocorrencia_usuario (
 
 /* INSERTS PARA TESTE */
 
-/* Declaração de cargo */
-INSERT INTO tb_cargo (cd_cargo, nm_cargo) VALUES 
- (null,"Motorista"),
- (null,"Atentende"),
- (null,"Medico"),
- (null,"Admin"),
- (null,"Abastecedor");
-
 /* Registro de funcionário */
+INSERT INTO tb_funcionario(cd_funcionario, cd_rm_funcionario, nm_funcionario, cd_cpf, cd_crm_medico, nr_cnh, dt_vencimento_cnh, ds_senha, dt_nasc, nm_cargo) VALUES 
+(null, 1, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "admin"),
+(null, 2, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "motorista"),
+(null, 3, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "atendente"),
+(null, 4, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "medico"),
+(null, 5, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "admin");
 
-INSERT INTO tb_funcionario(cd_rm_funcionario, nm_funcionario, cd_cpf, cd_crm_medico, nr_cnh, dt_vencimento_cnh, ds_senha, dt_nasc, id_cargo) VALUES 
-(1, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 1),
-(2, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 2),
-(3, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 3),
-(4, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 4),
-(5, "eu", 123, 123, 123, "2000-02-02", 123, "2000-02-02", 5);
+/* Registro de ambulâncias */
+INSERT INTO tb_ambulancia (cd_ambulancia, cd_placa, nr_chassi, dt_ano_fabricacao, nm_tipo) VALUES
+(null, "12hdh6", 324555, 2000-02-20, "d"),
+(null, "32dhh6", 466855, 2003-11-10, "a"),
+(null, "1hfjh6", 327895, 2005-05-12, "c");
+ 
