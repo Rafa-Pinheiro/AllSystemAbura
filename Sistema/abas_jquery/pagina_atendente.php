@@ -33,17 +33,17 @@ include_once('../conection/conexao.php');
                             <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
                             <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
                             <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
-                            <input type="number" id="numeroLocal" placeholder="Informe o n°" ><br><br>
+                            <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
 
                             <label>Campos de nome</label><br>
                             <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
                             <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" required><br><br>
+                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" max="130" required><br><br>
                         
                         <label>Possui Comorbidades</label><br>
                             <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 258px;" required><br>
                         
-                        <textarea id="descBasica" placeholder="Insira a descrição" required></textarea>
+                        <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
 
                         <input type="submit" onclick="addCadastroAtendimento();" value="Enviar">
                     </center>
@@ -85,6 +85,7 @@ include_once('../conection/conexao.php');
     <script>
 
         function addEndereco() {
+
           var cidadeAdd=$('#cidadeLocal').val();
           var bairroAdd=$('#bairroLocal').val();
           var ruaAdd=$('#ruaLocal').val();
@@ -100,12 +101,13 @@ include_once('../conection/conexao.php');
                 numeroSend: numeroAdd,
             },
             success: function () {
-                //console.log('foi1');
+                console.log('foi1');
             }
           });
         }
         
-        function addDados() {
+        function addDados() { 
+
           var nomeComplAdd=$('#nomeCompleto').val();
           var nomeSocorrAdd=$('#nomeSocorrido').val();
           var faixaEtariaAdd=$('#faixaEtaria').val();
@@ -124,7 +126,7 @@ include_once('../conection/conexao.php');
                 comorbidadesSend: comorbidadesAdd,
             },
             success: function () {
-                //console.log('foi sim');
+                console.log('foi sim');
             }
           });
         }
@@ -132,7 +134,7 @@ include_once('../conection/conexao.php');
         function addCadastroAtendimento(){
             addEndereco();
             addDados();
-        }
+}
 
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->

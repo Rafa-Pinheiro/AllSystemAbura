@@ -73,7 +73,7 @@ include_once('../conection/conexao.php');
             <div class="tab_container">
                 <form method="POST">
                     <!-- CÓDIGO ABA DOIS -->
-                    MAPA PARA VER AMBULÂNCIAS
+                    
                  </form>
             </div> 
         </div>   
