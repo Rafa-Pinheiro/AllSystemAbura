@@ -50,7 +50,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <!-- FIM NAVIGATION -->
 
     <div class="container my-3">
-        <h1 class="text-center h1-crud mt-5">Funcionários</h1>
+        <h1 class="text-center h1-titulo mt-5">Funcionários</h1>
         <button type="button" class="btn btn-dark my-3" data-toggle="modal" data-target="#completeModal">
             Adicionar
         </button>
