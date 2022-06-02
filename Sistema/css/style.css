@@ -157,8 +157,8 @@ td {
     display: none;
 }
 
-input, textarea{
-    text-align: center;
+input{
+    text-align: left !important;
 }
 
 /* ESTILIZAÇÃO DA TELA DE OCORRENCIAS */

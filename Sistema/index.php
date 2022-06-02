@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="css/style.css">
 	
     <title>Entrar</title>
+
+    <style>
+        input{
+            text-align: left !important;
+        }
+    </style>
+    
 </head>
 
 <body>

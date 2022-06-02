@@ -31,7 +31,7 @@ include_once('../conection/conexao.php');
 
     <div class="container my-3">
         <h1 class="text-center h1-titulo mt-5 mb-2">Ocorrências</h1>
-        <button type="button" class="btn btn-ocorrencia text-white my-3" data-toggle="modal" onclick="exibirMapa()" data-target="#mapaModal">
+        <button type="button" class="btn btn-ocorrencia text-white my-3" data-toggle="modal" onclick="exibirMapa()" data-target="mapaModal">
             Mapa
         </button>
     </div>
@@ -73,17 +73,13 @@ include_once('../conection/conexao.php');
             <div class="tab_container">
                 <form method="POST">
                     <!-- CÓDIGO ABA DOIS -->
-<<<<<<< HEAD
-=======
-                    
->>>>>>> 36e82757b6c32659db95384111f82d32f2951470
                  </form>
             </div> 
         </div>   
     </div>
 
      <!-- Modal de Vizualização -->
-     <div class="modal fade" id="#completeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="completeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content p-5">
                 <div class="modal-header">
