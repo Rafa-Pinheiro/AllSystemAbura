@@ -77,6 +77,23 @@ include_once('../conection/conexao.php');
                     </table>
                 </main>
             </div>
+
+
+            <div id="estiloMapa">
+                    <center><div id="map"></div></center>
+                </div>    
+                <style>
+                    body{
+                        
+                    }
+
+                    #estiloMapa, #map{
+                        width: 40vw !important;
+                        height: 60vh !important;
+                    }
+                </style>
+
+
             <!-- MODAL CONFIGS -->    
             <img src="../assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">
             
@@ -253,6 +270,15 @@ include_once('../conection/conexao.php');
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- MAPQUEST -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
+	    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+		<!-- FIM MAPQUEST -->
+
+		<!-- SCRIPT -->
+	    <script src="../js/motor.js"></script>
+		<!-- FIM SCRIPT -->
 
 </body>
 </html>

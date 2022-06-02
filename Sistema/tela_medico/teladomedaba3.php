@@ -23,9 +23,11 @@
 		<!-- MAPQUEST -->
 	    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
 	    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+		<!-- FIM MAPQUEST -->
 
 		<!-- SCRIPT -->
 	    <script src="../js/motor.js"></script>
+		<!-- FIM SCRIPT -->
 	    
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
