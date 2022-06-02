@@ -23,6 +23,12 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <link rel="stylesheet" href="../css/style.css">
 
     <title>Ambulâncias</title>
+
+    <style>
+        input{
+            text-align: left !important;
+        }
+    </style>
     
 </head>
 

@@ -22,6 +22,12 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
     <title>Funcionários</title>
 
+    <style>
+        input{
+            text-align: left !important;
+        }
+    </style>
+
 </head>
 
 <body>
