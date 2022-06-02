@@ -14,4 +14,3 @@ include_once('../conection/conexao.php');
 	} else {
 		echo $mysqli->error;
 	} 
- 

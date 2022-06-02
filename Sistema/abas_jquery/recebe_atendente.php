@@ -7,7 +7,6 @@ include_once('../conection/conexao.php');
     $coms = $_POST['coms']; 
     $descricaoSimples = $_POST['descricaoSimples']; 
 
-
    $insereNomes = "INSERT INTO tb_atendimento (nm_solicitante, nm_socorrido, ds_faixa_etaria_socorrido, ds_descricao_atendente, st_comorbidade) 
     VALUES ('".$nomeCompleto."', '".$nomeSocorrido."', '".$faixaEtaria."', '".$descricaoSimples."', '".$coms."')";
     

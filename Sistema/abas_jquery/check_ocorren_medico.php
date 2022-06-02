@@ -36,28 +36,24 @@ include_once('../conection/conexao.php');
                                         <th scope="col">ID Chamado</th>
                                         <th scope="col">Nome Socorrido</th>
                                         <th scope="col">Descrição Básica do Caso</th>
+                                        <th scope="col">Comorbidades</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">#</th>
-                                        <td>Nome</td>
-                                        <td>Desc</td>
-                                        <td><a href="info_medico.php">Visualizar</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">#</th>
-                                        <td>Nome</td>
-                                        <td>Desc</td>
-                                        <td><a href="info_medico.php">Visualizar</a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">#</th>
-                                        <td>Nome</td>
-                                        <td>Desc</td>
-                                        <td><a href="info_medico.php">Visualizar</a></td>
-                                    </tr>
-                                </tbody>
+							<?php
+							include('../conection/conexao.php');
+							$consulta = "SELECT * FROM tb_atendimento";
+							$result = $mysqli->query($consulta);
+
+							while ($row = $result->fetch_object()) {
+								echo "<tr>";
+								echo "<td> $row->cd_atendimento </td>";
+								echo "<td> $row->nm_socorrido </td>";
+								echo "<td> $row->ds_descricao_atendente </td>";
+								echo "<td> $row->st_comorbidade </td>";
+							    }
+							?>
+						</tbody>
                             </table>
                         </center>
 
