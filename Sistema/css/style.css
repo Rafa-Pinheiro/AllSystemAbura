@@ -16,6 +16,7 @@ body {
     background-color: #42f4bd;
     border-color: #42f4bd;
     color: white;
+    font-weight: 600;
 }
 
 .btn-login:hover {
