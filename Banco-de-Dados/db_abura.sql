@@ -11,7 +11,7 @@ CREATE TABLE tb_funcionario(
 	dt_vencimento_cnh DATE NULL,
 	ds_senha INT NOT NULL,
 	dt_nasc DATE NOT NULL,
-	nm_cargo ENUM('motorista','Motorista','MOTORISTA','atendente','Atendente','ATENDENTE','medico','Medico','MEDICO','administrador','Administrador','ADMINISTRADOR') NOT NULL
+	nm_cargo ENUM('motorista','atendente','medico','administrador') NOT NULL
 );
 
 CREATE TABLE tb_endereco (
@@ -29,7 +29,7 @@ CREATE TABLE tb_atendimento(
     ds_faixa_etaria_socorrido VARCHAR(20) NOT NULL,
     ds_descricao_atendente VARCHAR(80) NOT NULL,
     ds__descricao_medico LONGTEXT NULL,
-    st_comorbidade ENUM('s', 'sim', 'Sim', 'SIM', 'n', 'nao', 'Nao', 'NAO', 'não', 'Não', 'NÃO') NULL
+    st_comorbidade ENUM('sim','nao') NULL
 );
 
 CREATE TABLE tb_prioridade (
@@ -78,17 +78,32 @@ CREATE TABLE tb_ocorrencia_usuario (
 
 /* INSERTS PARA TESTE */
 
+/* Registro endereço */
+INSERT INTO `tb_endereco`(`cd_endereco`, `nm_cidade`, `nm_bairro`, `nm_rua`, `nr_numero`) VALUES 
+(null,"cidade","bairro","rua","12"),
+(null,"cidade","bairro","rua","12"),
+(null,"cidade","bairro","rua","12"),
+(null,"cidade","bairro","rua","12"),
+(null,"cidade","bairro","rua","12");
+
+/* Registro atendimento */
+INSERT INTO `tb_atendimento`(`cd_atendimento`, `nm_solicitante`, `nm_socorrido`, `ds_faixa_etaria_socorrido`, `ds_descricao_atendente`, `ds__descricao_medico`, `st_comorbidade`) VALUES (null,'solicitante','socorrido',20,'Ferido','Ferido','sim'),
+(null,'solicitante','socorrido',20,'Ferido','Ferido','sim'),
+(null,'solicitante','socorrido',20,'Ferido','Ferido','sim'),
+(null,'solicitante','socorrido',20,'Ferido','Ferido','sim'),
+(null,'solicitante','socorrido',20,'Ferido','Ferido','sim'),
+(null,'solicitante','socorrido',20,'Ferido','Ferido','sim');
+
 /* Registro de funcionário */
 INSERT INTO tb_funcionario(cd_funcionario, cd_rm_funcionario, nm_funcionario, cd_cpf, cd_crm_medico, nr_cnh, dt_vencimento_cnh, ds_senha, dt_nasc, nm_cargo) VALUES 
-(null, 1, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "admin"),
-(null, 2, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "motorista"),
-(null, 3, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "atendente"),
-(null, 4, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "medico"),
-(null, 5, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "admin");
+(null, 1, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "motorista"),
+(null, 2, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "atendente"),
+(null, 3, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "medico"),
+(null, 4, "funcionario", 123, 123, 123, "2000-02-02", 123, "2000-02-02", "administrador");
 
 /* Registro de ambulâncias */
 INSERT INTO tb_ambulancia (cd_ambulancia, cd_placa, nr_chassi, dt_ano_fabricacao, nm_tipo) VALUES
-(null, "12hdh6", 324555, 2000-02-20, "d"),
-(null, "32dhh6", 466855, 2003-11-10, "a"),
+(null, "12hdh6", 324555, 2000-02-20, "a"),
+(null, "32dhh6", 466855, 2003-11-10, "b"),
 (null, "1hfjh6", 327895, 2005-05-12, "c");
  

@@ -61,8 +61,8 @@ include_once('../conection/conexao.php');
                         echo "<td class='td-tabela_ocorrencia'> $row->ds_descricao_atendente </td>";
                         echo "<td class='td-tabela_ocorrencia'> $row->st_comorbidade </td>";
                         echo "<td>
-                                <button class='btn btn-ocorrencia text-white' onclick='visualizar('".$cd_atendimento."')'>Visualizar</button>
-                                <button class='btn btn-danger' onclick='Atender('".$cd_atendimento."')'>Atender</button>
+                                <button class='btn btn-ocorrencia text-white' onclick='visualizar()'>Visualizar</button>
+                                <button class='btn btn-danger' onclick='Atender()'>Atender</button>
                             </td>";
                         }
                     ?>
