@@ -20,13 +20,13 @@
 	                $_SESSION['cargo'] = $linha->nm_cargo;
 
 	                if ($linha->nm_cargo == "motorista") {
-	                    ?> <script> window.location.href = "../tela_atendente/teladoatendenteaba1.php"; </script> <?php
+	                    ?> <script> window.location.href = "../abas_jquery/pagina_atendente.php"; </script> <?php
 
 	                } elseif ($linha->nm_cargo == "atendente") {
-	                	?> <script> window.location.href = "../tela_atendente/teladoatendenteaba1.php"; </script> <?php
+	                	?> <script> window.location.href = "../abas_jquery/pagina_atendente.php"; </script> <?php
 
 					} elseif ($linha->nm_cargo == "medico") {
-	                	?> <script> window.location.href = "../tela_medico/teladomedaba1.php"; </script> <?php
+	                	?> <script> window.location.href = "../abas_jquery/check_ocorren_medico.php"; </script> <?php
 
 					} elseif ($linha->nm_cargo == "administrador") {
 	                	?> <script> window.location.href = "../crud_funcionario/crud_funcionario.php"; </script> <?php

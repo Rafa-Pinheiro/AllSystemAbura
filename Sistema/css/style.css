@@ -190,3 +190,126 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+/* MODAL ESCURO E AMPLIADO */
+
+#ampliar{
+    margin-right:615px;
+    }
+    
+#escuro{
+    margin-right:615px;
+}
+
+#Aparencia{
+    margin-top: -36px;
+    margin-left: 28px;
+}
+
+ul.dark{
+	background: #232c35;
+}
+
+body.dark{
+  background: #232c35;
+  color: gray;
+
+}
+#nomeCompleto.dark, 
+#ruaLocal.dark, 
+#barroLocal.dark, 
+#nomeSocorrido.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#faixaEtaria.dark{
+	border-style: none;
+	border-radius: 10px 50px;
+	color: gray;
+}
+
+#faixaEtaria.dark{
+border-style: none;
+top: 3px;
+border-radius: 10px 50px;
+}
+
+#faixaEtaria.dark:focus::placeholder{
+color: gray;
+}
+
+#descBasica.dark{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: none;
+	padding: 30px;
+}
+
+#nomeCompleto.dark:focus::placeholder,  
+#ruaLocal.dark:focus::placeholder{
+	font-size: 0.9em;
+	color: gray;
+}
+
+/* #canto.dark{
+	margin-top:-240px
+} */
+
+#nomeCompleto.ampli, 
+#ruaLocal.ampli{
+	font-size: 21px;
+}
+#bairroLocal.ampli, 
+#nomeSocorrido.ampli{
+	font-size: 21px;
+}
+
+#faixa_etaria.ampli{
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+#ruaLocal.ampli{
+	font-size: 21px;
+}
+
+#bairroLocal.ampli{
+	font-size: 21px;
+}
+
+#cidadeLocal.ampli{
+	font-size: 21px;
+	margin-top: 0px;
+}
+
+#numeroLocal.ampli{
+	font-size: 21px;
+}
+
+/* #canto.ampli{
+	font-size: 21px;
+	margin-top: -196px;
+} */
+
+#descBasica.ampli{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: solid;
+	padding: 30px;
+}
+
+#descBasica.dark.ampli{
+	font-size: 21px;
+	border-radius: 50px;
+	border-style: none;
+	padding: 30px;
+}
+
+/* #canto.ampli.dark{
+	font-size: 21px;
+	margin-top: -174px;
+} */
+
+/* FIM MODAL ESCURO AMPLIADO */
