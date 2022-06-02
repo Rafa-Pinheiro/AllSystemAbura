@@ -109,8 +109,9 @@ include_once('../conection/conexao.php');
           var nomeComplAdd=$('#nomeCompleto').val();
           var nomeSocorrAdd=$('#nomeSocorrido').val();
           var faixaEtariaAdd=$('#faixaEtaria').val();
-          var comorbidadesAdd=$('#coms').val();
           var descBasicaAdd=$('#descBasica').val();
+          var comorbidadesAdd=$('#coms').val();
+          
 
           $.ajax({
             url: 'recebe_atendente.php',
@@ -119,11 +120,11 @@ include_once('../conection/conexao.php');
                 nomeComplSend: nomeComplAdd,
                 nomeSocorrSend: nomeSocorrAdd,
                 faixaEtariaSend: faixaEtariaAdd,
-                comorbidadesSend: comorbidadesAdd,
                 descBasicaSend: descBasicaAdd,
+                comorbidadesSend: comorbidadesAdd,
             },
             success: function () {
-                console.log('foi2');
+                console.log('foi sim');
             }
           });
         }
