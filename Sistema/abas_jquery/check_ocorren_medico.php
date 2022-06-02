@@ -73,6 +73,10 @@ include_once('../conection/conexao.php');
             <div class="tab_container">
                 <form method="POST">
                     <!-- CÓDIGO ABA DOIS -->
+<<<<<<< HEAD
+=======
+                    
+>>>>>>> 36e82757b6c32659db95384111f82d32f2951470
                  </form>
             </div> 
         </div>   
