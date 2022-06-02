@@ -39,10 +39,10 @@ include_once('../conection/conexao.php');
                             <label>Campos de nome</label><br>
                             <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
                             <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" max="130" required><br><br>
+                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required><br><br>
                         
                         <label>Possui Comorbidades</label><br>
-                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 258px;" required><br>
+                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
                         
                         <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
 
