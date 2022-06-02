@@ -97,7 +97,7 @@ body {
     .div-table {
         overflow-x: scroll;
     }
-    .btn-dark, .btn-danger {
+    .btn-dark, .btn-danger, .btn-ocorrencia {
         margin-bottom: 5px;
     }
 }
@@ -116,6 +116,12 @@ td {
     background-color: rgb(56, 56, 58);
     border-left: 2px solid white;
     color: white;
+}
+
+.td-tabela_ocorrencia:hover {
+    background-color: rgba(110, 110, 236, 0.308);
+    border-left: 2px solid white;
+    color: black;
 }
 
 
