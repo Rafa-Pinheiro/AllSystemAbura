@@ -4,8 +4,37 @@ body {
     margin: 0;
 }
 
-/* ESTILIZAÇÃO DOS CRUDS */
+/* ESTILIZAÇÃO DO LOGIN */
+.card-body {
+    border: 1px solid #42f4bd;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
 
+.btn-login {
+    width: 130px;
+    background-color: #42f4bd;
+    border-color: #42f4bd;
+    color: white;
+}
+
+.btn-login:hover {
+    color: white;
+    background-image: -webkit-linear-gradient(45deg, #2f0058  50%, transparent 50%);
+    background-image: linear-gradient(45deg, #2f0058  50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    -webkit-transition: background 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
+}
+
+.btn-login {
+    color: white;
+    background-position: 0;
+}
+
+
+/* ESTILIZAÇÃO DOS CRUDS */
 .navbar-expand {
     font-size: medium;
     font-weight: 500;
