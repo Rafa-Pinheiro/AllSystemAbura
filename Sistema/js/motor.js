@@ -137,33 +137,36 @@ window.onload = function() {
 
         function createMap(error, response) {
             // Initialize the Map
-            console.log(response);
-            // console.log(response.results[0].)
+            let teste = response;
+            console.log(teste);
+            var popup = L.popup();
+            let latLng = response.results[0].locations[0].latLng;  
             var map = L.mapquest.map('map', {
                 layers: L.mapquest.tileLayer('map'),
-                center: [location[0].latLng],
+                center: [latLng.lat, latLng.lng],
                 zoom: 12
             });
+             L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map);
 
 
-            L.mapquest.directions().setLayerOptions({
-                startMarker: {
-                    icon: markerviatura
-                },
-                endMarker: {
-                    icon: markerhospital
-                },
-                waypoints: {
-                    icon: markeracidente
-                },
+            // L.mapquest.directions().setLayerOptions({
+            //     startMarker: {
+            //         icon: markerviatura
+            //     },
+            //     endMarker: {
+            //         icon: markerhospital
+            //     },
+            //     waypoints: {
+            //         icon: markeracidente
+            //     },
 
-                routeRibbon: {
-                    color: "#ccc",
-                    opacity: 1.0,
-                    showTraffic: false
-                }
-            });
-            for (let i = 0; i < uma.length; i++) {
+            //     routeRibbon: {
+            //         color: "#ccc",
+            //         opacity: 1.0,
+            //         showTraffic: false
+            //     }
+            // });
+            // for (let i = 0; i < uma.length; i++) {s
 
                 //CÓDIGO ORIGINAL DOS ICONES
                 /*
@@ -194,12 +197,12 @@ window.onload = function() {
                 }
                 });
                 */
-                L.mapquest.directions().route({
-                    start: uma[0],
-                    end: hospital[0],
-                    waypoints: [chamado]
-                })
-            };
+            //     L.mapquest.directions().route({
+            //         start: uma[0],
+            //         end: hospital[0],
+            //         waypoints: [chamado]
+            //     })
+            // };
 
             // Generate the feature group containing markers from the geocoded locations
             var featureGroup = generateMarkersFeatureGroup(response);
@@ -218,12 +221,12 @@ window.onload = function() {
         //         // Create a marker for each location\\
         //         //    Forma Antiga (Rodolfo)
         //         var qual = (i == 0) ? markeracidente : markerviatura
-        //         var marker = L.marker(locationLatLng, {
-        //                 icon: qual
-        //             })
-        //             .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
+                var marker = L.marker(locationLatLng, {
+                        icon: acidente
+                    })
+                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
 
-        //         group.push(marker);
+                group.push(marker);
         //         //    end\\
         //         // var qual = function() {
         //         //     switch (response.results[i].location) {
@@ -245,7 +248,7 @@ window.onload = function() {
         //             })
         //             .bindPopup(location.adminArea5 + ', ' + location.adminArea3); //CLIQUE COM O TEMPO, ALTERAR AQUI
 
-        //         group.push(marker);
+                // group.push(marker);
         //         //end\\
         //     }
         //     return L.featureGroup(group);
