@@ -20,7 +20,18 @@ include_once('../conection/conexao.php');
 
 </head>
 <body>
+    <!-- NAVIGATION -->
     
+    <nav class="navbar navbar-expand navbar-light navbar-ocorrencia">
+        <a class="navbar-brand" href="#">
+        <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <a href="../conection/encerrar_session.php"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">SAIR</button></a>
+    </nav>
+
+    <!-- FIM NAVIGATION -->    
+
     <div class="container">
             <ul class="tab_navigation">
             <li>ABA 1</li>
@@ -39,10 +50,10 @@ include_once('../conection/conexao.php');
                             <label>Campos de nome</label><br>
                             <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
                             <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 205px;" max="130" required><br><br>
+                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required><br><br>
                         
                         <label>Possui Comorbidades</label><br>
-                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 258px;" required><br>
+                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
                         
                         <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
 
@@ -77,6 +88,7 @@ include_once('../conection/conexao.php');
                     </table>
                 </main>
             </div>
+
             <!-- MODAL CONFIGS -->    
             <img src="../assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">
             
@@ -253,6 +265,15 @@ include_once('../conection/conexao.php');
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- MAPQUEST -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
+	    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+		<!-- FIM MAPQUEST -->
+
+		<!-- SCRIPT -->
+	    <script src="../js/motor.js"></script>
+		<!-- FIM SCRIPT -->
 
 </body>
 </html>
