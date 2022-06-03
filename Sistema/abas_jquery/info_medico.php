@@ -40,7 +40,6 @@ include_once('../conection/conexao.php');
                 <style>
                     body{
                         overflow: hidden;
-
                     }
 
                     #estiloMapa, #map{
