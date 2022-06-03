@@ -26,7 +26,18 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 </head>
 <body>
+    <!-- NAVIGATION -->
     
+    <nav class="navbar navbar-expand navbar-light navbar-ocorrencia">
+        <a class="navbar-brand" href="#">
+        <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        <a href="../conection/encerrar_session.php"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">SAIR</button></a>
+    </nav>
+
+    <!-- FIM NAVIGATION -->    
+
     <div class="container">
             <ul class="tab_navigation">
             <li>ABA 1</li>
@@ -83,22 +94,6 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                     </table>
                 </main>
             </div>
-
-
-            <div id="estiloMapa">
-                    <center><div id="map"></div></center>
-                </div>    
-                <style>
-                    body{
-                        
-                    }
-
-                    #estiloMapa, #map{
-                        width: 40vw !important;
-                        height: 60vh !important;
-                    }
-                </style>
-
 
             <!-- MODAL CONFIGS -->    
             <img src="../assets/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">

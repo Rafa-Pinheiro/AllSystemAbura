@@ -35,11 +35,11 @@ window.onload = function() {
                 "allToAll": true
             }
         };
-        var url = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=' + JSON.stringify(local);
+        var rotas = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=' + JSON.stringify(local);
 
 
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", url, false); // false for synchronous request
+        xmlHttp.open("GET", rotas, false); // false for synchronous request
         xmlHttp.send(null);
         var retorno = (JSON.parse(xmlHttp.responseText)); //LINHA DE ARMAZENAMENTO DO RETORNO DO TEMPO JÁ EM JSON
         var hor = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) / 60);
@@ -78,9 +78,27 @@ window.onload = function() {
         // console.log(chamado);
         // console.log(JSON.parse(localStorage.endereco)); de String para Objeto
 
-
-
-
+        //FUNÇÃO DE BUSCA DE HOSPITAIS
+        let hos = {
+            "origin": {
+                
+              "latLng": {
+                "lat": 40.41194686894974, 
+                "lng": -3.70598276333092
+              }
+            },
+            "options": {
+              "maxMatches": 40,
+              "radius": 20,
+              "units": "k"
+            }
+          };
+        let sLocais = "http://www.mapquestapi.com/search/v2/radius?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json="+ JSON.stringify(hos);
+        var xmlHttp2 = new XMLHttpRequest();
+        xmlHttp2.open("GET", sLocais, false); // false for synchronous request
+        xmlHttp2.send(null);
+        var retornoS = (JSON.parse(xmlHttp2.responseText));
+          console.log(retornoS);
         L.mapquest.key = 'lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh'; //objeto chave mapquest
 
         var markerSize = {
@@ -132,14 +150,13 @@ window.onload = function() {
                 //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
         });
         // Geocode three locations, then call the createMap callback
-        L.mapquest.geocoding().geocode([chamado, uma[0], uma[1]], createMap);
+        L.mapquest.geocoding().geocode(chamado, createMap);
 
 
         function createMap(error, response) {
             // Initialize the Map
             let teste = response;
-            console.log(teste);
-            var popup = L.popup();
+            // var popup = L.popup();
             let latLng = response.results[0].locations[0].latLng;  
             var map = L.mapquest.map('map', {
                 layers: L.mapquest.tileLayer('map'),
@@ -147,8 +164,7 @@ window.onload = function() {
                 zoom: 12
             });
              L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map);
-
-
+        }
             // L.mapquest.directions().setLayerOptions({
             //     startMarker: {
             //         icon: markerviatura
@@ -205,12 +221,12 @@ window.onload = function() {
             // };
 
             // Generate the feature group containing markers from the geocoded locations
-            var featureGroup = generateMarkersFeatureGroup(response);
+            // var featureGroup = generateMarkersFeatureGroup(response);
 
             // Add markers to the map and zoom to the features
-            featureGroup.addTo(map);
-            map.fitBounds(featureGroup.getBounds());
-        }
+            // featureGroup.addTo(map);
+            // map.fitBounds(featureGroup.getBounds());
+        
 
         // function generateMarkersFeatureGroup(response) {
         //     var group = [];
@@ -221,12 +237,12 @@ window.onload = function() {
         //         // Create a marker for each location\\
         //         //    Forma Antiga (Rodolfo)
         //         var qual = (i == 0) ? markeracidente : markerviatura
-                var marker = L.marker(locationLatLng, {
-                        icon: acidente
-                    })
-                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
+                // var marker = L.marker(locationLatLng, {
+                        // icon: acidente
+                    // })
+                    // .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
 
-                group.push(marker);
+                // group.push(marker);
         //         //    end\\
         //         // var qual = function() {
         //         //     switch (response.results[i].location) {
@@ -263,28 +279,31 @@ window.onload = function() {
     //ICONES NA ROTA
     // https://developer.mapquest.com/documentation/mapquest-js/v1.0/examples/directions-with-custom-icons-and-ribbons/
 
-//API RESTANTES
-//------------------------------- Configuração apache linux ---------------------------------------\\
-// https://www.youtube.com/watch?v=twLFmELptnQ - alterando deretório de execução
-// https://www.youtube.com/watch?v=l9uZ3gk0Kzk - Arrumando o mysql
-//https://pt.linkedin.com/pulse/instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-mysql-linux-mint-20-ubuntu-yenny-delgado?trk=pulse-article_more-articles_related-content-card
+    //API RESTANTES
+
+    //PAINEL LATERAL
+    //https://developer.mapquest.com/documentation/mapquest-js/v1.3/examples/directions-control/
+    //------------------------------- Configuração apache linux ---------------------------------------\\
+    // https://www.youtube.com/watch?v=twLFmELptnQ - alterando deretório de execução
+    // https://www.youtube.com/watch?v=l9uZ3gk0Kzk - Arrumando o mysql
+    //https://pt.linkedin.com/pulse/instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-mysql-linux-mint-20-ubuntu-yenny-delgado?trk=pulse-article_more-articles_related-content-card
 
 
-//------------------------------- Gia De Commit terminal/git ---------------------------------------\\
+    //------------------------------- Gia De Commit terminal/git ---------------------------------------\\
 
-/* COMMIT ATUAL DO GIT
+    /* COMMIT ATUAL DO GIT
 
-git pull
-git init
-git add .
-git status
-git commit -m ""
+    git pull
+    git init
+    git add .
+    git status
+    git commit -m ""
 
 
-git branch -M main
-git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
-git push -u origin main
+    git branch -M main
+    git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
+    git push -u origin main
 
-CHAVE GIT HUB
-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
-*/
+    CHAVE GIT HUB
+    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
+    */
