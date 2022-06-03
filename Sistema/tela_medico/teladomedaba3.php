@@ -1,12 +1,4 @@
-<?php
-	session_start();
-	include_once('../conection/conexao.php');
-		if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) {
-		unset($_SESSION['rm']);
-		unset($_SESSION['senha']);
-		header('Location: ../index.php');
-		}
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
@@ -23,6 +15,7 @@
 		<!-- MAPQUEST -->
 	    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
 	    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+		
 
 		<!-- SCRIPT -->
 	    <script src="../js/motor.js"></script>
@@ -105,7 +98,8 @@
 		</div>
 		<!-- .FINAL DO MODAL -->
 
-		<!-- https://netbeans.apache.org/kb/docs/php/configure-php-environment-ubuntu_pt_BR.html#specifyDocumentRoot  -SITE DE CONFIGURAÇÃO DO LAMP NO LINUX- -->
+		<!-- https://netbeans.apache.org/kb/docs/php/configure-php-environment-ubuntu_pt_BR.html#specifyDocumentRoot  
+		-SITE DE CONFIGURAÇÃO DO LAMP NO LINUX- -->
 		<!-- https://www.youtube.com/watch?v=twLFmELptnQ -ALTERAÇÃO DE DIRETÓRIO NO APACHE2 LINUX-->
 
 		<!-- SCRIPTS -->
