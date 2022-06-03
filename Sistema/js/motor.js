@@ -156,7 +156,6 @@ window.onload = function() {
         function createMap(error, response) {
             // Initialize the Map
             let teste = response;
-            console.log(teste);
             // var popup = L.popup();
             let latLng = response.results[0].locations[0].latLng;  
             var map = L.mapquest.map('map', {
