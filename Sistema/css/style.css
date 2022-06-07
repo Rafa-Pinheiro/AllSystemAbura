@@ -221,42 +221,30 @@ body.dark{
   color: gray;
 
 }
-#nomeCompleto.dark, 
-#ruaLocal.dark, 
-#barroLocal.dark, 
-#nomeSocorrido.dark{
-	border-style: none;
-	border-radius: 10px 50px;
+#nomeCompleto.dark,
+#nomeSocorrido.dark,
+#faixaEtaria.dark,
+#coms.dark,
+#descBasica.dark,
+#cidadeLocal.dark, 
+#bairroLocal.dark,
+#ruaLocal.dark,
+#numeroLocal.dark
+{
 	color: gray;
+    border-color: rgba(4, 49, 107, 0.4);
 }
 
-#faixaEtaria.dark{
-	border-style: none;
-	border-radius: 10px 50px;
-	color: gray;
-}
-
-#faixaEtaria.dark{
-border-style: none;
-top: 3px;
-border-radius: 10px 50px;
-}
-
-#faixaEtaria.dark:focus::placeholder{
-color: gray;
-}
-
-#descBasica.dark{
-	font-size: 21px;
-	border-radius: 50px;
-	border-style: none;
-	padding: 30px;
-}
-
-#nomeCompleto.dark:focus::placeholder,  
-#ruaLocal.dark:focus::placeholder{
+#nomeCompleto.dark:focus::placeholder,
+#nomeSocorrido.dark:focus::placeholder,
+#faixaEtaria.dark:focus::placeholder,
+#coms.dark:focus::placeholder,
+#descBasica.dark:focus::placeholder,
+#cidadeLocal.dark:focus::placeholder,
+#bairroLocal.dark:focus::placeholder,
+#ruaLocal.dark:focus::placeholder,
+#numeroLocal.dark:focus::placeholder{
 	font-size: 0.9em;
-	color: gray;
 }
 
 /* #canto.dark{
@@ -264,32 +252,13 @@ color: gray;
 } */
 
 #nomeCompleto.ampli, 
-#ruaLocal.ampli{
-	font-size: 21px;
-}
-#bairroLocal.ampli, 
-#nomeSocorrido.ampli{
-	font-size: 21px;
-}
-
-#faixa_etaria.ampli{
-	font-size: 21px;
-	margin-top: 0px;
-}
-
-#ruaLocal.ampli{
-	font-size: 21px;
-}
-
-#bairroLocal.ampli{
-	font-size: 21px;
-}
-
-#cidadeLocal.ampli{
-	font-size: 21px;
-	margin-top: 0px;
-}
-
+#ruaLocal.ampli,
+#bairroLocal.ampli,
+#nomeSocorrido.ampli,
+#faixa_etaria.ampli,
+#ruaLocal.ampli,
+#bairroLocal.ampli,
+#cidadeLocal.ampli,
 #numeroLocal.ampli{
 	font-size: 21px;
 }

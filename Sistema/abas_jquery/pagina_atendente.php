@@ -150,15 +150,15 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 						function dark( ){
 							document.body.classList.toggle('dark');
-							document.querySelector('.navbar').classList.toggle('dark');
-							document.querySelector('.campos').classList.toggle('dark');
-							document.querySelector('.campos2').classList.toggle('dark');
-							document.querySelector('#faixa_etaria').classList.toggle('dark');
-							document.querySelector('#rua').classList.toggle('dark');
-							document.querySelector('#bairro').classList.toggle('dark');
-							document.querySelector('#cidade').classList.toggle('dark');
-							document.querySelector('#numerores').classList.toggle('dark');
-							document.querySelector('#desc').classList.toggle('dark');
+							document.querySelector('#cidadeLocal').classList.toggle('dark');
+							document.querySelector('#ruaLocal').classList.toggle('dark');
+							document.querySelector('#bairroLocal').classList.toggle('dark');
+							document.querySelector('#numeroLocal').classList.toggle('dark');
+							document.querySelector('#nomeCompleto').classList.toggle('dark');
+							document.querySelector('#nomeSocorrido').classList.toggle('dark');
+							document.querySelector('#faixaEtaria').classList.toggle('dark');
+							document.querySelector('#coms').classList.toggle('dark');
+							document.querySelector('#descBasica').classList.toggle('dark');
 							document.querySelector('#canto').classList.toggle('dark');
 						}
 						const chk = document.getElementById('chk')
