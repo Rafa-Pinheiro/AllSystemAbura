@@ -44,36 +44,36 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             <li>ABA 2</li>
             </ul>
         <div class="tab_container_area">
-            <div class="tab_container">
+            <div class="tab_container" id="abaUm">
                     
                     <center>
-                        <label>Endereço</label><br>
+                        <label class="titulos" id="tituloEnde">Endereço</label><br>
                             <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
                             <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
                             <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
                             <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
 
-                            <label>Campos de nome</label><br>
+                            <label class="titulos" id="tituloNomes">Campos de nome</label><br>
                             <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
                             <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
                             <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required><br><br>
                         
-                        <label>Possui Comorbidades</label><br>
+                        <label class="titulos" id="tituloComs">Possui Comorbidades</label><br>
                             <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
                         
                         <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
 
-                        <input type="submit" onclick="addCadastroAtendimento();" value="Enviar">
+                        <input type="submit" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
                     </center>
                 
             </div>
 
-            <div class="tab_container">
+            <div class="tab_container" id="abaDois">
                 <main>
                     <table>
                         <tr>
                             <td> 
-                                <select name="ambulancia" id="select1">
+                                <select name="ambulancia" id="selectUm">
                                     <option value="volvo">Tipo de Ambulância</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
@@ -83,7 +83,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                         </tr>
 
                         <tr>
-                            <td> <select name="ambulancia2" id="select2">
+                            <td> <select name="ambulancia2" id="selectDois">
                                     <option value="volvo">Qtd.Ocorrência</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -115,23 +115,15 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 				<div id="telas" class="w3-container city">
 					<i id="edit" class="fa-solid fa-pen-to-square"><br><br><h1 id="Aparencia">Aparência</h1></i>
 					<div class="row">
-                        <input type="checkbox" class="checkbox2" id="chk2" name="idd">
-						<h2 id="ampliar">Ampliar fonte</h2>
-						<label class="label2" for="chk2">
-							<div class="bola2"></div>
-						</label>
+                        <input type="checkbox" class="checkbox2" id="chk2" name="idd"><label class="amplia_escurece">Ampliar Fontes</label>
 					</div>
 
 					<div class="row">
-                        <input type="checkbox" class="checkbox" id="chk" name="id" >	
-                        <h2 id="escuro">modo escuro</h2>
-					
-						<label class="label" for="chk">
-							<div class="bola"></div>
-						</label>
+                        <input type="checkbox" class="checkbox" id="chk" name="id">	<label class="amplia_escurece">Modo Escuro</label>
 					</div>
 
 					<script>
+
                         document.getElementsByClassName("tablink")[0].click();
 
                         function abrir(evt, cityName) {
@@ -148,8 +140,16 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                             evt.currentTarget.classList.add("w3-light-grey");
                         }
 
-						function dark( ){
+						function dark(){
 							document.body.classList.toggle('dark');
+                            document.querySelector('#selectUm').classList.toggle('dark');
+                            document.querySelector('#selectDois').classList.toggle('dark');
+                            document.querySelector('#abaUm').classList.toggle('dark');
+                            document.querySelector('#abaDois').classList.toggle('dark');
+                            document.querySelector('#botaoCad').classList.toggle('dark');
+                            document.querySelector('#tituloEnde').classList.toggle('dark');
+                            document.querySelector('#tituloNomes').classList.toggle('dark');
+                            document.querySelector('#tituloComs').classList.toggle('dark');
 							document.querySelector('#cidadeLocal').classList.toggle('dark');
 							document.querySelector('#ruaLocal').classList.toggle('dark');
 							document.querySelector('#bairroLocal').classList.toggle('dark');
@@ -168,21 +168,28 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
 						function ampli(){
 							document.body.classList.toggle('ampli');
-							document.querySelector('.campos').classList.toggle('ampli');
-							document.querySelector('.campos2').classList.toggle('ampli');
-							document.querySelector('#faixa_etaria').classList.toggle('ampli');
-							document.querySelector('#rua').classList.toggle('ampli');
-							document.querySelector('#bairro').classList.toggle('ampli');
-							document.querySelector('#cidade').classList.toggle('ampli');
-							document.querySelector('#numerores').classList.toggle('ampli');
-							document.querySelector('#desc').classList.toggle('ampli');
+                            document.querySelector('#selectUm').classList.toggle('ampli');
+                            document.querySelector('#selectDois').classList.toggle('ampli');
+                            document.querySelector('#botaoCad').classList.toggle('ampli');
+                            document.querySelector('#tituloEnde').classList.toggle('ampli');
+                            document.querySelector('#tituloNomes').classList.toggle('ampli');
+                            document.querySelector('#tituloComs').classList.toggle('ampli');
+							document.querySelector('#cidadeLocal').classList.toggle('ampli');
+							document.querySelector('#ruaLocal').classList.toggle('ampli');
+							document.querySelector('#bairroLocal').classList.toggle('ampli');
+							document.querySelector('#numeroLocal').classList.toggle('ampli');
+							document.querySelector('#nomeCompleto').classList.toggle('ampli');
+							document.querySelector('#nomeSocorrido').classList.toggle('ampli');
+							document.querySelector('#faixaEtaria').classList.toggle('ampli');
+							document.querySelector('#coms').classList.toggle('ampli');
+							document.querySelector('#descBasica').classList.toggle('ampli');
 							document.querySelector('#canto').classList.toggle('ampli');
 						}
 						const chk2 = document.getElementById('chk2')
 						chk2.addEventListener('change', () => {
 							ampli();
-
 						});
+
 					</script>
 
 				</div>

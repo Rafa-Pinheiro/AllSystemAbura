@@ -161,6 +161,10 @@ input{
     text-align: left !important;
 }
 
+.titulos{
+    font-size: 18px;
+}
+
 /* ESTILIZAÇÃO DA TELA DE OCORRENCIAS */
 .btn-ocorrencia {
     width: 130px;
@@ -199,12 +203,8 @@ input[type="number"] {
 
 /* MODAL ESCURO E AMPLIADO */
 
-#ampliar{
-    margin-right:615px;
-    }
-    
-#escuro{
-    margin-right:615px;
+.amplia_escurece{
+    font-size: 40px;
 }
 
 #Aparencia{
@@ -219,7 +219,67 @@ ul.dark{
 body.dark{
   background: #232c35;
   color: gray;
+}
 
+/* a */
+
+#tituloEnde.dark,
+#tituloNomes.dark,
+#tituloComs.dark{
+    color: gray;
+}
+#selectUm.dark,
+#selectDois.dark{
+    background: gray;
+}
+
+#abaUm.dark,
+#abaDois.dark{
+    background: #24272a;
+}
+#botaoCad.dark{
+    background: #3b3f44;
+}
+#tituloEnde.ampli,
+#tituloNomes.ampli,
+#tituloComs.ampli{
+    font-size: 30px;
+}
+#selectUm.ampli,
+#selectDois.ampli{
+    font-size: 20px;
+}
+#botaoCad.ampli{
+    font-size: 20px;
+}
+#tituloEnde.dark.ampli,
+#tituloNomes.dark.ampli,
+#tituloComs.dark.ampli{
+    color: gray;
+    font-size: 30px;
+}
+#selectUm.dark.ampli,
+#selectDois.dark.ampli{
+    background: gray;
+    font-size: 20px;
+}
+#botaoCad.dark.ampli{
+    background: #3b3f44;
+    font-size: 20px;
+}
+
+/* b */
+
+#nomeCompleto:focus::placeholder,
+#nomeSocorrido:focus::placeholder,
+#faixaEtaria:focus::placeholder,
+#coms:focus::placeholder,
+#descBasica:focus::placeholder,
+#cidadeLocal:focus::placeholder,
+#bairroLocal:focus::placeholder,
+#ruaLocal:focus::placeholder,
+#numeroLocal:focus::placeholder{
+	font-size: 0.9em;
 }
 #nomeCompleto.dark,
 #nomeSocorrido.dark,
@@ -229,12 +289,10 @@ body.dark{
 #cidadeLocal.dark, 
 #bairroLocal.dark,
 #ruaLocal.dark,
-#numeroLocal.dark
-{
-	color: gray;
-    border-color: rgba(4, 49, 107, 0.4);
+#numeroLocal.dark{
+    color: gray;
+    background: #3b3f44;
 }
-
 #nomeCompleto.dark:focus::placeholder,
 #nomeSocorrido.dark:focus::placeholder,
 #faixaEtaria.dark:focus::placeholder,
@@ -245,46 +303,48 @@ body.dark{
 #ruaLocal.dark:focus::placeholder,
 #numeroLocal.dark:focus::placeholder{
 	font-size: 0.9em;
+    color: gray;
 }
-
-/* #canto.dark{
-	margin-top:-240px
-} */
-
 #nomeCompleto.ampli, 
 #ruaLocal.ampli,
 #bairroLocal.ampli,
 #nomeSocorrido.ampli,
-#faixa_etaria.ampli,
+#faixaEtaria.ampli,
+#coms.ampli,
 #ruaLocal.ampli,
 #bairroLocal.ampli,
 #cidadeLocal.ampli,
-#numeroLocal.ampli{
-	font-size: 21px;
-}
-
-/* #canto.ampli{
-	font-size: 21px;
-	margin-top: -196px;
-} */
-
+#numeroLocal.ampli,
 #descBasica.ampli{
 	font-size: 21px;
-	border-radius: 50px;
-	border-style: solid;
-	padding: 30px;
 }
-
+#nomeCompleto.dark.ampli, 
+#ruaLocal.dark.ampli,
+#bairroLocal.dark.ampli,
+#nomeSocorrido.dark.ampli,
+#faixaEtaria.dark.ampli,
+#coms.dark.ampli,
+#ruaLocal.dark.ampli,
+#bairroLocal.dark.ampli,
+#cidadeLocal.dark.ampli,
+#numeroLocal.dark.ampli,
 #descBasica.dark.ampli{
 	font-size: 21px;
-	border-radius: 50px;
-	border-style: none;
-	padding: 30px;
+    color: gray;
 }
-
-/* #canto.ampli.dark{
-	font-size: 21px;
-	margin-top: -174px;
-} */
+#nomeCompleto.dark.ampli:focus::placeholder, 
+#ruaLocal.dark.ampli:focus::placeholder,
+#bairroLocal.dark.ampli:focus::placeholder,
+#nomeSocorrido.dark.ampli:focus::placeholder,
+#faixaEtaria.dark.ampli:focus::placeholder,
+#coms.dark.ampli:focus::placeholder,
+#ruaLocal.dark.ampli:focus::placeholder,
+#bairroLocal.dark.ampli:focus::placeholder,
+#cidadeLocal.dark.ampli:focus::placeholder,
+#numeroLocal.dark.ampli:focus::placeholder,
+#descBasica.dark.ampli:focus::placeholder{
+    font-size: 16px;
+    color: gray;
+}
 
 /* FIM MODAL ESCURO AMPLIADO */
