@@ -5,6 +5,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+#image{
+    bottom: 0px;
+}
 
 /* ESTILIZAÇÃO DO LOGIN */
 .card-body {
@@ -130,18 +133,25 @@ td {
     padding: 0;
     margin: 0;
     list-style: none;
+    border-radius: 0, 15, 15, 0;
+}
+
+.navAbas{
+    height: 8px;
 }
 
 .tab_navigation li{
     display: inline-block;
     padding: 5px 15px;
-    background: #000;
+    background: rgb(255, 255, 255);
     min-width: 100px;
     text-align: center;
-    color: #fff;
-    border-radius: 5px 5px 0 0;
+    color: rgb(0, 0, 0);
+    border-radius: 80px 15px 0px 0px;
     cursor: pointer;
     transition: all 0.3 ease-in-out;
+    height: 40px;
+    width: 200px;
 }
 
 .tab_navigation li.active, .tab_navigation li:hover{

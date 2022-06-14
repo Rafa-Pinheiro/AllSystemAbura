@@ -32,7 +32,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
         <a class="navbar-brand" href="#">
         <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
         </a>
-        <ul class="tab_navigation">
+        <ul class="tab_navigation navAbas">
         <li>ABA 1</li>
         <li>ABA 2</li>
         </ul>
