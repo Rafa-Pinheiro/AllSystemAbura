@@ -348,3 +348,18 @@ body.dark{
 }
 
 /* FIM MODAL ESCURO AMPLIADO */
+
+/* MAPA */
+
+.map {
+    max-width: 100vW;
+    max-height: 700px;
+    min-height: 600px;
+    border-radius: 4px;
+}
+
+.div-nivel {
+    padding: 30px;
+}
+
+/* FIM MAPA */

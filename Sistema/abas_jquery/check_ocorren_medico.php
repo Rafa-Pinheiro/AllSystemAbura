@@ -21,6 +21,13 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../css/style.css" >
 
+    <!-- MAPQUEST -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
+	<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+
+	<!-- SCRIPT -->
+	<script src="../js/motor.js"></script>
+
     <title>Tela do Médico</title>
 </head>
 <body>
@@ -37,7 +44,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
     <div class="container my-3">
         <h1 class="text-center h1-titulo mt-5 mb-2">Ocorrências</h1>
-        <button type="button" class="btn btn-ocorrencia text-white my-3" data-toggle="modal" onclick="exibirMapa()" data-target="mapaModal">
+        <button type="button" class="btn btn-ocorrencia text-white my-3" data-toggle="modal" data-target="#mapaModal">
             Mapa
         </button>
     </div>
@@ -45,6 +52,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <!-- CONTEÚDO PRINCIPAL -->
     <div class="container">
         <div class="div-table mb-5">
+
             <!-- CÓDIGO ABA 1 -->
             <table class="table table-striped mb-1">
                 <thead>
@@ -67,8 +75,8 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                         echo "<td class='td-tabela_ocorrencia'> $row->ds_descricao_atendente </td>";
                         echo "<td class='td-tabela_ocorrencia'> $row->st_comorbidade </td>";
                         echo "<td>
-                                <button class='btn btn-ocorrencia text-white' onclick='visualizar()'>Visualizar</button>
-                                <button class='btn btn-danger' onclick='Atender()'>Atender</button>
+                                <button class='btn btn-ocorrencia text-white' onclick='visualizar()' data-target='#visualizarModal'>Visualizar</button>
+                                <button class='btn btn-danger' onclick='Atender()' data-target='#atenderModal'>Atender</button>
                             </td>";
                         }
                     ?>
@@ -83,13 +91,60 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             </div> 
         </div>   
     </div>
+    
+    <!-- Modal do Mapa -->
+    
+    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mapa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-8">
+                        <!-- DIV MAPA -->
+		                <div id="map" class="map"></div>
+                    </div>
+                    <div class="col-4 div-nivel">
+
+                        <form action="" method="get">
+                            <div class="form-group">
+                                <label for="uma" id="amb">Nível da ambulância</label>
+                                <select class="form-control" name="uma" id="uma">
+                                    <option value="" selected>Selecione</option>
+                                    <option value="A">Tipo A</option>
+                                    <option value="B">Tipo B</option>
+                                    <option value="C">Tipo C</option>
+                                    <option value="D">Tipo D</option>
+                                </select>
+                            </div>
+                         </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Filtrar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim do modal do Mapa -->
+
+
 
      <!-- Modal de Vizualização -->
-     <div class="modal fade" id="completeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="visualizarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content p-5">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Visualizar ocorrência</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Visualizar Ocorrência</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -150,10 +205,12 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
     <script>
 
+      
+
         // Visualizar
         function visualizar(updateid) {
             $('#hiddendata').val(updateid);
-            $.post('update.php',{updateid:updateid},function(data, status){
+            $.post('#.php',{updateid:updateid},function(data, status){
                 var ocorrenid = JSON.parse(data);
                 $('#nomeSolicitante').val(ocorrenid.nm_solicitante);
                 $('#nomeSocorrido').val(ocorrenid.nm_socorrido);
@@ -166,7 +223,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                 $('#numero').val(ocorrenid.nr_numero);
             });
 
-            $('#completeModal').modal('show');
+            $('#visualizarModal').modal('show');
         }
 
     </script>

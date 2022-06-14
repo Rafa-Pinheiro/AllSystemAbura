@@ -1,5 +1,5 @@
 //CÓDIGO MODAL
-document.getElementsByClassName("tablink")[0].click();
+/* document.getElementsByClassName("tablink")[0].click();
 
 function abrir(evt, cityName) {
     var i, x, tablinks;
@@ -13,7 +13,7 @@ function abrir(evt, cityName) {
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.classList.add("w3-light-grey");
-}
+} */
 //FIM CÓDIGO MODAL
 
 window.onload = function() {
