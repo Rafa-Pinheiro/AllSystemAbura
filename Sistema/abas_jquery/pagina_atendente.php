@@ -32,6 +32,10 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
         <a class="navbar-brand" href="#">
         <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
         </a>
+        <ul class="tab_navigation navAbas">
+        <li>ABA 1</li>
+        <li>ABA 2</li>
+        </ul>
         <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
         <a href="../conection/encerrar_session.php"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">SAIR</button></a>
     </nav>
@@ -39,10 +43,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <!-- FIM NAVIGATION -->    
 
     <div class="container">
-            <ul class="tab_navigation">
-            <li>ABA 1</li>
-            <li>ABA 2</li>
-            </ul>
+            
         <div class="tab_container_area">
             <div class="tab_container" id="abaUm">
                     
