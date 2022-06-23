@@ -29,7 +29,9 @@ CREATE TABLE tb_atendimento(
     ds_faixa_etaria_socorrido VARCHAR(20) NOT NULL,
     ds_descricao_atendente VARCHAR(80) NOT NULL,
     ds__descricao_medico LONGTEXT NULL,
-    st_comorbidade ENUM('sim','nao') NULL
+    st_comorbidade ENUM('sim','nao') NULL,
+    id_funcionario INT,
+    FOREIGN KEY (id_funcionario) REFERENCES tb_funcionario(cd_funcionario)
 );
 
 CREATE TABLE tb_prioridade (
