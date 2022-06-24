@@ -5,6 +5,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+#body-index {
+    background-image: linear-gradient(to right, #42f4bd, #2f0058);
+}
+
 #image{
     bottom: 0px;
 }
@@ -14,6 +18,10 @@ body {
     border: 1px solid #42f4bd;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
+}
+
+.inputs-login {
+    border-color: #42f4bc79;
 }
 
 .btn-login {
@@ -137,7 +145,7 @@ td {
 }
 
 .navAbas{
-    height: 8px;
+    height: 20px;
 }
 
 .tab_navigation li{
@@ -150,8 +158,8 @@ td {
     border-radius: 80px 15px 0px 0px;
     cursor: pointer;
     transition: all 0.3 ease-in-out;
-    height: 40px;
-    width: 200px;
+    height: 36px;
+    width: 210px;
 }
 
 .tab_navigation li.active, .tab_navigation li:hover{
@@ -165,6 +173,11 @@ td {
     color: #000;
     border-radius: 0 5px 5px 5px;
     display: none;
+}
+
+#img-axolote {
+    margin-bottom: -10px;
+    margin-right: 10px;
 }
 
 input{
