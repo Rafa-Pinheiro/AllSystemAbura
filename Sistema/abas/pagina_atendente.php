@@ -47,25 +47,21 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
         <div class="tab_container_area">
             <div class="tab_container" id="abaUm">
                     
-                    <center>
-                        <label class="titulos" id="tituloEnde">Endereço</label><br>
-                            <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
-                            <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
-                            <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
-                            <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
-
-                            <label class="titulos" id="tituloNomes">Campos de nome</label><br>
-                            <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
-                            <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required><br><br>
-                        
-                        <label class="titulos" id="tituloComs">Possui Comorbidades</label><br>
-                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
-                        
-                        <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
-
-                        <input type="submit" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
-                    </center>
+                <label class="titulos" id="tituloEnde">Endereço</label><br>
+                    <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
+                    <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
+                    <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
+                    <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
+                    <label class="titulos" id="tituloNomes">Campos de nome</label><br>
+                    <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
+                    <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
+                    <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required>
+                
+                <label class="titulos" id="tituloComs">Possui Comorbidades</label><br>
+                    <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
+                
+                <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
+                <input type="submit" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
                 
             </div>
 
@@ -278,7 +274,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 
     <!-- MAPQUEST -->
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js" defer></script>
