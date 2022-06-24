@@ -52,7 +52,7 @@ window.onload = function() {
         function queryDatabase() {
             console.log("Reading rows from the Table...");
 
-            filter.addEventListener("click", function(tpAmb) {
+            filtrar.addEventListener("click", function(tpAmb) {
                 const request = new Request(
                     `SELECT * FROM tb_ocorrencia WHERE tp_ambulancia =` + tpAmb.value,
                     (err, rowCount) => {
