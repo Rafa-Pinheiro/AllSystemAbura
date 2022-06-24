@@ -135,7 +135,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Filtrar</button>
+                <button type="button" class="btn btn-primary" id = "filter">Filtrar</button>
             </div>
             </div>
         </div>

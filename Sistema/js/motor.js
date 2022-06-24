@@ -52,30 +52,33 @@ window.onload = function() {
         function queryDatabase() {
             console.log("Reading rows from the Table...");
 
-            // Read all rows from table
-            const request = new Request(
-                `SELECT * FROM tb_ocorrencia WHERE tp_ambulancia =` + tpAmb.value,
-                (err, rowCount) => {
-                    if (err) {
-                        console.error(err.message);
-                    } else {
-                        console.log(`${rowCount} row(s) returned`);
+            filter.addEventListener("click", function(tpAmb) {
+                const request = new Request(
+                    `SELECT * FROM tb_ocorrencia WHERE tp_ambulancia =` + tpAmb.value,
+                    (err, rowCount) => {
+                        if (err) {
+                            console.error(err.message);
+                        } else {
+                            console.log(`${rowCount} row(s) returned`);
+                            chamado = '${rowCount}';
+                        }
                     }
-                }
-            );
-            //MOSTRANDO O RESULTADO NO CONSOLE\\
-            request.on("row", columns => {
-                columns.forEach(column => {
-                    console.log("%s\t%s", column.metadata.colName, column.value);
+                );
+                //MOSTRANDO O RESULTADO NO CONSOLE\\
+                request.on("row", columns => {
+                    columns.forEach(column => {
+                        console.log("%s\t%s", column.metadata.colName, column.value);
+                    });
                 });
-            });
 
-            connection.execSql(request);
+                connection.execSql(request);
+            })
         }
 
         //VARIAVEIS GLOBAIS\\
         const tpAmb = document.getElementById(uma);
-        var chamado = 'Avenida Paula Ferreira, 3108, Pirituba, São Paulo, SP';
+        const filtrar = document.getElementById(filter);
+        var chamado;
         var uma = ['Rua Manoel Ribeiro dos Santos,101, Itanhaém, SP', 'Avenida Estados Unidos, 859, Jardim São fernando, Itanhaém SP', 'Rua Oswaldo Cruz, 277, Boqueirão, Santos, SP'];
         var chamado = "Avenida Paula Ferreira, 3108, Itanhaém, SP";
         const hospitais = [{
