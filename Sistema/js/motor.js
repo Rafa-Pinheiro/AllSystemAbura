@@ -17,18 +17,176 @@ function abrir(evt, cityName) {
 //FIM CÓDIGO MODAL
 
 window.onload = function() {
+        //CONEXÃO COM O BANCO DE DADOS\\
+        const { Connection, Request } = require("tedious");
 
+        // Create connection to database
+        const config = {
+            authentication: {
+                options: {
+                    userName: "rafa", // update me
+                    password: "usbw" // update me
+                },
+                type: "default"
+            },
+            server: "localhost", // update me
+            options: {
+                database: "db_abura", //update me
+                encrypt: true
+            }
+        };
+
+        const connection = new Connection(config);
+
+        // Attempt to connect and execute queries if connection goes through
+        connection.on("connect", err => {
+            if (err) {
+                console.error(err.message);
+            } else {
+                queryDatabase();
+            }
+        });
+
+        connection.connect();
+
+        function queryDatabase() {
+            console.log("Reading rows from the Table...");
+
+            // Read all rows from table
+            const request = new Request(
+                `SELECT * FROM tb_ocorrencia WHERE tp_ambulancia =` + tpAmb.value,
+                (err, rowCount) => {
+                    if (err) {
+                        console.error(err.message);
+                    } else {
+                        console.log(`${rowCount} row(s) returned`);
+                    }
+                }
+            );
+            //MOSTRANDO O RESULTADO NO CONSOLE\\
+            request.on("row", columns => {
+                columns.forEach(column => {
+                    console.log("%s\t%s", column.metadata.colName, column.value);
+                });
+            });
+
+            connection.execSql(request);
+        }
+
+        //VARIAVEIS GLOBAIS\\
+        const tpAmb = document.getElementById(uma);
         var chamado = 'Avenida Paula Ferreira, 3108, Pirituba, São Paulo, SP';
         var uma = ['Rua Manoel Ribeiro dos Santos,101, Itanhaém, SP', 'Avenida Estados Unidos, 859, Jardim São fernando, Itanhaém SP', 'Rua Oswaldo Cruz, 277, Boqueirão, Santos, SP'];
         var chamado = "Avenida Paula Ferreira, 3108, Itanhaém, SP";
-        var hospital = ['Rua Valter José Alves, 485, Nova Mirim, Praia Grande, SP'];
+        const hospitais = [{
+                nome: "Hospital Regional de Itanhaém",
+                logradouro: "Avenida Rui Barbosa",
+                numero: "541",
+                bairro: "Centro",
+                cidade: "Itanhaém",
+                cep: "11740-000",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Hospital Guilherme Álvaro",
+                logradouro: "Rua Oswaldo Cruz",
+                numero: "197",
+                bairro: "Boqueirão",
+                cidade: "Santos",
+                cep: "11045-904",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Hospital Emílio Ribas II",
+                logradouro: "Rua São Miguel",
+                numero: "760",
+                bairro: "Sítio Paecara",
+                cidade: "Guarujá",
+                cep: "11460-200",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Hospital Santo Amaro",
+                logradouro: "Rua Quinto Bertoldi",
+                numero: "40",
+                bairro: "Vila Maia",
+                cidade: "Guarujá",
+                cep: "11410-908",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Santa Casa de Santos",
+                logradouro: " Avenida Dr. Cláudio Luiz da Costa",
+                numero: "50",
+                bairro: "Jabaquara",
+                cidade: "Santos",
+                cep: "11075-101",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Hospital Municipal Bertioga",
+                logradouro: "Praça Vicente Molinari",
+                numero: "S/n",
+                bairro: "Vila Itapanhaú",
+                cidade: "Bertioga",
+                cep: "11250-000",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Hospital Dr. Luís Camargo F. Silva",
+                logradouro: "Avenida Henry Borden",
+                numero: "S/n",
+                bairro: "Vila Santa Rosa",
+                cidade: "Cubatão",
+                cep: "11515-000",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "Complexo Hospitalar Irmã Dulce",
+                logradouro: "Rua Dair Borges",
+                numero: "550",
+                bairro: "Boqueirão",
+                cidade: "Praia Grande",
+                cep: "11701-210",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "AME Santos 200",
+                logradouro: "Rua Alexandre Martins",
+                numero: "70",
+                bairro: "Aparecida",
+                cidade: "Santos",
+                cep: "11025-201",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+            {
+                nome: "AME Praia Grande",
+                logradouro: "Rua Valter José Alves",
+                numero: "485",
+                bairro: "Nova Mirim",
+                cidade: "Praia Grande",
+                cep: "11705-010",
+                estado: 'SP',
+                pais: 'Brasil'
+            }
+        ]
+        console.log(hospitais[0]);
 
 
         // FUNÇÃO QUE RETORNA OS DADOS DA ROTA
         var local = {
             "locations": [
                 uma[0],
-                hospital[0], //ENDEREÇOS DA MATRIZ
+                hospitais[0], //ENDEREÇOS DA MATRIZ
                 chamado
             ],
             "options": {
@@ -81,24 +239,24 @@ window.onload = function() {
         //FUNÇÃO DE BUSCA DE HOSPITAIS
         let hos = {
             "origin": {
-                
-              "latLng": {
-                "lat": 40.41194686894974, 
-                "lng": -3.70598276333092
-              }
+
+                "latLng": {
+                    "lat": 40.41194686894974,
+                    "lng": -3.70598276333092
+                }
             },
             "options": {
-              "maxMatches": 40,
-              "radius": 20,
-              "units": "k"
+                "maxMatches": 40,
+                "radius": 20,
+                "units": "k"
             }
-          };
-        let sLocais = "http://www.mapquestapi.com/search/v2/radius?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json="+ JSON.stringify(hos);
+        };
+        let sLocais = "http://www.mapquestapi.com/search/v2/radius?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=" + JSON.stringify(hos);
         var xmlHttp2 = new XMLHttpRequest();
         xmlHttp2.open("GET", sLocais, false); // false for synchronous request
         xmlHttp2.send(null);
         var retornoS = (JSON.parse(xmlHttp2.responseText));
-          console.log(retornoS);
+        console.log(retornoS);
         L.mapquest.key = 'lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh'; //objeto chave mapquest
 
         var markerSize = {
@@ -157,76 +315,76 @@ window.onload = function() {
             // Initialize the Map
             let teste = response;
             // var popup = L.popup();
-            let latLng = response.results[0].locations[0].latLng;  
+            let latLng = response.results[0].locations[0].latLng;
             var map = L.mapquest.map('map', {
                 layers: L.mapquest.tileLayer('map'),
                 center: [latLng.lat, latLng.lng],
                 zoom: 12
             });
-             L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map);
+            L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map);
         }
-            // L.mapquest.directions().setLayerOptions({
-            //     startMarker: {
-            //         icon: markerviatura
-            //     },
-            //     endMarker: {
-            //         icon: markerhospital
-            //     },
-            //     waypoints: {
-            //         icon: markeracidente
-            //     },
+        // L.mapquest.directions().setLayerOptions({
+        //     startMarker: {
+        //         icon: markerviatura
+        //     },
+        //     endMarker: {
+        //         icon: markerhospital
+        //     },
+        //     waypoints: {
+        //         icon: markeracidente
+        //     },
 
-            //     routeRibbon: {
-            //         color: "#ccc",
-            //         opacity: 1.0,
-            //         showTraffic: false
-            //     }
-            // });
-            // for (let i = 0; i < uma.length; i++) {s
+        //     routeRibbon: {
+        //         color: "#ccc",
+        //         opacity: 1.0,
+        //         showTraffic: false
+        //     }
+        // });
+        // for (let i = 0; i < uma.length; i++) {s
 
-                //CÓDIGO ORIGINAL DOS ICONES
-                /*
-                var directions = L.mapquest.directions();
-                directions.setLayerOptions({
-                startMarker: {
-                    icon: 'circle',
-                    iconOptions: {
-                    size: 'sm',
-                    primaryColor: '#1fc715',
-                    secondaryColor: '#1fc715',
-                    symbol: 'A'
-                    }
-                },
-                endMarker: {
-                    icon: 'circle',
-                    iconOptions: {
-                    size: 'sm',
-                    primaryColor: '#e9304f',
-                    secondaryColor: '#e9304f',
-                    symbol: 'B'
-                    }
-                },
-                routeRibbon: {
-                    color: "#2aa6ce",
-                    opacity: 1.0,
-                    showTraffic: false
-                }
-                });
-                */
-            //     L.mapquest.directions().route({
-            //         start: uma[0],
-            //         end: hospital[0],
-            //         waypoints: [chamado]
-            //     })
-            // };
+        //CÓDIGO ORIGINAL DOS ICONES
+        /*
+        var directions = L.mapquest.directions();
+        directions.setLayerOptions({
+        startMarker: {
+            icon: 'circle',
+            iconOptions: {
+            size: 'sm',
+            primaryColor: '#1fc715',
+            secondaryColor: '#1fc715',
+            symbol: 'A'
+            }
+        },
+        endMarker: {
+            icon: 'circle',
+            iconOptions: {
+            size: 'sm',
+            primaryColor: '#e9304f',
+            secondaryColor: '#e9304f',
+            symbol: 'B'
+            }
+        },
+        routeRibbon: {
+            color: "#2aa6ce",
+            opacity: 1.0,
+            showTraffic: false
+        }
+        });
+        */
+        //     L.mapquest.directions().route({
+        //         start: uma[0],
+        //         end: hospital[0],
+        //         waypoints: [chamado]
+        //     })
+        // };
 
-            // Generate the feature group containing markers from the geocoded locations
-            // var featureGroup = generateMarkersFeatureGroup(response);
+        // Generate the feature group containing markers from the geocoded locations
+        // var featureGroup = generateMarkersFeatureGroup(response);
 
-            // Add markers to the map and zoom to the features
-            // featureGroup.addTo(map);
-            // map.fitBounds(featureGroup.getBounds());
-        
+        // Add markers to the map and zoom to the features
+        // featureGroup.addTo(map);
+        // map.fitBounds(featureGroup.getBounds());
+
 
         // function generateMarkersFeatureGroup(response) {
         //     var group = [];
@@ -237,12 +395,12 @@ window.onload = function() {
         //         // Create a marker for each location\\
         //         //    Forma Antiga (Rodolfo)
         //         var qual = (i == 0) ? markeracidente : markerviatura
-                // var marker = L.marker(locationLatLng, {
-                        // icon: acidente
-                    // })
-                    // .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
+        // var marker = L.marker(locationLatLng, {
+        // icon: acidente
+        // })
+        // .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
 
-                // group.push(marker);
+        // group.push(marker);
         //         //    end\\
         //         // var qual = function() {
         //         //     switch (response.results[i].location) {
@@ -264,7 +422,7 @@ window.onload = function() {
         //             })
         //             .bindPopup(location.adminArea5 + ', ' + location.adminArea3); //CLIQUE COM O TEMPO, ALTERAR AQUI
 
-                // group.push(marker);
+        // group.push(marker);
         //         //end\\
         //     }
         //     return L.featureGroup(group);
@@ -279,31 +437,31 @@ window.onload = function() {
     //ICONES NA ROTA
     // https://developer.mapquest.com/documentation/mapquest-js/v1.0/examples/directions-with-custom-icons-and-ribbons/
 
-    //API RESTANTES
+//API RESTANTES
 
-    //PAINEL LATERAL
-    //https://developer.mapquest.com/documentation/mapquest-js/v1.3/examples/directions-control/
-    //------------------------------- Configuração apache linux ---------------------------------------\\
-    // https://www.youtube.com/watch?v=twLFmELptnQ - alterando deretório de execução
-    // https://www.youtube.com/watch?v=l9uZ3gk0Kzk - Arrumando o mysql
-    //https://pt.linkedin.com/pulse/instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-mysql-linux-mint-20-ubuntu-yenny-delgado?trk=pulse-article_more-articles_related-content-card
-
-
-    //------------------------------- Gia De Commit terminal/git ---------------------------------------\\
-
-    /* COMMIT ATUAL DO GIT
-
-    git pull
-    git init
-    git add .
-    git status
-    git commit -m ""
+//PAINEL LATERAL
+//https://developer.mapquest.com/documentation/mapquest-js/v1.3/examples/directions-control/
+//------------------------------- Configuração apache linux ---------------------------------------\\
+// https://www.youtube.com/watch?v=twLFmELptnQ - alterando deretório de execução
+// https://www.youtube.com/watch?v=l9uZ3gk0Kzk - Arrumando o mysql
+//https://pt.linkedin.com/pulse/instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-mysql-linux-mint-20-ubuntu-yenny-delgado?trk=pulse-article_more-articles_related-content-card
 
 
-    git branch -M main
-    git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
-    git push -u origin main
+//------------------------------- Gia De Commit terminal/git ---------------------------------------\\
 
-    CHAVE GIT HUB
-    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
-    */
+/* COMMIT ATUAL DO GIT
+
+git pull
+git init
+git add .
+git status
+git commit -m ""
+
+
+git branch -M main
+git remote add origin https://github.com/Rafa-Pinheiro/AllSystemAbura.git
+git push -u origin main
+
+CHAVE GIT HUB
+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
+*/
