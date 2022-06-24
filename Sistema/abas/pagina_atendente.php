@@ -50,78 +50,82 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             
         <div class="tab_container_area">
             <div class="tab_container" id="abaUm">
-                <form>
-                    <div class="form-group">
-                        <label class="titulos" id="tituloEnde">Endereço</label><br>
-                            <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
-                            <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
-                            <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
-                            <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
-                            <label class="titulos" id="tituloNomes">Campos de nome</label><br>
-                            <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
-                            <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                            <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required>
-                        
-                        <label class="titulos" id="tituloComs">Possui Comorbidades</label><br>
-                            <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
-                        
-                        <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
-                        <input type="submit" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
-                    </div>
-                </form>
-
-            <div class="tab_container" id="abaDois">
-                <form>
-                    <table>
-                        <tr>
-                            <td> 
-                                <select name="ambulancia" id="selectUm">
-                                    <option value="volvo">Tipo de Ambulância</option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td> <select name="ambulancia2" id="selectDois">
-                                    <option value="volvo">Qtd.Ocorrência</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                <form>
-            </div>
-        </div>
-
-        <!-- MODAL CONFIGS -->    
-        <img src="../assets/img/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">
-        
-        <div id="id01" class="w3-modal">
-            <div class="w3-modal-content w3-card-4 w3-animate-zoom">
-                <header class="w3-container w3-pale-green">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-pale-green w3-xlarge w3-display-topright">&times;</span>
-                    <h2>Opções</h2>
-                </header>
-                <div class="w3-bar w3-border-bottom">
-                    <button class="tablink w3-bar-item w3-button" onclick="abrir(event, 'telas')">Tela</button>
-                    <button class="tablink w3-bar-item w3-button" onclick="abrir(event, 'ajuste')">Ajustes</button>
-                    <button class="tablink w3-bar-item w3-button" onclick="abrir(event, 'contato')">Fale Conosco</button>
+                <div class="form-group">
+                    <label class="titulos" id="tituloEnde">Endereço</label><br>
+                        <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
+                        <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
+                        <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
+                        <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
+                        <label class="titulos" id="tituloNomes">Campos de nome</label><br>
+                        <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
+                        <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
+                        <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required>
+                    
+                    <label class="titulos" id="tituloComs">Possui Comorbidades</label><br>
+                        <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
+                    
+                    <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
+                    <input type="submit" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
                 </div>
-                <div id="telas" class="w3-container city">
-                    <i id="edit" class="fa-solid fa-pen-to-square"><br><br><h1 id="Aparencia">Aparência</h1></i>
-                    <div class="row">
+
+                <div class="tab_container" id="abaDois">
+                    <main>
+                        <table>
+                            <tr>
+                                <td> 
+                                    <select name="ambulancia" id="selectUm">
+                                        <option value="volvo">Tipo de Ambulância</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td> <select name="ambulancia2" id="selectDois">
+                                        <option value="volvo">Qtd.Ocorrência</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </main>
+                </div>
+
+            <!-- MODAL CONFIGS -->    
+            <img src="../assets/img/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">
+            
+            <div id="id01" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom">
+
+				<header class="w3-container w3-pale-green">
+					<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-pale-green w3-xlarge w3-display-topright">&times;</span>
+					<h2>Opções</h2>
+				</header>
+
+				<div class="w3-bar w3-border-bottom">
+					<button class="tablink w3-bar-item w3-button" onclick="abrir(event, 'telas')">Tela</button>
+					<button class="tablink w3-bar-item w3-button" onclick="abrir(event, 'ajuste')">Ajustes</button>
+					<button class="tablink w3-bar-item w3-button" onclick="abrir(event, 'contato')">Fale Conosco</button>
+				</div>
+
+				<div id="telas" class="w3-container city">
+					<i id="edit" class="fa-solid fa-pen-to-square"><br><br><h1 id="Aparencia">Aparência</h1></i>
+					<div class="row">
                         <input type="checkbox" class="checkbox2" id="chk2" name="idd"><label class="amplia_escurece">Ampliar Fontes</label>
-                    </div>
-                    <div class="row">
+					</div>
+
+					<div class="row">
                         <input type="checkbox" class="checkbox" id="chk" name="id">	<label class="amplia_escurece">Modo Escuro</label>
-                    </div>
-                    <script>
+					</div>
+
+					<script>
+
                         document.getElementsByClassName("tablink")[0].click();
+
                         function abrir(evt, cityName) {
                             var i, x, tablinks;
                             x = document.getElementsByClassName("city");
@@ -135,8 +139,9 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                             document.getElementById(cityName).style.display = "block";
                             evt.currentTarget.classList.add("w3-light-grey");
                         }
-                        function dark(){
-                            document.body.classList.toggle('dark');
+
+						function dark(){
+							document.body.classList.toggle('dark');
                             document.querySelector('#selectUm').classList.toggle('dark');
                             document.querySelector('#selectDois').classList.toggle('dark');
                             document.querySelector('#abaUm').classList.toggle('dark');
@@ -145,67 +150,73 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                             document.querySelector('#tituloEnde').classList.toggle('dark');
                             document.querySelector('#tituloNomes').classList.toggle('dark');
                             document.querySelector('#tituloComs').classList.toggle('dark');
-                            document.querySelector('#cidadeLocal').classList.toggle('dark');
-                            document.querySelector('#ruaLocal').classList.toggle('dark');
-                            document.querySelector('#bairroLocal').classList.toggle('dark');
-                            document.querySelector('#numeroLocal').classList.toggle('dark');
-                            document.querySelector('#nomeCompleto').classList.toggle('dark');
-                            document.querySelector('#nomeSocorrido').classList.toggle('dark');
-                            document.querySelector('#faixaEtaria').classList.toggle('dark');
-                            document.querySelector('#coms').classList.toggle('dark');
-                            document.querySelector('#descBasica').classList.toggle('dark');
-                            document.querySelector('#canto').classList.toggle('dark');
-                        }
-                        const chk = document.getElementById('chk')
-                        chk.addEventListener('change', () => {
-                            dark();
-                        })
-                        function ampli(){
-                            document.body.classList.toggle('ampli');
+							document.querySelector('#cidadeLocal').classList.toggle('dark');
+							document.querySelector('#ruaLocal').classList.toggle('dark');
+							document.querySelector('#bairroLocal').classList.toggle('dark');
+							document.querySelector('#numeroLocal').classList.toggle('dark');
+							document.querySelector('#nomeCompleto').classList.toggle('dark');
+							document.querySelector('#nomeSocorrido').classList.toggle('dark');
+							document.querySelector('#faixaEtaria').classList.toggle('dark');
+							document.querySelector('#coms').classList.toggle('dark');
+							document.querySelector('#descBasica').classList.toggle('dark');
+							document.querySelector('#canto').classList.toggle('dark');
+						}
+						const chk = document.getElementById('chk')
+						chk.addEventListener('change', () => {
+							dark();
+						})
+
+						function ampli(){
+							document.body.classList.toggle('ampli');
                             document.querySelector('#selectUm').classList.toggle('ampli');
                             document.querySelector('#selectDois').classList.toggle('ampli');
                             document.querySelector('#botaoCad').classList.toggle('ampli');
                             document.querySelector('#tituloEnde').classList.toggle('ampli');
                             document.querySelector('#tituloNomes').classList.toggle('ampli');
                             document.querySelector('#tituloComs').classList.toggle('ampli');
-                            document.querySelector('#cidadeLocal').classList.toggle('ampli');
-                            document.querySelector('#ruaLocal').classList.toggle('ampli');
-                            document.querySelector('#bairroLocal').classList.toggle('ampli');
-                            document.querySelector('#numeroLocal').classList.toggle('ampli');
-                            document.querySelector('#nomeCompleto').classList.toggle('ampli');
-                            document.querySelector('#nomeSocorrido').classList.toggle('ampli');
-                            document.querySelector('#faixaEtaria').classList.toggle('ampli');
-                            document.querySelector('#coms').classList.toggle('ampli');
-                            document.querySelector('#descBasica').classList.toggle('ampli');
-                            document.querySelector('#canto').classList.toggle('ampli');
-                        }
-                        const chk2 = document.getElementById('chk2')
-                        chk2.addEventListener('change', () => {
-                            ampli();
-                        });
-                    </script>
-                </div>
-                <div id="ajuste" class="w3-container city">
-                    <h1>Algum problema? Nos comunique!</h1>
-                    <p>Equipe: Abura</p>
-                    <p>Data de criação: 24/05/2022</p><br>
-                </div>
-                <div id="contato" class="w3-container city">
-                    <h2>Informações de Contato</h2>
-                    <i class="fa-solid fa-phone">Telefone:40028922 </i>
-                    <i class="fa-brands fa-whatsapp">Whatsapp:13982192428 </i>
-                    <i class="fa-solid fa-at">E-mail:abura@gmail.com </i>
-                </div>
-                <div class="w3-container w3-light-grey w3-padding">
-                    <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">fechar</button>
-                </div>
-		    </div>
-		</div>
-        <!-- FIM MODAL CONFIGS -->
+							document.querySelector('#cidadeLocal').classList.toggle('ampli');
+							document.querySelector('#ruaLocal').classList.toggle('ampli');
+							document.querySelector('#bairroLocal').classList.toggle('ampli');
+							document.querySelector('#numeroLocal').classList.toggle('ampli');
+							document.querySelector('#nomeCompleto').classList.toggle('ampli');
+							document.querySelector('#nomeSocorrido').classList.toggle('ampli');
+							document.querySelector('#faixaEtaria').classList.toggle('ampli');
+							document.querySelector('#coms').classList.toggle('ampli');
+							document.querySelector('#descBasica').classList.toggle('ampli');
+							document.querySelector('#canto').classList.toggle('ampli');
+						}
+						const chk2 = document.getElementById('chk2')
+						chk2.addEventListener('change', () => {
+							ampli();
+						});
+
+					</script>
+
+				    </div>
+					<div id="ajuste" class="w3-container city">
+						<h1>Algum problema? Nos comunique!</h1>
+						<p>Equipe: Abura</p>
+						<p>Data de criação: 24/05/2022</p><br>
+					</div>
+
+					<div id="contato" class="w3-container city">
+						<h2>Informações de Contato</h2>
+						<i class="fa-solid fa-phone">Telefone:40028922 </i>
+						<i class="fa-brands fa-whatsapp">Whatsapp:13982192428 </i>
+						<i class="fa-solid fa-at">E-mail:abura@gmail.com </i>
+					</div>
+
+					<div class="w3-container w3-light-grey w3-padding">
+						<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">fechar</button>
+					</div>
+			        </div>
+		        </div>
+            <!-- FIM MODAL CONFIGS -->
+        </div>
     </div>
 
 
-    <!-- SCRIPTS / AJAX -->
+    <!-- SCRIPTS -->
     <script>
 
         function addEndereco() {
@@ -260,7 +271,6 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             addDados();
         }
     </script>
-    <!-- FIM SCRIPTS / AJAX -->
 
 
     <!-- SCRIPT -->
