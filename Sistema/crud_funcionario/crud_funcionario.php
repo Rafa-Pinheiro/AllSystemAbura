@@ -16,17 +16,17 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+	<link rel="manifest" href="../assets/favicon/site.webmanifest">
+
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 
     <title>Funcionários</title>
-
-    <style>
-        input{
-            text-align: left !important;
-        }
-    </style>
 
 </head>
 
@@ -199,7 +199,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             var displayData="true";
 
             $.ajax({
-                url: 'display.php',
+                url: 'funcionalidades/display.php',
                 type: 'post',
                 data:{
                     displaySend: displayData
@@ -222,7 +222,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
           var cargoAdd=$('#cargo').val();
 
           $.ajax({
-            url: 'cadastrar.php',
+            url: 'funcionalidades/cadastrar.php',
             type: 'post',
             data:{
                 rmSend: rmAdd,
@@ -246,7 +246,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
         // Deleção
         function DeleteFun(deleteid) {
             $.ajax({
-                url: 'delete.php',
+                url: 'funcionalidades/delete.php',
                 type: 'post',
                 data:{
                     deletesend: deleteid
@@ -260,7 +260,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
         // Alteração
         function GetDetails(updateid) {
             $('#hiddendata').val(updateid);
-            $.post('update.php',{updateid:updateid},function(data, status){
+            $.post('funcionalidades/update.php',{updateid:updateid},function(data, status){
                 var funid = JSON.parse(data);
                 $('#updaterm').val(funid.cd_rm_funcionario);
                 $('#updatenome').val(funid.nm_funcionario);
@@ -289,7 +289,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
             var updatecargo = $('#updatecargo').val();
             var hiddendata = $('#hiddendata').val();
 
-            $.post('update.php',{
+            $.post('funcionalidades/update.php',{
                 updaterm: updaterm,
                 updatenome: updatenome,
                 updatecpf: updatecpf,

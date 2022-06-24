@@ -21,30 +21,24 @@
 	
     <title>Entrar</title>
 
-    <style>
-        input{
-            text-align: left !important;
-        }
-    </style>
-    
 </head>
 
-<body>
+<body id="body-index">
 
     <section>
         <div class="container mt-5 pt-5">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-8 col-lg-6 m-auto">
                     <div class="card border-0">
-                        <div class="card-body shadow">
-                            <img class="rounded mx-auto d-block" src="img/Renata-reduzida-branca.png" alt="" height="80px" width="140px">
+                        <div class="card-body shadow rounded-3">
+                            <img class="rounded mx-auto d-block" src="assets/img/Renata-reduzida-branca.png" alt="" height="80px" width="140px">
                             
                             <form action="conection/login.php" method="POST">
                                 <div class="form-group">
-                                    <input type="number" class="form-control my-3 py-2" id="input-rm-login" name="rm" placeholder="RM" required autofocus />
+                                    <input type="number" class="form-control my-3 py-2 inputs-login" name="rm" placeholder="RM" required autofocus />
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control my-3 py-2" id="input-senha-login" name="senha" placeholder="Senha" required autofocus />
+                                    <input type="password" class="form-control my-3 py-2 inputs-login" name="senha" placeholder="Senha" required autofocus />
                                 </div>
                                 <div class="text-center mt-3">
                                     <button type="submit" class="btn btn-login">Entrar</button>

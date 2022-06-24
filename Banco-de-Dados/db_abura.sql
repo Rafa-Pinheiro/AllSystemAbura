@@ -30,6 +30,7 @@ CREATE TABLE tb_atendimento(
     ds_descricao_atendente VARCHAR(80) NOT NULL,
     ds__descricao_medico LONGTEXT NULL,
     st_comorbidade ENUM('sim','nao') NULL,
+    tp_ambulancia CHAR(1) NULL,
     id_funcionario INT,
     FOREIGN KEY (id_funcionario) REFERENCES tb_funcionario(cd_funcionario)
 );
