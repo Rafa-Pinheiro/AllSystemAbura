@@ -1,5 +1,5 @@
 <?php
-include '../conection/conexao.php';
+include '../../conection/conexao.php';
 
 if (isset($_POST['displaySend'])) {
     $table='<div class="div-table mb-5"><table class="table table-striped mb-1">

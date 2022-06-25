@@ -1,6 +1,6 @@
 <!-- recebe os valores do textarea, nivel de prioridade do caso e tipo de ambulância  -->
 <?php
-include_once('../conection/conexao.php');
+include_once('../../conection/conexao.php');
 
     $descricaoDetalhada = $_POST['descricaoDetalhada'];
     $prioridade_caso = $_POST['prioridade_caso'];

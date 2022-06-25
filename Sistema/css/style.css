@@ -184,6 +184,14 @@ input{
     text-align: left !important;
 }
 
+.atendente-inputs {
+    border-color: #3e086d85;
+}
+
+.atendente-labels {
+    float: top;
+}
+
 .titulos{
     font-size: 18px;
 }

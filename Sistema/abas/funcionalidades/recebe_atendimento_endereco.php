@@ -1,5 +1,5 @@
 <?php
-include_once('../conection/conexao.php');
+include_once('../../conection/conexao.php');
 
 extract($_POST);
 

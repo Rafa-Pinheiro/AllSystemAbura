@@ -45,27 +45,67 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     </nav>
 
     <!-- FIM NAVIGATION -->    
-
-    <div class="container">
             
-        <div class="tab_container_area">
+        <div class="container mt-4">
             <div class="tab_container" id="abaUm">
+            <div class="col-md-10">
                 <div class="form-group">
-                    <label class="titulos" id="tituloEnde">Endereço</label><br>
-                        <input type="text" id="cidadeLocal" placeholder="Insira a cidade" required>
-                        <input type="text" id="bairroLocal" placeholder="Insira o bairro" required><br>
-                        <input type="text" id="ruaLocal" placeholder="Insira a rua" required>
-                        <input type="number" id="numeroLocal" placeholder="Informe o n°" required><br><br>
-                        <label class="titulos" id="tituloNomes">Campos de nome</label><br>
-                        <input type="text" id="nomeCompleto" placeholder="Nome completo"required><br>
-                        <input type="text" id="nomeSocorrido" placeholder="Nome do socorrido" ><br>
-                        <input type="number" id="faixaEtaria" placeholder="Digite a faixa etária do socorrido" style="width: 255px;" max="130" required>
-                    
-                    <label class="titulos" id="tituloComs">Possui Comorbidades</label><br>
-                        <input type="text" id="coms" placeholder="O Socorrido Possui Comorbidades?" style="width: 270px;" required><br>
-                    
-                    <textarea id="descBasica" placeholder="Insira a descrição" maxlength="80" required></textarea>
-                    <input type="submit" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
+                    <label class="titulos" id="tituloEnde">Informações Iniciais</label>
+                    <div class="row mb-5">
+                        <div class="col-lg col-md-6">
+                            <label class="atendente-labels" for="nomeCompleto">Nome completo</label>
+                            <input type="text" id="nomeCompleto" class="form-control atendente-inputs" placeholder="Insira o nome completo" required>
+                        </div>
+                        <div class="col-lg col-md-6 mt-2">
+                            <label class="atendente-labels" for="nomeSocorrido">Nome do socorrido</label>
+                            <input type="text" id="nomeSocorrido" class="form-control atendente-inputs" placeholder="Insira o nome do socorrido">
+                        </div>
+                        <div class="col-lg col-md mt-2">
+                            <label class="atendente-labels" for="faixaEtaria">Faixa etária do socorrido</label>
+                            <input type="number" id="faixaEtaria" class="form-control atendente-inputs" placeholder="Insira a faixa etária" required>
+                        </div>
+                    </div>
+
+                    <label class="titulos" id="tituloEnde">Endereço</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label class="atendente-labels" for="cidadeLocal">Cidade</label>
+                            <input type="text" id="cidadeLocal" class="form-control atendente-inputs" placeholder="Insira a cidade" required>
+                        </div>
+                        <div class="col-sm">
+                            <label class="atendente-labels" for="bairroLocal">Bairro</label>
+                            <input type="text" id="bairroLocal" class="form-control atendente-inputs" placeholder="Insira o bairro" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5 mt-2">
+                        <div class="col-sm">
+                            <label class="atendente-labels" for="ruaLocal">Rua</label>
+                            <input type="text" id="ruaLocal" class="form-control atendente-inputs" placeholder="Insira a rua" required>
+                        </div>
+                        <div class="col-sm">
+                            <label class="atendente-labels" for="numeroLocal">Número</label>
+                            <input type="number" id="numeroLocal" class="form-control atendente-inputs" placeholder="Insira o n°" required>
+                        </div>
+                    </div>
+                                  
+                    <label class="titulos" id="tituloComs">Detalhes</label>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label class="atendente-labels" for="coms">O socorrido possui comorbidades?</label>
+                            <input type="text" id="coms" class="form-control atendente-inputs" placeholder="Comorbidades" required>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-sm">
+                            <label class="atendente-labels" for="descBasica">Descrição</label>
+                            <textarea id="descBasica" class="form-control atendente-inputs" placeholder="Insira a descrição" maxlength="80" rows="4" required></textarea>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-success mt-4 px-5 py-2" onclick="addCadastroAtendimento();" id="botaoCad" value="Enviar">
+                </div>
                 </div>
 
                 <div class="tab_container" id="abaDois">
@@ -96,7 +136,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
                 </div>
 
             <!-- MODAL CONFIGS -->    
-            <img src="../assets/img/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Avatar" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">
+            <img src="../assets/img/modal.gif" onclick="document.getElementById('id01').style.display='block'" alt="Engrenagem" id="image" style="display: block; width: 150px; height: 150px; margin-top: -20px; margin-left: 100%;">
             
             <div id="id01" class="w3-modal">
 			<div class="w3-modal-content w3-card-4 w3-animate-zoom">
@@ -113,7 +153,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 				</div>
 
 				<div id="telas" class="w3-container city">
-					<i id="edit" class="fa-solid fa-pen-to-square"><br><br><h1 id="Aparencia">Aparência</h1></i>
+					<i id="edit" class="fa-solid fa-pen-to-square"><h1 id="Aparencia">Aparência</h1></i>
 					<div class="row">
                         <input type="checkbox" class="checkbox2" id="chk2" name="idd"><label class="amplia_escurece">Ampliar Fontes</label>
 					</div>
@@ -196,7 +236,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 					<div id="ajuste" class="w3-container city">
 						<h1>Algum problema? Nos comunique!</h1>
 						<p>Equipe: Abura</p>
-						<p>Data de criação: 24/05/2022</p><br>
+						<p>Data de criação: 24/05/2022</p>
 					</div>
 
 					<div id="contato" class="w3-container city">
@@ -213,8 +253,6 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 		        </div>
             <!-- FIM MODAL CONFIGS -->
         </div>
-    </div>
-
 
     <!-- SCRIPTS -->
     <script>
