@@ -17,71 +17,85 @@ function abrir(evt, cityName) {
 //FIM CÓDIGO MODAL
 
 window.onload = function() {
-        //CONEXÃO COM O BANCO DE DADOS\\
-        const { Connection, Request } = require("tedious");
-
-        // Create connection to database
-        const config = {
-            authentication: {
-                options: {
-                    userName: "rafa", // update me
-                    password: "usbw" // update me
-                },
-                type: "default"
-            },
-            server: "localhost", // update me
-            options: {
-                database: "db_abura", //update me
-                encrypt: true
-            }
-        };
-
-        const connection = new Connection(config);
-
-        // Attempt to connect and execute queries if connection goes through
-        connection.on("connect", err => {
-            if (err) {
-                console.error(err.message);
-            } else {
-                queryDatabase();
-            }
-        });
-
-        connection.connect();
-
-        function queryDatabase() {
-            console.log("Reading rows from the Table...");
-
-            filtrar.addEventListener("click", function(tpAmb) {
-                const request = new Request(
-                    `SELECT * FROM tb_ocorrencia WHERE tp_ambulancia =` + tpAmb.value,
-                    (err, rowCount) => {
-                        if (err) {
-                            console.error(err.message);
-                        } else {
-                            console.log(`${rowCount} row(s) returned`);
-                            chamado = '${rowCount}';
-                        }
-                    }
-                );
-                //MOSTRANDO O RESULTADO NO CONSOLE\\
-                request.on("row", columns => {
-                    columns.forEach(column => {
-                        console.log("%s\t%s", column.metadata.colName, column.value);
-                    });
-                });
-
-                connection.execSql(request);
-            })
-        }
 
         //VARIAVEIS GLOBAIS\\
-        const tpAmb = document.getElementById(uma);
-        const filtrar = document.getElementById(filter);
-        var chamado;
-        var uma = ['Rua Manoel Ribeiro dos Santos,101, Itanhaém, SP', 'Avenida Estados Unidos, 859, Jardim São fernando, Itanhaém SP', 'Rua Oswaldo Cruz, 277, Boqueirão, Santos, SP'];
-        var chamado = "Avenida Paula Ferreira, 3108, Itanhaém, SP";
-        const hospitais = [{
+        L.mapquest.key = 'lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh'; //objeto chave mapquest
+        const tpAmb = document.getElementById('uma');
+
+        tpAmb.addEventListener("change", function() {
+            console.log("chamou" + tpAmb.value);
+            if (tpAmb != "") {
+                switch (tpAmb.value) {
+                    case "A":
+                        let i = 0;
+                        for (i; i < length(chamado); i++) {
+                            L.mapquest.geocoding().geocode(chamado[i].logradouro + ',' + chamado[i].numero + "," + chamado[i].bairro + ',' + chamado[i].cidade + ',' + chamado[i].cep + ',' + chamado[i].estado + ',' + chamado[i].pais, L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map));
+                        }
+                        break;
+                    case "B":
+                        break;
+                    case "C":
+                        break;
+                    case "D":
+                        break;
+                    default:
+                        alert();
+                }
+            }
+
+
+            // L.mapquest.geocoding().geocode(chamado, createMap);
+        });
+
+        var chamado = [{
+                // nome: "Maycon",
+                logradouro: "Rua Manoel Ribeiro dos Santos",
+                numero: "1163",
+                bairro: "Gaivota",
+                cidade: "Itanhaém",
+                cep: "11740-000",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+
+            {
+                nome: "Roberta",
+                logradouro: "Rua José Ferreira da Rocha",
+                numero: "627",
+                bairro: "Vila Peruibe",
+                cidade: "Peruíbe",
+                cep: "11750-000",
+                estado: 'SP',
+                pais: 'Brasil'
+            }
+        ];
+
+
+        var ambulancia = [{
+                Tipo: "A",
+                logradouro: "Rua Rio Grande do Norte",
+                numero: "1163",
+                bairro: "Gaivota",
+                cidade: "Itanhaém",
+                cep: "11740-000",
+                estado: 'SP',
+                pais: 'Brasil'
+            },
+
+            {
+                Tipo: "trocar",
+                logradouro: "trocar",
+                numero: "trocar",
+                bairro: "trocar",
+                cidade: "trocar",
+                cep: "trocar",
+                estado: 'trocar',
+                pais: 'trocar'
+            }
+        ];
+
+
+        var hospitais = [{
                 nome: "Hospital Regional de Itanhaém",
                 logradouro: "Avenida Rui Barbosa",
                 numero: "541",
@@ -181,32 +195,32 @@ window.onload = function() {
                 estado: 'SP',
                 pais: 'Brasil'
             }
-        ]
+        ];
         console.log(hospitais[0]);
 
 
         // FUNÇÃO QUE RETORNA OS DADOS DA ROTA
-        var local = {
-            "locations": [
-                uma[0],
-                hospitais[0], //ENDEREÇOS DA MATRIZ
-                chamado
-            ],
-            "options": {
-                "allToAll": true
-            }
-        };
-        var rotas = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=' + JSON.stringify(local);
+        // var local = {
+        //     "locations": [
+        //         uma[0],
+        //         hospitais[0], //ENDEREÇOS DA MATRIZ
+        //         chamado
+        //     ],
+        //     "options": {
+        //         "allToAll": true
+        //     }
+        // };
+        // var rotas = 'http://www.mapquestapi.com/directions/v2/routematrix?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=' + JSON.stringify(local);
 
 
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", rotas, false); // false for synchronous request
-        xmlHttp.send(null);
-        var retorno = (JSON.parse(xmlHttp.responseText)); //LINHA DE ARMAZENAMENTO DO RETORNO DO TEMPO JÁ EM JSON
-        var hor = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) / 60);
-        var min = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) - (hor * 60));
-        var sec = (((retorno.time[0][1] + retorno.time[1][0]) / 60) - (min + (hor * 60))) * 60;
-        console.log(retorno, hor + ':' + min + ":" + sec);
+        // var xmlHttp = new XMLHttpRequest();
+        // xmlHttp.open("GET", rotas, false); // false for synchronous request
+        // xmlHttp.send(null);
+        // var retorno = (JSON.parse(xmlHttp.responseText)); //LINHA DE ARMAZENAMENTO DO RETORNO DO TEMPO JÁ EM JSON
+        // var hor = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) / 60);
+        // var min = parseInt(((retorno.time[0][1] + retorno.time[1][0]) / 60) - (hor * 60));
+        // var sec = (((retorno.time[0][1] + retorno.time[1][0]) / 60) - (min + (hor * 60))) * 60;
+        // console.log(retorno, hor + ':' + min + ":" + sec);
 
 
         /*
@@ -239,28 +253,28 @@ window.onload = function() {
         // console.log(chamado);
         // console.log(JSON.parse(localStorage.endereco)); de String para Objeto
 
-        //FUNÇÃO DE BUSCA DE HOSPITAIS
-        let hos = {
-            "origin": {
+        // //FUNÇÃO DE BUSCA DE HOSPITAIS
+        // let hos = {
+        //     "origin": {
 
-                "latLng": {
-                    "lat": 40.41194686894974,
-                    "lng": -3.70598276333092
-                }
-            },
-            "options": {
-                "maxMatches": 40,
-                "radius": 20,
-                "units": "k"
-            }
-        };
-        let sLocais = "http://www.mapquestapi.com/search/v2/radius?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=" + JSON.stringify(hos);
-        var xmlHttp2 = new XMLHttpRequest();
-        xmlHttp2.open("GET", sLocais, false); // false for synchronous request
-        xmlHttp2.send(null);
-        var retornoS = (JSON.parse(xmlHttp2.responseText));
-        console.log(retornoS);
-        L.mapquest.key = 'lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh'; //objeto chave mapquest
+        //         "latLng": {
+        //             "lat": 40.41194686894974,
+        //             "lng": -3.70598276333092
+        //         }
+        //     },
+        //     "options": {
+        //         "maxMatches": 40,
+        //         "radius": 20,
+        //         "units": "k"
+        //     }
+        // };
+        // let sLocais = "http://www.mapquestapi.com/search/v2/radius?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=" + JSON.stringify(hos);
+        // var xmlHttp2 = new XMLHttpRequest();
+        // xmlHttp2.open("GET", sLocais, false); // false for synchronous request
+        // xmlHttp2.send(null);
+        // var retornoS = (JSON.parse(xmlHttp2.responseText));
+        // console.log(retornoS);
+
 
         var markerSize = {
             'sm': [28, 35],

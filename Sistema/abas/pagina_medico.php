@@ -41,7 +41,7 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
     <!-- NAVIGATION -->
     <nav class="navbar navbar-expand navbar-light navbar-ocorrencia">
         <a class="navbar-brand" href="#">
-            <img src="../assets/axolote.png" width="66" height="48" alt="logo-abura">
+            <img src="../assets/img/axolote.png" width="66" height="48" alt="logo-abura">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
         <a href="../conection/encerrar_session.php"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">SAIR</button></a>
