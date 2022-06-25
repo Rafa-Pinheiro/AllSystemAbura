@@ -3,7 +3,7 @@
 //conexao banco
 
 $host = "localhost";
-$usuario = "root";
+$usuario = "rafa";
 $senha = "usbw";
 $bd = "db_abura";
 

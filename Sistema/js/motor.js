@@ -23,15 +23,55 @@ window.onload = function() {
         const tpAmb = document.getElementById('uma');
 
         tpAmb.addEventListener("change", function() {
-            console.log("chamou" + tpAmb.value);
             if (tpAmb != "") {
                 switch (tpAmb.value) {
                     case "A":
+                        //VARIAVEIS LOCAIS && INICIALIZADAS\\
+                        //Variavel que define chamados e hospitais
                         let i = 0;
-                        L.mapquest.geocoding().geocode(chamado[i].logradouro + ',' + chamado[i].numero + "," + chamado[i].bairro + ',' + chamado[i].cidade + ',' + chamado[i].cep + ',' + chamado[i].estado + ',' + chamado[i].pais, createMap);
-                        for (i = 1; i <= chamado.length; i++) {
-                            console.log("VAAAAAI");
-                            L.mapquest.geocoding().geocode(chamado[0].logradouro + ',' + chamado[0].numero + "," + chamado[0].bairro + ',' + chamado[0].cidade + ',' + chamado[0].cep + ',' + chamado[0].estado + ',' + chamado[0].pais, L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map));
+
+                        let j = 0;
+
+                        //Variavel geocoding Mapquest
+                        let geo = L.mapquest.geocoding();
+
+                        //Variavel que define o endereço das ambulancias;
+                        let auxAmb;
+
+
+                        // for (i = 1; i < auxAmb.length; i++) {
+                        //     geo.geocode(auxAmb[i], addTo(map));
+                        // }
+
+                        //Estrutura que define qual ambulancia está disponivel
+                        function vai(ambulancia) {
+                            let aux;
+                            let aux2;
+                            for (i = 0; i < ambulancia.length; i++) {
+                                if (i == 0 && ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
+                                    aux = ambulancia[j].logradouro + ', ' + ambulancia[j].numero + ", " + ambulancia[j].bairro + ', ' + ambulancia[j].cidade + ', ' + ambulancia[j].cep + ', ' + ambulancia[j].estado + ', ' + ambulancia[j].pais;
+                                } else if (ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
+                                    j = i;
+                                    alert(j);
+                                    aux2 = ambulancia[j].logradouro + ',' + ambulancia[j].numero + "," + ambulancia[j].bairro + ',' + ambulancia[j].cidade + ',' + ambulancia[j].cep + ',' + ambulancia[j].estado + ',' + ambulancia[j].pais;
+                                    aux.push(aux2.value);
+                                }
+                            }
+                            console.log(aux);
+                            aux = [aux.value, ""];
+                        }
+                        vai(ambulancia);
+
+                        geo.geocode(auxAmb[0], createMap);
+
+                        //Estrutura que define qual chamado é do tipo
+                        function chamadasA() {
+                            for (i; i < chamado.length; i++) {
+                                if (chamado[i].Tipo == "A") {
+                                    auxCha.push(chamado[i]);
+                                }
+                            }
+                            return auxCha;
                         }
                         break;
                     case "B":
@@ -74,6 +114,7 @@ window.onload = function() {
 
 
         var ambulancia = [{
+                Status: "Disponível",
                 Tipo: "A",
                 logradouro: "Rua Rio Grande do Norte",
                 numero: "1163",
@@ -85,7 +126,8 @@ window.onload = function() {
             },
 
             {
-                Tipo: "trocar",
+                Status: "Disponível",
+                Tipo: "A",
                 logradouro: "trocar",
                 numero: "trocar",
                 bairro: "trocar",
@@ -198,7 +240,6 @@ window.onload = function() {
                 pais: 'Brasil'
             }
         ];
-        console.log(hospitais[0]);
 
 
         // FUNÇÃO QUE RETORNA OS DADOS DA ROTA
@@ -327,7 +368,7 @@ window.onload = function() {
                 //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
         });
         // Geocode three locations, then call the createMap callback
-        L.mapquest.geocoding().geocode(chamado, createMap);
+        L.mapquest.geocoding().geocode(auxAmb[0], createMap);
 
 
         function createMap(error, response) {
@@ -340,7 +381,7 @@ window.onload = function() {
                 center: [latLng.lat, latLng.lng],
                 zoom: 12
             });
-            L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map);
+            L.marker([latLng.lat, latLng.lng], { icon: markerviatura }).addTo(map);
         }
         // L.mapquest.directions().setLayerOptions({
         //     startMarker: {
