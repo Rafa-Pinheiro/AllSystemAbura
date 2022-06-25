@@ -28,8 +28,10 @@ window.onload = function() {
                 switch (tpAmb.value) {
                     case "A":
                         let i = 0;
-                        for (i; i < length(chamado); i++) {
-                            L.mapquest.geocoding().geocode(chamado[i].logradouro + ',' + chamado[i].numero + "," + chamado[i].bairro + ',' + chamado[i].cidade + ',' + chamado[i].cep + ',' + chamado[i].estado + ',' + chamado[i].pais, L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map));
+                        L.mapquest.geocoding().geocode(chamado[i].logradouro + ',' + chamado[i].numero + "," + chamado[i].bairro + ',' + chamado[i].cidade + ',' + chamado[i].cep + ',' + chamado[i].estado + ',' + chamado[i].pais, createMap);
+                        for (i = 1; i <= chamado.length; i++) {
+                            console.log("VAAAAAI");
+                            L.mapquest.geocoding().geocode(chamado[0].logradouro + ',' + chamado[0].numero + "," + chamado[0].bairro + ',' + chamado[0].cidade + ',' + chamado[0].cep + ',' + chamado[0].estado + ',' + chamado[0].pais, L.marker([latLng.lat, latLng.lng], { icon: markeracidente }).addTo(map));
                         }
                         break;
                     case "B":
