@@ -22,6 +22,7 @@ window.onload = function() {
         L.mapquest.key = 'lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh'; //objeto chave mapquest
         const tpAmb = document.getElementById('uma');
 
+
         tpAmb.addEventListener("change", function() {
             if (tpAmb != "") {
                 switch (tpAmb.value) {
@@ -44,25 +45,28 @@ window.onload = function() {
                         // }
 
                         //Estrutura que define qual ambulancia está disponivel
-                        function vai(ambulancia) {
-                            let aux;
-                            let aux2;
-                            for (i = 0; i < ambulancia.length; i++) {
-                                if (i == 0 && ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
-                                    aux = ambulancia[j].logradouro + ', ' + ambulancia[j].numero + ", " + ambulancia[j].bairro + ', ' + ambulancia[j].cidade + ', ' + ambulancia[j].cep + ', ' + ambulancia[j].estado + ', ' + ambulancia[j].pais;
-                                } else if (ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
-                                    j = i;
-                                    alert(j);
-                                    aux2 = ambulancia[j].logradouro + ',' + ambulancia[j].numero + "," + ambulancia[j].bairro + ',' + ambulancia[j].cidade + ',' + ambulancia[j].cep + ',' + ambulancia[j].estado + ',' + ambulancia[j].pais;
-                                    aux.push(aux2.value);
-                                }
-                            }
-                            console.log(aux);
-                            aux = [aux.value, ""];
-                        }
-                        vai(ambulancia);
 
-                        geo.geocode(auxAmb[0], createMap);
+
+                        const enderecoAmblanciaA =
+                            ambulancia.map((adress) => {
+                                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                                if (Status == "Disponível" && Tipo == "A") {
+                                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                                }
+                            })
+                            // for (i = 0; i < ambulancia.length; i++) {
+                            //     if (i == 0 && ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
+                            //         aux = ambulancia[j].logradouro + ', ' + ambulancia[j].numero + ", " + ambulancia[j].bairro + ', ' + ambulancia[j].cidade + ', ' + ambulancia[j].cep + ', ' + ambulancia[j].estado + ', ' + ambulancia[j].pais;
+                            //     } else if (ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
+                            //         j = i;
+                            //         alert(j);
+                            //         aux2 = ambulancia[j].logradouro + ',' + ambulancia[j].numero + "," + ambulancia[j].bairro + ',' + ambulancia[j].cidade + ',' + ambulancia[j].cep + ',' + ambulancia[j].estado + ',' + ambulancia[j].pais;
+                            //         aux.push(aux2.value);
+                            //     }
+                            // }
+                        geo.geocode(enderecoAmblanciaA[0], createMap);
+
+                        // geo.geocode(auxAmb[0], createMap);
 
                         //Estrutura que define qual chamado é do tipo
                         function chamadasA() {
@@ -126,7 +130,7 @@ window.onload = function() {
             },
 
             {
-                Status: "Disponível",
+                Status: "Indisponível",
                 Tipo: "A",
                 logradouro: "trocar",
                 numero: "trocar",
@@ -368,7 +372,7 @@ window.onload = function() {
                 //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
         });
         // Geocode three locations, then call the createMap callback
-        L.mapquest.geocoding().geocode(auxAmb[0], createMap);
+        // L.mapquest.geocoding().geocode(auxAmb[0], createMap);
 
 
         function createMap(error, response) {
