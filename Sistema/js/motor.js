@@ -17,83 +17,9 @@ function abrir(evt, cityName) {
 //FIM CÓDIGO MODAL
 
 window.onload = function() {
-
         //VARIAVEIS GLOBAIS\\
         L.mapquest.key = 'lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh'; //objeto chave mapquest
-        const tpAmb = document.getElementById('uma');
-
-
-        tpAmb.addEventListener("change", function() {
-            if (tpAmb != "") {
-                switch (tpAmb.value) {
-                    case "A":
-                        //VARIAVEIS LOCAIS && INICIALIZADAS\\
-                        //Variavel que define chamados e hospitais
-                        let i = 0;
-
-                        let j = 0;
-
-                        //Variavel geocoding Mapquest
-                        let geo = L.mapquest.geocoding();
-
-                        //Variavel que define o endereço das ambulancias;
-                        let auxAmb;
-
-
-                        // for (i = 1; i < auxAmb.length; i++) {
-                        //     geo.geocode(auxAmb[i], addTo(map));
-                        // }
-
-                        //Estrutura que define qual ambulancia está disponivel
-
-
-                        const enderecoAmblanciaA =
-                            ambulancia.map((adress) => {
-                                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
-                                if (Status == "Disponível" && Tipo == "A") {
-                                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
-                                }
-                            })
-                            // for (i = 0; i < ambulancia.length; i++) {
-                            //     if (i == 0 && ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
-                            //         aux = ambulancia[j].logradouro + ', ' + ambulancia[j].numero + ", " + ambulancia[j].bairro + ', ' + ambulancia[j].cidade + ', ' + ambulancia[j].cep + ', ' + ambulancia[j].estado + ', ' + ambulancia[j].pais;
-                            //     } else if (ambulancia[i].Tipo == "A" && ambulancia[i].Status == "Disponível") {
-                            //         j = i;
-                            //         alert(j);
-                            //         aux2 = ambulancia[j].logradouro + ',' + ambulancia[j].numero + "," + ambulancia[j].bairro + ',' + ambulancia[j].cidade + ',' + ambulancia[j].cep + ',' + ambulancia[j].estado + ',' + ambulancia[j].pais;
-                            //         aux.push(aux2.value);
-                            //     }
-                            // }
-                        geo.geocode(enderecoAmblanciaA[0], createMap);
-
-                        // geo.geocode(auxAmb[0], createMap);
-
-                        //Estrutura que define qual chamado é do tipo
-                        function chamadasA() {
-                            for (i; i < chamado.length; i++) {
-                                if (chamado[i].Tipo == "A") {
-                                    auxCha.push(chamado[i]);
-                                }
-                            }
-                            return auxCha;
-                        }
-                        break;
-                    case "B":
-                        break;
-                    case "C":
-                        break;
-                    case "D":
-                        break;
-                    default:
-                        alert();
-                }
-            }
-
-
-            // L.mapquest.geocoding().geocode(chamado, createMap);
-        });
-
-        var chamado = [{
+        var ocorrencia = [{
                 // nome: "Maycon",
                 logradouro: "Rua Manoel Ribeiro dos Santos",
                 numero: "1163",
@@ -141,7 +67,6 @@ window.onload = function() {
                 pais: 'trocar'
             }
         ];
-
 
         var hospitais = [{
                 nome: "Hospital Regional de Itanhaém",
@@ -244,6 +169,112 @@ window.onload = function() {
                 pais: 'Brasil'
             }
         ];
+        const tpAmb = document.getElementById('uma');
+        //futuramente gerar campo na tabela para incluir endereço concatenado em cada objeto
+        const enderecoHospitais =
+            ambulancia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais } = adress;
+                return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`
+            });
+        const enderecoAmblanciaA =
+            ambulancia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "A") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+        const enderecoAmblanciaB =
+            ambulancia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "B") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+
+        const enderecoAmblanciaC =
+            ambulancia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "C") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+        const enderecoAmblanciaD =
+            ambulancia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "D") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+
+        const enderecoOA =
+            //DEPOIS IPLEMENTAR A OCORRENCIA4D = OSGT (OCORRENCIA, STATUS, GRAU, TIPO)
+            ocorrencia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "A") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+        const enderecoOB =
+            ocorrencia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "B") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+        const enderecoOC =
+            ocorrencia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "C") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+        const enderecoOD =
+            ocorrencia.map((adress) => {
+                const { logradouro, numero, bairro, cidade, cep, estado, pais, Status, Tipo } = adress;
+                if (Status == "Disponível" && Tipo == "D") {
+                    return `${logradouro}, ${numero} - ${bairro}, ${cidade} - ${cep} - ${estado}, ${pais}`;
+                }
+            });
+
+
+
+        //CHAMAR FUNÇÕES\\
+        L.mapquest.geocoding().geocode("São Paulo, SP - Brazil", createMap);
+
+
+        function createMap(error, response) {
+            // Initialize the Map
+            let teste = response;
+            // var popup = L.popup();
+            let latLng = response.results[0].locations[0].latLng;
+            var map = L.mapquest.map('map', {
+                layers: L.mapquest.tileLayer('map'),
+                center: [latLng.lat, latLng.lng],
+                zoom: 12
+            });
+            // L.marker([latLng.lat, latLng.lng], { icon: markerviatura }).addTo(map);
+        }
+
+
+        tpAmb.addEventListener("change", function() {
+            if (tpAmb != "") {
+                switch (tpAmb.value) {
+                    case "A":
+                        break;
+                    case "B":
+                        break;
+                    case "C":
+                        break;
+                    case "D":
+                        break;
+                    default:
+                        alert();
+                }
+            }
+
+
+            // L.mapquest.geocoding().geocode(chamado, createMap);
+        });
 
 
         // FUNÇÃO QUE RETORNA OS DADOS DA ROTA
@@ -372,21 +403,7 @@ window.onload = function() {
                 //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
         });
         // Geocode three locations, then call the createMap callback
-        // L.mapquest.geocoding().geocode(auxAmb[0], createMap);
 
-
-        function createMap(error, response) {
-            // Initialize the Map
-            let teste = response;
-            // var popup = L.popup();
-            let latLng = response.results[0].locations[0].latLng;
-            var map = L.mapquest.map('map', {
-                layers: L.mapquest.tileLayer('map'),
-                center: [latLng.lat, latLng.lng],
-                zoom: 12
-            });
-            L.marker([latLng.lat, latLng.lng], { icon: markerviatura }).addTo(map);
-        }
         // L.mapquest.directions().setLayerOptions({
         //     startMarker: {
         //         icon: markerviatura
