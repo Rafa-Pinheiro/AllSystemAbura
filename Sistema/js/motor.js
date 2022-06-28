@@ -169,7 +169,59 @@ window.onload = function() {
                 pais: 'Brasil'
             }
         ];
-        const tpAmb = document.getElementById('uma');
+
+        var featureGroup = generateMarkersFeatureGroup(response);
+
+        var markerSize = {
+            'sm': [28, 35],
+            'md': [35, 44],
+            'lg': [42, 53]
+        };
+        var markerAnchor = {
+            'sm': [14, 35],
+            'md': [17, 44],
+            'lg': [21, 53]
+        };
+        var markerPopupAnchor = {
+            'sm': [1, -35],
+            'md': [1, -44],
+            'lg': [2, -53]
+        };
+
+        var markeracidente = L.icon({
+            // https://www.flaticon.com/br/icone-gratis/ligacao-de-emergencia_2991158?term=emergencia&related_id=2991158
+            iconUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991158.png',
+            //<a href="https://www.flaticon.com/br/icones-gratis/emergencia" title="emergência ícones">Emergência ícones criados por Freepik - Flaticon</a>
+            iconRetinaUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991158.png',
+            iconSize: markerSize.sm,
+            iconAnchor: markerAnchor.sm,
+            popupAnchor: markerPopupAnchor.sm
+                //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/emergencia" title="emergência ícones">Emergência ícones criados por Freepik - Flaticon</a>
+        });
+
+        var markerviatura = L.icon({
+            //https://www.flaticon.com/br/icone-premium/ambulancia_2991996?term=ambulanci&page=1&position=14&page=1&position=14&related_id=2991996&origin=search
+            iconUrl: 'https://cdn-icons.flaticon.com/png/512/2991/premium/2991996.png?token=exp=1653614934~hmac=a8024458bd7491e7c75a234b26e04754',
+            //<a href="https://www.flaticon.com/br/icones-gratis/ambulancia" title="ambulância ícones">Ambulância ícones criados por vectorsmarket15 - Flaticon</a>
+            iconRetinaUrl: 'https://cdn-icons.flaticon.com/png/512/2991/premium/2991996.png?token=exp=1653614934~hmac=a8024458bd7491e7c75a234b26e04754',
+            iconSize: markerSize.md,
+            iconAnchor: markerAnchor.md,
+            popupAnchor: markerPopupAnchor.md
+                //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/ambulancia" title="ambulância ícones">Ambulância ícones criados por vectorsmarket15 - Flaticon</a>
+        });
+
+        var markerhospital = L.icon({
+            //https://www.flaticon.com/br/icone-premium/hospital_2866287?term=hospital&page=1&position=2&page=1&position=2&related_id=2866287&origin=search
+            iconUrl: 'https://cdn-icons.flaticon.com/png/512/2866/premium/2866287.png?token=exp=1653614878~hmac=a0e8129990e997bfa68bd9e57dfa664e',
+            //<a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
+            iconRetinaUrl: 'https://cdn-icons.flaticon.com/png/512/2866/premium/2866287.png?token=exp=1653614878~hmac=a0e8129990e997bfa68bd9e57dfa664e',
+            iconSize: markerSize.md,
+            iconAnchor: markerAnchor.md,
+            popupAnchor: markerPopupAnchor.md
+                //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
+        });
+
+        const tpAmb = document.getElementById('ocorrencia');
         //futuramente gerar campo na tabela para incluir endereço concatenado em cada objeto
         const enderecoHospitais =
             ambulancia.map((adress) => {
@@ -236,12 +288,9 @@ window.onload = function() {
                 }
             });
 
+        //FUNÇÕES\\
 
-
-        //CHAMAR FUNÇÕES\\
-        L.mapquest.geocoding().geocode("São Paulo, SP - Brazil", createMap);
-
-
+        //CREATEMAP\\
         function createMap(error, response) {
             // Initialize the Map
             let teste = response;
@@ -253,7 +302,66 @@ window.onload = function() {
                 zoom: 12
             });
             // L.marker([latLng.lat, latLng.lng], { icon: markerviatura }).addTo(map);
-        }
+        };
+
+        //GRUPO DE LOCALIZAÇÕES\\
+        // Generate the feature group containing markers from the geocoded locations
+        function generateMarkersFeatureGroup(response) {
+            var group = [];
+            for (var i = 0; i < response.results.length; i++) {
+                var location = response.results[i].locations[0];
+                var locationLatLng = location.latLng;
+
+                // Create a marker for each location\\
+                //    Forma Antiga (Rodolfo)
+                //         var qual = (i == 0) ? markeracidente : markerviatura
+                // var marker = L.marker(locationLatLng, {
+                // icon: acidente
+                // })
+                // .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
+
+                // group.push(marker);
+                //            end\\
+                var qual = function() {
+                    switch (response.results[i].location) {
+                        case chamado:
+                            markeracidente;
+                            break;
+                        case viatura:
+                            markerviatura;
+                            break;
+                        case hospital:
+                            markerhospital;
+                            break;
+                        default:
+                            alert("Ocorreu um erroo na definição do endereço no mapa! Por favor, tente novamente.");
+                            break;
+                    };
+                }
+                var marker = L.marker(locationLatLng, {
+                        icon: qual
+                    })
+                    .bindPopup(location.adminArea5 + ', ' + location.adminArea3); //CLIQUE COM O TEMPO, ALTERAR AQUI
+
+                group.push(marker);
+                //end\\
+            }
+            return L.featureGroup(group);
+        };
+
+
+        //CHAMAR FUNÇÕES\\
+        L.mapquest.geocoding().geocode("Brazil", createMap);
+
+
+
+
+
+
+
+        // Add markers to the map and zoom to the features
+        featureGroup.addTo(map);
+        map.fitBounds(featureGroup.getBounds());
 
 
         tpAmb.addEventListener("change", function() {
@@ -318,6 +426,7 @@ window.onload = function() {
         //     }
         // }
         //FIM DA ESTRUTURA FOR DO CHAMADO
+        //comi o cú de quem ta lendo;
 
         //   var chamado = JSON.parse(localStorage.endereco).logradouro + ", " + JSON.parse(localStorage.endereco).numero + ", " + JSON.parse(localStorage.endereco).bairro + ", " + JSON.parse(localStorage.endereco).cidade + ", " + JSON.parse(localStorage.endereco).estado + ", " + JSON.parse(localStorage.endereco).pais; *TEMPORARIO*
 
@@ -331,77 +440,9 @@ window.onload = function() {
         // console.log(chamado);
         // console.log(JSON.parse(localStorage.endereco)); de String para Objeto
 
-        // //FUNÇÃO DE BUSCA DE HOSPITAIS
-        // let hos = {
-        //     "origin": {
-
-        //         "latLng": {
-        //             "lat": 40.41194686894974,
-        //             "lng": -3.70598276333092
-        //         }
-        //     },
-        //     "options": {
-        //         "maxMatches": 40,
-        //         "radius": 20,
-        //         "units": "k"
-        //     }
-        // };
-        // let sLocais = "http://www.mapquestapi.com/search/v2/radius?key=lYtoHgx2sLGH5pRJqqCgomNI1xQuUJfh&json=" + JSON.stringify(hos);
-        // var xmlHttp2 = new XMLHttpRequest();
-        // xmlHttp2.open("GET", sLocais, false); // false for synchronous request
-        // xmlHttp2.send(null);
-        // var retornoS = (JSON.parse(xmlHttp2.responseText));
-        // console.log(retornoS);
 
 
-        var markerSize = {
-            'sm': [28, 35],
-            'md': [35, 44],
-            'lg': [42, 53]
-        };
-        var markerAnchor = {
-            'sm': [14, 35],
-            'md': [17, 44],
-            'lg': [21, 53]
-        };
-        var markerPopupAnchor = {
-            'sm': [1, -35],
-            'md': [1, -44],
-            'lg': [2, -53]
-        };
 
-        var markeracidente = L.icon({
-            // https://www.flaticon.com/br/icone-gratis/ligacao-de-emergencia_2991158?term=emergencia&related_id=2991158
-            iconUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991158.png',
-            //<a href="https://www.flaticon.com/br/icones-gratis/emergencia" title="emergência ícones">Emergência ícones criados por Freepik - Flaticon</a>
-            iconRetinaUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991158.png',
-            iconSize: markerSize.sm,
-            iconAnchor: markerAnchor.sm,
-            popupAnchor: markerPopupAnchor.sm
-                //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/emergencia" title="emergência ícones">Emergência ícones criados por Freepik - Flaticon</a>
-        });
-
-        var markerviatura = L.icon({
-            //https://www.flaticon.com/br/icone-premium/ambulancia_2991996?term=ambulanci&page=1&position=14&page=1&position=14&related_id=2991996&origin=search
-            iconUrl: 'https://cdn-icons.flaticon.com/png/512/2991/premium/2991996.png?token=exp=1653614934~hmac=a8024458bd7491e7c75a234b26e04754',
-            //<a href="https://www.flaticon.com/br/icones-gratis/ambulancia" title="ambulância ícones">Ambulância ícones criados por vectorsmarket15 - Flaticon</a>
-            iconRetinaUrl: 'https://cdn-icons.flaticon.com/png/512/2991/premium/2991996.png?token=exp=1653614934~hmac=a8024458bd7491e7c75a234b26e04754',
-            iconSize: markerSize.md,
-            iconAnchor: markerAnchor.md,
-            popupAnchor: markerPopupAnchor.md
-                //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/ambulancia" title="ambulância ícones">Ambulância ícones criados por vectorsmarket15 - Flaticon</a>
-        });
-
-        var markerhospital = L.icon({
-            //https://www.flaticon.com/br/icone-premium/hospital_2866287?term=hospital&page=1&position=2&page=1&position=2&related_id=2866287&origin=search
-            iconUrl: 'https://cdn-icons.flaticon.com/png/512/2866/premium/2866287.png?token=exp=1653614878~hmac=a0e8129990e997bfa68bd9e57dfa664e',
-            //<a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
-            iconRetinaUrl: 'https://cdn-icons.flaticon.com/png/512/2866/premium/2866287.png?token=exp=1653614878~hmac=a0e8129990e997bfa68bd9e57dfa664e',
-            iconSize: markerSize.md,
-            iconAnchor: markerAnchor.md,
-            popupAnchor: markerPopupAnchor.md
-                //Link de Crédito imagem - <a href="https://www.flaticon.com/br/icones-gratis/hospital" title="hospital ícones">Hospital ícones criados por Blak1ta - Flaticon</a>
-        });
         // Geocode three locations, then call the createMap callback
 
         // L.mapquest.directions().setLayerOptions({
@@ -458,61 +499,6 @@ window.onload = function() {
         //         waypoints: [chamado]
         //     })
         // };
-
-        // Generate the feature group containing markers from the geocoded locations
-        // var featureGroup = generateMarkersFeatureGroup(response);
-
-        // Add markers to the map and zoom to the features
-        // featureGroup.addTo(map);
-        // map.fitBounds(featureGroup.getBounds());
-
-
-        // function generateMarkersFeatureGroup(response) {
-        //     var group = [];
-        //     for (var i = 0; i < response.results.length; i++) {
-        //         var location = response.results[i].locations[0];
-        //         var locationLatLng = location.latLng;
-
-        //         // Create a marker for each location\\
-        //         //    Forma Antiga (Rodolfo)
-        //         var qual = (i == 0) ? markeracidente : markerviatura
-        // var marker = L.marker(locationLatLng, {
-        // icon: acidente
-        // })
-        // .bindPopup(location.adminArea5 + ', ' + location.adminArea3);
-
-        // group.push(marker);
-        //         //    end\\
-        //         // var qual = function() {
-        //         //     switch (response.results[i].location) {
-        //         //         case chamado:
-        //         //             markeracidente;
-        //         //             break;
-        //         //         case viatura:
-        //         //             markerviatura;
-        //         //             break;
-        //         //         case hospital:
-        //         //             markerhospital;
-        //         //             break;
-        //         //         default:
-        //         //             alert("Ocorreu um erroo na definição do endereço no mapa! Por favor, tente novamente.");
-        //         //     };
-        //         // }
-        //         var marker = L.marker(locationLatLng, {
-        //                 icon: qual
-        //             })
-        //             .bindPopup(location.adminArea5 + ', ' + location.adminArea3); //CLIQUE COM O TEMPO, ALTERAR AQUI
-
-        // group.push(marker);
-        //         //end\\
-        //     }
-        //     return L.featureGroup(group);
-        // };
-
-
-
-
-
     }
     //------------------------------- Links Documentação importantes ---------------------------------------\\
     //ICONES NA ROTA

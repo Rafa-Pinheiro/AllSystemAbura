@@ -119,8 +119,8 @@ if ((!isset($_SESSION['rm']) == true) and (!isset($_SESSION['senha']) == true)) 
 
                         <form action="" method="get">
                             <div class="form-group">
-                                <label for="uma" id="amb">Nível da ambulância do chamado</label>
-                                <select class="form-control" name="uma" id="uma">
+                                <label for="ocorrencia" id="amb">Nível da ambulância do chamado</label>
+                                <select class="form-control" name="ocorrencia" id="ocorrencia">
                                     <option value="" selected>Selecione</option>
                                     <option value="A">Tipo A</option>
                                     <option value="B">Tipo B</option>
